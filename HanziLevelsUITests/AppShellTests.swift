@@ -25,16 +25,15 @@ final class AppShellTests: XCTestCase {
 
         for level in 1...5 {
             let card = app.buttons["level.\(level)"]
-            if !card.isHittable {
-                app.swipeUp()
-            }
-            XCTAssertTrue(card.exists)
+            scrollToHittable(card, in: app)
             card.tap()
 
             let navigationBar = app.navigationBars["HSK \(level)"]
             XCTAssertTrue(navigationBar.waitForExistence(timeout: 5))
             XCTAssertTrue(app.staticTexts["No vocabulary yet"].exists)
-            navigationBar.buttons.firstMatch.tap()
+            let back = navigationBar.buttons["Levels"]
+            XCTAssertTrue(back.waitForExistence(timeout: 5))
+            back.tap()
             XCTAssertTrue(app.navigationBars["Levels"].waitForExistence(timeout: 5))
         }
     }
@@ -44,15 +43,35 @@ final class AppShellTests: XCTestCase {
         app.launch()
 
         let sources = app.buttons["sources"]
-        if !sources.isHittable {
-            app.swipeUp()
-        }
+        scrollToHittable(sources, in: app)
         sources.tap()
 
         let navigationBar = app.navigationBars["Sources & Licenses"]
         XCTAssertTrue(navigationBar.waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["No sources bundled yet"].exists)
-        navigationBar.buttons.firstMatch.tap()
+        let back = navigationBar.buttons["Levels"]
+        XCTAssertTrue(back.waitForExistence(timeout: 5))
+        back.tap()
         XCTAssertTrue(app.navigationBars["Levels"].waitForExistence(timeout: 5))
+    }
+
+    private func scrollToHittable(
+        _ element: XCUIElement,
+        in app: XCUIApplication,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        // Start each lookup at the top so restored offsets cannot affect the search.
+        for _ in 0..<3 {
+            app.swipeDown()
+        }
+        XCTAssertTrue(element.waitForExistence(timeout: 5), "Missing navigation row", file: file, line: line)
+        for _ in 0..<5 {
+            if element.isHittable {
+                break
+            }
+            app.swipeUp()
+        }
+        XCTAssertTrue(element.isHittable, "Navigation row could not be scrolled into view", file: file, line: line)
     }
 }

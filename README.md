@@ -33,14 +33,15 @@ HanziLevels/
     Components/                 Level cards and shared empty state
   Resources/Assets.xcassets/     Adaptive AccentColor
 HanziLevelsUITests/              Launch and navigation smoke tests
+HanziLevelsTests/                Unit-test target for subsequent features
 scripts/                        Offline source check and simulator CI
 ```
 
 `Route` uses `level(Int)`, `word(String)`, `character(String)`, and `sources`.
 Word and character identifiers are hanzi. Destinations are registered once
 in `RootView`; SwiftUI supplies the back button and swipe-back behavior.
-Word and character routes are ready for later content screens and have no
-links from the empty library. Dataset loading, search, history, and stroke
+Word and character routes have individual SwiftUI previews and are ready for
+later content screens, with no links from the empty library. Dataset loading, search, history, and stroke
 playback belong to subsequent increments.
 
 The UI uses system fonts and grouped backgrounds, supports Dynamic Type,
@@ -63,8 +64,10 @@ The static offline check also runs with Command Line Tools only:
 python3 scripts/check_offline.py
 ```
 
-GitHub Actions builds and runs the UI smoke tests on an available iPhone
-simulator, then captures the launch screen in light and dark appearance.
+GitHub Actions builds Release and runs the Debug UI smoke tests on an available
+iOS 17+ iPhone simulator, then captures the launch screen in light and dark
+appearance. Both screenshot exports are required for success. The unit-test
+target is intentionally empty until the data and other feature logic land.
 Download the `ios-shell-evidence` artifact for PNG attachments and `.xcresult`
 bundles. To reproduce this workflow locally with Xcode 16 or newer:
 

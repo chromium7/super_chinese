@@ -13,3 +13,9 @@ struct CharacterDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
+
+#Preview {
+    NavigationStack {
+        CharacterDetailView(characterID: "学")
+    }
+}

@@ -4,11 +4,6 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Text("HSK 1–5 · words and characters")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .padding(.bottom, 12)
-
                 ForEach(1...5, id: \.self) { level in
                     NavigationLink(value: Route.level(level)) {
                         LevelCard(level: level)

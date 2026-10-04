@@ -22,6 +22,5 @@ struct LevelCard: View {
         .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 16))
-        .accessibilityElement(children: .combine)
     }
 }

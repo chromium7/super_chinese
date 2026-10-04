@@ -13,3 +13,9 @@ struct WordDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
+
+#Preview {
+    NavigationStack {
+        WordDetailView(wordID: "学生")
+    }
+}
