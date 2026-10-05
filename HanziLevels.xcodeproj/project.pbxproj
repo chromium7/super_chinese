@@ -28,7 +28,7 @@
 		100000000000000000000008 = {
 			isa = PBXNativeTarget; buildConfigurationList = 100000000000000000000009;
 			buildPhases = (100000000000000000000005, 100000000000000000000007, 100000000000000000000006);
-			buildRules = (); dependencies = (10000000000000000000000C);
+			buildRules = (); dependencies = ();
 			name = HanziLevelsTests; productName = HanziLevelsTests; productReference = 100000000000000000000002;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -38,7 +38,6 @@
 		};
 		10000000000000000000000A = {
 			isa = XCBuildConfiguration; buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -50,12 +49,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = "1";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HanziLevels.app/HanziLevels";
 			}; name = Debug;
 		};
 		10000000000000000000000B = {
 			isa = XCBuildConfiguration; buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -67,14 +64,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = "1";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HanziLevels.app/HanziLevels";
 			}; name = Release;
-		};
-		10000000000000000000000C = {
-			isa = PBXTargetDependency; target = 000000000000000000000006; targetProxy = 10000000000000000000000D;
-		};
-		10000000000000000000000D = {
-			isa = PBXContainerItemProxy; containerPortal = 000000000000000000000001; proxyType = 1; remoteGlobalIDString = 000000000000000000000006; remoteInfo = HanziLevels;
 		};
 		000000000000000000000015 = {
 			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/HanziLevelsApp.swift"; sourceTree = "<group>";
@@ -142,22 +132,12 @@
 		00000000000000000000002A = {
 			isa = PBXBuildFile; fileRef = 000000000000000000000029;
 		};
-		00000000000000000000002B = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppShellTests.swift"; sourceTree = "<group>";
-		};
-		00000000000000000000002C = {
-			isa = PBXBuildFile; fileRef = 00000000000000000000002B;
-		};
 		000000000000000000000008 = {
 			isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanziLevels.app; sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		000000000000000000000009 = {
-			isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanziLevelsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		000000000000000000000002 = {
 			isa = PBXGroup; children = (
 				000000000000000000000003,
-				000000000000000000000004,
 				100000000000000000000001,
 				000000000000000000000005,
 			); sourceTree = "<group>";
@@ -177,15 +157,9 @@
 				000000000000000000000029,
 			); path = HanziLevels; sourceTree = "<group>";
 		};
-		000000000000000000000004 = {
-			isa = PBXGroup; children = (
-				00000000000000000000002B,
-			); path = HanziLevelsUITests; sourceTree = "<group>";
-		};
 		000000000000000000000005 = {
 			isa = PBXGroup; children = (
 				000000000000000000000008,
-				000000000000000000000009,
 				100000000000000000000002,
 			); name = Products; sourceTree = "<group>";
 		};
@@ -212,40 +186,12 @@
 			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
 			); runOnlyForDeploymentPostprocessing = 0;
 		};
-		00000000000000000000000D = {
-			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
-				00000000000000000000002C,
-			); runOnlyForDeploymentPostprocessing = 0;
-		};
-		00000000000000000000000E = {
-			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
-			); runOnlyForDeploymentPostprocessing = 0;
-		};
-		00000000000000000000000F = {
-			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
-			); runOnlyForDeploymentPostprocessing = 0;
-		};
-		000000000000000000000010 = {
-			isa = PBXContainerItemProxy; containerPortal = 000000000000000000000001; proxyType = 1; remoteGlobalIDString = 000000000000000000000006; remoteInfo = HanziLevels;
-		};
-		000000000000000000000011 = {
-			isa = PBXTargetDependency; target = 000000000000000000000006; targetProxy = 000000000000000000000010;
-		};
 		000000000000000000000006 = {
 			isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000013; buildPhases = (
 				00000000000000000000000A,
 				00000000000000000000000C,
 				00000000000000000000000B,
 			); buildRules = (); dependencies = (); name = HanziLevels; productName = HanziLevels; productReference = 000000000000000000000008; productType = "com.apple.product-type.application";
-		};
-		000000000000000000000007 = {
-			isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000014; buildPhases = (
-				00000000000000000000000D,
-				00000000000000000000000F,
-				00000000000000000000000E,
-			); buildRules = (); dependencies = (
-				000000000000000000000011,
-			); name = HanziLevelsUITests; productName = HanziLevelsUITests; productReference = 000000000000000000000009; productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		00000000000000000000002D = {
 			isa = XCBuildConfiguration; buildSettings = {
@@ -346,53 +292,12 @@
 				000000000000000000000030,
 			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
 		};
-		000000000000000000000031 = {
-			isa = XCBuildConfiguration; buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevelsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1";
-				TEST_TARGET_NAME = HanziLevels;
-			}; name = Debug;
-		};
-		000000000000000000000032 = {
-			isa = XCBuildConfiguration; buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevelsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1";
-				TEST_TARGET_NAME = HanziLevels;
-			}; name = Release;
-		};
-		000000000000000000000014 = {
-			isa = XCConfigurationList; buildConfigurations = (
-				000000000000000000000031,
-				000000000000000000000032,
-			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
-		};
 		000000000000000000000001 = {
 			isa = PBXProject;
-			attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1530; TargetAttributes = { 000000000000000000000006 = { CreatedOnToolsVersion = 15.3; }; 000000000000000000000007 = { CreatedOnToolsVersion = 15.3; TestTargetID = 000000000000000000000006; }; 100000000000000000000008 = { CreatedOnToolsVersion = 15.3; TestTargetID = 000000000000000000000006; }; }; };
+			attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1530; TargetAttributes = { 000000000000000000000006 = { CreatedOnToolsVersion = 15.3; }; 100000000000000000000008 = { CreatedOnToolsVersion = 15.3; }; }; };
 			buildConfigurationList = 000000000000000000000012; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0;
 			knownRegions = (en, Base); mainGroup = 000000000000000000000002; productRefGroup = 000000000000000000000005; projectDirPath = ""; projectRoot = ""; targets = (
 				000000000000000000000006,
-				000000000000000000000007,
 				100000000000000000000008,
 			);
 		};

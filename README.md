@@ -15,7 +15,7 @@ needed in a fresh checkout.
 
 1. Open `HanziLevels.xcodeproj`.
 2. Select the shared **HanziLevels** scheme and an iPhone simulator.
-3. Run with **⌘R**. Run the UI smoke tests with **⌘U**.
+3. Run with **⌘R**. Run unit tests with **⌘U**.
 
 For a physical iPhone, choose your development team under Signing &
 Capabilities. Simulator builds do not need a development team.
@@ -32,17 +32,16 @@ HanziLevels/
   Views/                        Home and placeholder destinations
     Components/                 Level cards and shared empty state
   Resources/Assets.xcassets/     Adaptive AccentColor
-HanziLevelsUITests/              Launch and navigation smoke tests
-HanziLevelsTests/                Unit-test target for subsequent features
-scripts/                        Offline source check and simulator CI
+HanziLevelsTests/                Unhosted unit-test target for subsequent features
+scripts/                        Offline source check
 ```
 
 `Route` uses `level(Int)`, `word(String)`, `character(String)`, and `sources`.
 Word and character identifiers are hanzi. Destinations are registered once
 in `RootView`; SwiftUI supplies the back button and swipe-back behavior.
 Word and character routes have individual SwiftUI previews and are ready for
-later content screens, with no links from the empty library. Dataset loading, search, history, and stroke
-playback belong to subsequent increments.
+later content screens, with no links from the empty library. Dataset loading,
+search, history, and stroke playback belong to subsequent increments.
 
 The UI uses system fonts and grouped backgrounds, supports Dynamic Type,
 and follows the device's light/dark appearance. The accent asset is
@@ -64,16 +63,9 @@ The static offline check also runs with Command Line Tools only:
 python3 scripts/check_offline.py
 ```
 
-GitHub Actions builds Release and runs the Debug UI smoke tests on an available
-iOS 17+ iPhone simulator, then captures the launch screen in light and dark
-appearance. Both screenshot exports are required for success. The unit-test
-target is intentionally empty until the data and other feature logic land.
-Download the `ios-shell-evidence` artifact for PNG attachments and `.xcresult`
-bundles. To reproduce this workflow locally with Xcode 16 or newer:
+The shared scheme's test action contains only the unhosted `HanziLevelsTests`
+target. It does not build or launch the Hanzi Levels app for testing. The target
+is intentionally scaffolded with no test cases until data and feature logic
+land. Add those Swift files to the unit-test target when their tests are added.
 
-```sh
-bash scripts/ios_ci.sh
-```
-
-Xcode 16 is needed for this script's `xcresulttool export attachments` command;
-the app and UI tests themselves support Xcode 15.3+.
+There is no simulator CI workflow, app-launch automation, or UI-test target.
