@@ -2,9 +2,10 @@
 
 A native, offline Chinese vocabulary browser for iPhone, built with SwiftUI.
 
-This first increment provides the app shell: five HSK level cards, a single
+The app shell provides five HSK level cards, a single
 typed `NavigationStack`, placeholder level/word/character/source destinations,
-and the shared system appearance. The app works with no bundled dataset. It
+and the shared system appearance. A validated development sample is now bundled;
+the placeholder screens will be connected to it in subsequent increments. It
 does not request permissions, use the network, or require an account.
 
 ## Open and run
@@ -32,8 +33,11 @@ HanziLevels/
   Views/                        Home and placeholder destinations
     Components/                 Level cards and shared empty state
   Resources/Assets.xcassets/     Adaptive AccentColor
-HanziLevelsTests/                Unhosted unit-test target for subsequent features
-scripts/                        Offline source check
+  Resources/Data/               Manifest, sample vocabulary, characters, strokes, licenses
+  Data/BundledDataFiles.swift    Local resource integrity reader
+DataSources/                    Immutable sample inputs and SHA-256 lock
+HanziLevelsTests/                Unhosted unit tests with a copied Data folder
+scripts/                        Offline conversion and verification
 ```
 
 `Route` uses `level(Int)`, `word(String)`, `character(String)`, and `sources`.
@@ -64,8 +68,35 @@ python3 scripts/check_offline.py
 ```
 
 The shared scheme's test action contains only the unhosted `HanziLevelsTests`
-target. It does not build or launch the Hanzi Levels app for testing. The target
-is intentionally scaffolded with no test cases until data and feature logic
-land. Add those Swift files to the unit-test target when their tests are added.
+target. It does not build or launch the Hanzi Levels app for testing. Resource
+tests use `Bundle(for:)`; production loading defaults to `Bundle.main`.
+
+Verify/reproduce the content with Python 3 and Command Line Tools:
+
+```sh
+python3 scripts/prepare_data.py --check
+python3 scripts/test_prepare_data.py
+python3 scripts/check_bundle_loading.py
+python3 scripts/prepare_data.py --check --report build/resource-verification.html
+```
+
+The Swift probe compiles the production reader into a temporary macOS app bundle,
+loads its resources through `Bundle.main` with networking denied by `sandbox-exec`,
+and checks six damaged fixtures.
+It is useful with Command Line Tools, but does not replace an iOS simulator build.
+The Xcode project copies `Resources/Data` as a folder reference into both app and
+test bundles, preserving `Licenses/`. The reader throws on missing resources,
+unknown schema, invalid manifest metadata, or SHA-256 mismatch; a later Library
+will decode/index these verified bytes in a background task and show errors.
+
+**Release blocked:** `2026.10.0-sample` contains 131 words and 213 characters.
+The level list lacks written redistribution permission or an approved replacement;
+upstream definition/stroke revisions were not supplied. The precise attachments
+are pinned for reproducible development. All three source attributions and full
+Arphic / Creative Commons license texts are bundled. CC-CEDICT currently names
+CC BY-SA 3.0, so the 4.0 text requested in the brief is included as reference only.
+See `Resources/Data/Licenses/SOURCES.md` and `DataSources/README.md` for details.
+`python3 scripts/prepare_data.py --check --require-release-approved` intentionally
+fails until a reviewed permission/provenance decision and schema update are made.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.

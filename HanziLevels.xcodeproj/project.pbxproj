@@ -4,8 +4,17 @@
 	classes = {};
 	objectVersion = 56;
 	objects = {
+		200000000000000000000001 = { isa = PBXFileReference; lastKnownFileType = folder; path = "Resources/Data"; sourceTree = "<group>"; };
+		200000000000000000000002 = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
+		200000000000000000000003 = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
+		200000000000000000000004 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/BundledDataFiles.swift"; sourceTree = "<group>"; };
+		200000000000000000000005 = { isa = PBXBuildFile; fileRef = 200000000000000000000004; };
+		200000000000000000000006 = { isa = PBXBuildFile; fileRef = 200000000000000000000004; };
+		200000000000000000000007 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundledDataFilesTests.swift; sourceTree = "<group>"; };
+		200000000000000000000008 = { isa = PBXBuildFile; fileRef = 200000000000000000000007; };
+
 		100000000000000000000001 = {
-			isa = PBXGroup; children = (100000000000000000000003); path = HanziLevelsTests; sourceTree = "<group>";
+			isa = PBXGroup; children = (100000000000000000000003, 200000000000000000000007); path = HanziLevelsTests; sourceTree = "<group>";
 		};
 		100000000000000000000002 = {
 			isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanziLevelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR;
@@ -17,10 +26,10 @@
 			isa = PBXBuildFile; fileRef = 100000000000000000000003;
 		};
 		100000000000000000000005 = {
-			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000004); runOnlyForDeploymentPostprocessing = 0;
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000004, 200000000000000000000006, 200000000000000000000008); runOnlyForDeploymentPostprocessing = 0;
 		};
 		100000000000000000000006 = {
-			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (200000000000000000000003); runOnlyForDeploymentPostprocessing = 0;
 		};
 		100000000000000000000007 = {
 			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +164,8 @@
 				000000000000000000000025,
 				000000000000000000000027,
 				000000000000000000000029,
+				200000000000000000000001,
+				200000000000000000000004,
 			); path = HanziLevels; sourceTree = "<group>";
 		};
 		000000000000000000000005 = {
@@ -175,11 +186,13 @@
 				000000000000000000000024,
 				000000000000000000000026,
 				000000000000000000000028,
+				200000000000000000000005,
 			); runOnlyForDeploymentPostprocessing = 0;
 		};
 		00000000000000000000000B = {
 			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
 				00000000000000000000002A,
+				200000000000000000000002,
 			); runOnlyForDeploymentPostprocessing = 0;
 		};
 		00000000000000000000000C = {

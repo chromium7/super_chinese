@@ -1,0 +1,1929 @@
+[
+  {
+    "id": "爱",
+    "readings": [
+      "ài"
+    ],
+    "meaning": "love",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "八",
+    "readings": [
+      "bā"
+    ],
+    "meaning": "eight",
+    "strokeCount": 2,
+    "firstLevel": 1
+  },
+  {
+    "id": "爸",
+    "readings": [
+      "bà"
+    ],
+    "meaning": "father",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "北",
+    "readings": [
+      "běi"
+    ],
+    "meaning": "north",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "京",
+    "readings": [
+      "jīng"
+    ],
+    "meaning": "capital",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "不",
+    "readings": [
+      "bù"
+    ],
+    "meaning": "not; no",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "菜",
+    "readings": [
+      "cài"
+    ],
+    "meaning": "vegetable; dish",
+    "strokeCount": 11,
+    "firstLevel": 1
+  },
+  {
+    "id": "茶",
+    "readings": [
+      "chá"
+    ],
+    "meaning": "tea",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "吃",
+    "readings": [
+      "chī"
+    ],
+    "meaning": "eat",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "出",
+    "readings": [
+      "chū"
+    ],
+    "meaning": "go out; exit",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "租",
+    "readings": [
+      "zū"
+    ],
+    "meaning": "rent",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "车",
+    "readings": [
+      "chē"
+    ],
+    "meaning": "vehicle; car",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "大",
+    "readings": [
+      "dà"
+    ],
+    "meaning": "big",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "电",
+    "readings": [
+      "diàn"
+    ],
+    "meaning": "electricity",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "脑",
+    "readings": [
+      "nǎo"
+    ],
+    "meaning": "brain",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "视",
+    "readings": [
+      "shì"
+    ],
+    "meaning": "look at; view",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "影",
+    "readings": [
+      "yǐng"
+    ],
+    "meaning": "shadow; image",
+    "strokeCount": 15,
+    "firstLevel": 1
+  },
+  {
+    "id": "东",
+    "readings": [
+      "dōng"
+    ],
+    "meaning": "east",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "西",
+    "readings": [
+      "xī"
+    ],
+    "meaning": "west",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "对",
+    "readings": [
+      "duì"
+    ],
+    "meaning": "correct; toward",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "起",
+    "readings": [
+      "qǐ"
+    ],
+    "meaning": "rise; get up",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "多",
+    "readings": [
+      "duō"
+    ],
+    "meaning": "many; much",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "少",
+    "readings": [
+      "shǎo",
+      "shào"
+    ],
+    "meaning": "few; young",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "儿",
+    "readings": [
+      "ér"
+    ],
+    "meaning": "child; son",
+    "strokeCount": 2,
+    "firstLevel": 1
+  },
+  {
+    "id": "子",
+    "readings": [
+      "zǐ"
+    ],
+    "meaning": "child; seed",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "飞",
+    "readings": [
+      "fēi"
+    ],
+    "meaning": "fly",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "机",
+    "readings": [
+      "jī"
+    ],
+    "meaning": "machine; opportunity",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "高",
+    "readings": [
+      "gāo"
+    ],
+    "meaning": "tall; high",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "兴",
+    "readings": [
+      "xìng",
+      "xīng"
+    ],
+    "meaning": "interest; prosper",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "工",
+    "readings": [
+      "gōng"
+    ],
+    "meaning": "work",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "作",
+    "readings": [
+      "zuò"
+    ],
+    "meaning": "do; make",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "汉",
+    "readings": [
+      "hàn"
+    ],
+    "meaning": "Han Chinese",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "语",
+    "readings": [
+      "yǔ"
+    ],
+    "meaning": "language",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "好",
+    "readings": [
+      "hǎo",
+      "hào"
+    ],
+    "meaning": "good; to like",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "喝",
+    "readings": [
+      "hē"
+    ],
+    "meaning": "drink",
+    "strokeCount": 12,
+    "firstLevel": 1
+  },
+  {
+    "id": "很",
+    "readings": [
+      "hěn"
+    ],
+    "meaning": "very",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "火",
+    "readings": [
+      "huǒ"
+    ],
+    "meaning": "fire",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "站",
+    "readings": [
+      "zhàn"
+    ],
+    "meaning": "stand; station",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "今",
+    "readings": [
+      "jīn"
+    ],
+    "meaning": "now; today",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "天",
+    "readings": [
+      "tiān"
+    ],
+    "meaning": "sky; day",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "看",
+    "readings": [
+      "kàn"
+    ],
+    "meaning": "look; see",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "见",
+    "readings": [
+      "jiàn"
+    ],
+    "meaning": "see; meet",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "老",
+    "readings": [
+      "lǎo"
+    ],
+    "meaning": "old",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "师",
+    "readings": [
+      "shī"
+    ],
+    "meaning": "teacher; master",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "冷",
+    "readings": [
+      "lěng"
+    ],
+    "meaning": "cold",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "妈",
+    "readings": [
+      "mā"
+    ],
+    "meaning": "mother",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "米",
+    "readings": [
+      "mǐ"
+    ],
+    "meaning": "rice; meter",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "饭",
+    "readings": [
+      "fàn"
+    ],
+    "meaning": "cooked rice; meal",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "明",
+    "readings": [
+      "míng"
+    ],
+    "meaning": "bright; next",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "名",
+    "readings": [
+      "míng"
+    ],
+    "meaning": "name",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "字",
+    "readings": [
+      "zì"
+    ],
+    "meaning": "character; word",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "你",
+    "readings": [
+      "nǐ"
+    ],
+    "meaning": "you",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "女",
+    "readings": [
+      "nǚ"
+    ],
+    "meaning": "woman; female",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "朋",
+    "readings": [
+      "péng"
+    ],
+    "meaning": "friend",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "友",
+    "readings": [
+      "yǒu"
+    ],
+    "meaning": "friend",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "漂",
+    "readings": [
+      "piào",
+      "piāo"
+    ],
+    "meaning": "pretty; float",
+    "strokeCount": 14,
+    "firstLevel": 1
+  },
+  {
+    "id": "亮",
+    "readings": [
+      "liàng"
+    ],
+    "meaning": "bright",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "苹",
+    "readings": [
+      "píng"
+    ],
+    "meaning": "apple",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "果",
+    "readings": [
+      "guǒ"
+    ],
+    "meaning": "fruit; result",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "钱",
+    "readings": [
+      "qián"
+    ],
+    "meaning": "money",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "请",
+    "readings": [
+      "qǐng"
+    ],
+    "meaning": "please; invite",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "人",
+    "readings": [
+      "rén"
+    ],
+    "meaning": "person",
+    "strokeCount": 2,
+    "firstLevel": 1
+  },
+  {
+    "id": "认",
+    "readings": [
+      "rèn"
+    ],
+    "meaning": "recognize",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "识",
+    "readings": [
+      "shí"
+    ],
+    "meaning": "know",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "商",
+    "readings": [
+      "shāng"
+    ],
+    "meaning": "commerce; discuss",
+    "strokeCount": 11,
+    "firstLevel": 1
+  },
+  {
+    "id": "店",
+    "readings": [
+      "diàn"
+    ],
+    "meaning": "shop",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "上",
+    "readings": [
+      "shàng"
+    ],
+    "meaning": "up; on",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "午",
+    "readings": [
+      "wǔ"
+    ],
+    "meaning": "noon",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "什",
+    "readings": [
+      "shén"
+    ],
+    "meaning": "what",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "么",
+    "readings": [
+      "me"
+    ],
+    "meaning": "interrogative suffix",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "时",
+    "readings": [
+      "shí"
+    ],
+    "meaning": "time",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "候",
+    "readings": [
+      "hòu"
+    ],
+    "meaning": "wait; season",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "书",
+    "readings": [
+      "shū"
+    ],
+    "meaning": "book",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "水",
+    "readings": [
+      "shuǐ"
+    ],
+    "meaning": "water",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "睡",
+    "readings": [
+      "shuì"
+    ],
+    "meaning": "sleep",
+    "strokeCount": 13,
+    "firstLevel": 1
+  },
+  {
+    "id": "觉",
+    "readings": [
+      "jiào",
+      "jué"
+    ],
+    "meaning": "sleep; feel",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "说",
+    "readings": [
+      "shuō"
+    ],
+    "meaning": "speak",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "话",
+    "readings": [
+      "huà"
+    ],
+    "meaning": "speech; words",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "气",
+    "readings": [
+      "qì"
+    ],
+    "meaning": "air; gas",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "同",
+    "readings": [
+      "tóng"
+    ],
+    "meaning": "same; together",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "学",
+    "readings": [
+      "xué"
+    ],
+    "meaning": "learn; study",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "我",
+    "readings": [
+      "wǒ"
+    ],
+    "meaning": "I; me",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "们",
+    "readings": [
+      "men"
+    ],
+    "meaning": "plural suffix",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "喜",
+    "readings": [
+      "xǐ"
+    ],
+    "meaning": "happy; like",
+    "strokeCount": 12,
+    "firstLevel": 1
+  },
+  {
+    "id": "欢",
+    "readings": [
+      "huān"
+    ],
+    "meaning": "joyful",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "下",
+    "readings": [
+      "xià"
+    ],
+    "meaning": "down; below",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "雨",
+    "readings": [
+      "yǔ"
+    ],
+    "meaning": "rain",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "先",
+    "readings": [
+      "xiān"
+    ],
+    "meaning": "first; before",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "生",
+    "readings": [
+      "shēng"
+    ],
+    "meaning": "be born; life",
+    "strokeCount": 5,
+    "firstLevel": 1
+  },
+  {
+    "id": "现",
+    "readings": [
+      "xiàn"
+    ],
+    "meaning": "appear; present",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "在",
+    "readings": [
+      "zài"
+    ],
+    "meaning": "at; exist",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "小",
+    "readings": [
+      "xiǎo"
+    ],
+    "meaning": "small",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "姐",
+    "readings": [
+      "jiě"
+    ],
+    "meaning": "older sister",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "谢",
+    "readings": [
+      "xiè"
+    ],
+    "meaning": "thank",
+    "strokeCount": 12,
+    "firstLevel": 1
+  },
+  {
+    "id": "星",
+    "readings": [
+      "xīng"
+    ],
+    "meaning": "star",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "期",
+    "readings": [
+      "qī"
+    ],
+    "meaning": "period",
+    "strokeCount": 12,
+    "firstLevel": 1
+  },
+  {
+    "id": "习",
+    "readings": [
+      "xí"
+    ],
+    "meaning": "practice",
+    "strokeCount": 3,
+    "firstLevel": 1
+  },
+  {
+    "id": "校",
+    "readings": [
+      "xiào"
+    ],
+    "meaning": "school",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "医",
+    "readings": [
+      "yī"
+    ],
+    "meaning": "medicine; doctor",
+    "strokeCount": 7,
+    "firstLevel": 1
+  },
+  {
+    "id": "院",
+    "readings": [
+      "yuàn"
+    ],
+    "meaning": "courtyard; institution",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "衣",
+    "readings": [
+      "yī"
+    ],
+    "meaning": "clothing",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "服",
+    "readings": [
+      "fú"
+    ],
+    "meaning": "clothes; serve",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "中",
+    "readings": [
+      "zhōng"
+    ],
+    "meaning": "middle; China",
+    "strokeCount": 4,
+    "firstLevel": 1
+  },
+  {
+    "id": "国",
+    "readings": [
+      "guó"
+    ],
+    "meaning": "country",
+    "strokeCount": 8,
+    "firstLevel": 1
+  },
+  {
+    "id": "昨",
+    "readings": [
+      "zuó"
+    ],
+    "meaning": "yesterday",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "桌",
+    "readings": [
+      "zhuō"
+    ],
+    "meaning": "table",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "再",
+    "readings": [
+      "zài"
+    ],
+    "meaning": "again",
+    "strokeCount": 6,
+    "firstLevel": 1
+  },
+  {
+    "id": "怎",
+    "readings": [
+      "zěn"
+    ],
+    "meaning": "how",
+    "strokeCount": 9,
+    "firstLevel": 1
+  },
+  {
+    "id": "样",
+    "readings": [
+      "yàng"
+    ],
+    "meaning": "shape; kind",
+    "strokeCount": 10,
+    "firstLevel": 1
+  },
+  {
+    "id": "帮",
+    "readings": [
+      "bāng"
+    ],
+    "meaning": "help",
+    "strokeCount": 9,
+    "firstLevel": 2
+  },
+  {
+    "id": "助",
+    "readings": [
+      "zhù"
+    ],
+    "meaning": "assist",
+    "strokeCount": 7,
+    "firstLevel": 2
+  },
+  {
+    "id": "宾",
+    "readings": [
+      "bīn"
+    ],
+    "meaning": "guest",
+    "strokeCount": 10,
+    "firstLevel": 2
+  },
+  {
+    "id": "馆",
+    "readings": [
+      "guǎn"
+    ],
+    "meaning": "building; hall",
+    "strokeCount": 11,
+    "firstLevel": 2
+  },
+  {
+    "id": "唱",
+    "readings": [
+      "chàng"
+    ],
+    "meaning": "sing",
+    "strokeCount": 11,
+    "firstLevel": 2
+  },
+  {
+    "id": "歌",
+    "readings": [
+      "gē"
+    ],
+    "meaning": "song",
+    "strokeCount": 14,
+    "firstLevel": 2
+  },
+  {
+    "id": "家",
+    "readings": [
+      "jiā"
+    ],
+    "meaning": "home; family",
+    "strokeCount": 10,
+    "firstLevel": 2
+  },
+  {
+    "id": "弟",
+    "readings": [
+      "dì"
+    ],
+    "meaning": "younger brother",
+    "strokeCount": 7,
+    "firstLevel": 2
+  },
+  {
+    "id": "告",
+    "readings": [
+      "gào"
+    ],
+    "meaning": "tell; announce",
+    "strokeCount": 7,
+    "firstLevel": 2
+  },
+  {
+    "id": "诉",
+    "readings": [
+      "sù"
+    ],
+    "meaning": "tell; complain",
+    "strokeCount": 7,
+    "firstLevel": 2
+  },
+  {
+    "id": "公",
+    "readings": [
+      "gōng"
+    ],
+    "meaning": "public",
+    "strokeCount": 4,
+    "firstLevel": 2
+  },
+  {
+    "id": "司",
+    "readings": [
+      "sī"
+    ],
+    "meaning": "manage",
+    "strokeCount": 5,
+    "firstLevel": 2
+  },
+  {
+    "id": "孩",
+    "readings": [
+      "hái"
+    ],
+    "meaning": "child",
+    "strokeCount": 9,
+    "firstLevel": 2
+  },
+  {
+    "id": "场",
+    "readings": [
+      "chǎng"
+    ],
+    "meaning": "field; venue",
+    "strokeCount": 6,
+    "firstLevel": 2
+  },
+  {
+    "id": "教",
+    "readings": [
+      "jiào",
+      "jiāo"
+    ],
+    "meaning": "teach; teaching",
+    "strokeCount": 11,
+    "firstLevel": 2
+  },
+  {
+    "id": "室",
+    "readings": [
+      "shì"
+    ],
+    "meaning": "room",
+    "strokeCount": 9,
+    "firstLevel": 2
+  },
+  {
+    "id": "咖",
+    "readings": [
+      "kā"
+    ],
+    "meaning": "coffee (phonetic)",
+    "strokeCount": 8,
+    "firstLevel": 2
+  },
+  {
+    "id": "啡",
+    "readings": [
+      "fēi"
+    ],
+    "meaning": "coffee (phonetic)",
+    "strokeCount": 11,
+    "firstLevel": 2
+  },
+  {
+    "id": "旅",
+    "readings": [
+      "lǚ"
+    ],
+    "meaning": "travel",
+    "strokeCount": 10,
+    "firstLevel": 2
+  },
+  {
+    "id": "游",
+    "readings": [
+      "yóu"
+    ],
+    "meaning": "swim; roam",
+    "strokeCount": 12,
+    "firstLevel": 2
+  },
+  {
+    "id": "日",
+    "readings": [
+      "rì"
+    ],
+    "meaning": "sun; day",
+    "strokeCount": 4,
+    "firstLevel": 2
+  },
+  {
+    "id": "间",
+    "readings": [
+      "jiān"
+    ],
+    "meaning": "between; room",
+    "strokeCount": 7,
+    "firstLevel": 2
+  },
+  {
+    "id": "手",
+    "readings": [
+      "shǒu"
+    ],
+    "meaning": "hand",
+    "strokeCount": 4,
+    "firstLevel": 2
+  },
+  {
+    "id": "问",
+    "readings": [
+      "wèn"
+    ],
+    "meaning": "ask",
+    "strokeCount": 6,
+    "firstLevel": 2
+  },
+  {
+    "id": "题",
+    "readings": [
+      "tí"
+    ],
+    "meaning": "topic; problem",
+    "strokeCount": 15,
+    "firstLevel": 2
+  },
+  {
+    "id": "希",
+    "readings": [
+      "xī"
+    ],
+    "meaning": "hope; rare",
+    "strokeCount": 7,
+    "firstLevel": 2
+  },
+  {
+    "id": "望",
+    "readings": [
+      "wàng"
+    ],
+    "meaning": "look toward; hope",
+    "strokeCount": 11,
+    "firstLevel": 2
+  },
+  {
+    "id": "颜",
+    "readings": [
+      "yán"
+    ],
+    "meaning": "face; color",
+    "strokeCount": 15,
+    "firstLevel": 2
+  },
+  {
+    "id": "色",
+    "readings": [
+      "sè"
+    ],
+    "meaning": "color",
+    "strokeCount": 6,
+    "firstLevel": 2
+  },
+  {
+    "id": "眼",
+    "readings": [
+      "yǎn"
+    ],
+    "meaning": "eye",
+    "strokeCount": 11,
+    "firstLevel": 2
+  },
+  {
+    "id": "睛",
+    "readings": [
+      "jīng"
+    ],
+    "meaning": "eyeball",
+    "strokeCount": 13,
+    "firstLevel": 2
+  },
+  {
+    "id": "早",
+    "readings": [
+      "zǎo"
+    ],
+    "meaning": "early",
+    "strokeCount": 6,
+    "firstLevel": 2
+  },
+  {
+    "id": "办",
+    "readings": [
+      "bàn"
+    ],
+    "meaning": "handle; do",
+    "strokeCount": 4,
+    "firstLevel": 3
+  },
+  {
+    "id": "法",
+    "readings": [
+      "fǎ"
+    ],
+    "meaning": "law; method",
+    "strokeCount": 8,
+    "firstLevel": 3
+  },
+  {
+    "id": "忙",
+    "readings": [
+      "máng"
+    ],
+    "meaning": "busy",
+    "strokeCount": 6,
+    "firstLevel": 3
+  },
+  {
+    "id": "比",
+    "readings": [
+      "bǐ"
+    ],
+    "meaning": "compare",
+    "strokeCount": 4,
+    "firstLevel": 3
+  },
+  {
+    "id": "赛",
+    "readings": [
+      "sài"
+    ],
+    "meaning": "compete",
+    "strokeCount": 14,
+    "firstLevel": 3
+  },
+  {
+    "id": "地",
+    "readings": [
+      "dì",
+      "de"
+    ],
+    "meaning": "earth; ground",
+    "strokeCount": 6,
+    "firstLevel": 3
+  },
+  {
+    "id": "图",
+    "readings": [
+      "tú"
+    ],
+    "meaning": "picture; map",
+    "strokeCount": 8,
+    "firstLevel": 3
+  },
+  {
+    "id": "附",
+    "readings": [
+      "fù"
+    ],
+    "meaning": "attach; near",
+    "strokeCount": 7,
+    "firstLevel": 3
+  },
+  {
+    "id": "近",
+    "readings": [
+      "jìn"
+    ],
+    "meaning": "near",
+    "strokeCount": 7,
+    "firstLevel": 3
+  },
+  {
+    "id": "关",
+    "readings": [
+      "guān"
+    ],
+    "meaning": "close; concern",
+    "strokeCount": 6,
+    "firstLevel": 3
+  },
+  {
+    "id": "心",
+    "readings": [
+      "xīn"
+    ],
+    "meaning": "heart",
+    "strokeCount": 4,
+    "firstLevel": 3
+  },
+  {
+    "id": "迎",
+    "readings": [
+      "yíng"
+    ],
+    "meaning": "welcome",
+    "strokeCount": 7,
+    "firstLevel": 3
+  },
+  {
+    "id": "环",
+    "readings": [
+      "huán"
+    ],
+    "meaning": "ring; surround",
+    "strokeCount": 8,
+    "firstLevel": 3
+  },
+  {
+    "id": "境",
+    "readings": [
+      "jìng"
+    ],
+    "meaning": "border; condition",
+    "strokeCount": 14,
+    "firstLevel": 3
+  },
+  {
+    "id": "健",
+    "readings": [
+      "jiàn"
+    ],
+    "meaning": "healthy",
+    "strokeCount": 10,
+    "firstLevel": 3
+  },
+  {
+    "id": "康",
+    "readings": [
+      "kāng"
+    ],
+    "meaning": "healthy; well-being",
+    "strokeCount": 11,
+    "firstLevel": 3
+  },
+  {
+    "id": "历",
+    "readings": [
+      "lì"
+    ],
+    "meaning": "pass through; history",
+    "strokeCount": 4,
+    "firstLevel": 3
+  },
+  {
+    "id": "史",
+    "readings": [
+      "shǐ"
+    ],
+    "meaning": "history",
+    "strokeCount": 5,
+    "firstLevel": 3
+  },
+  {
+    "id": "奇",
+    "readings": [
+      "qí"
+    ],
+    "meaning": "strange",
+    "strokeCount": 8,
+    "firstLevel": 3
+  },
+  {
+    "id": "怪",
+    "readings": [
+      "guài"
+    ],
+    "meaning": "strange; blame",
+    "strokeCount": 8,
+    "firstLevel": 3
+  },
+  {
+    "id": "真",
+    "readings": [
+      "zhēn"
+    ],
+    "meaning": "real; true",
+    "strokeCount": 10,
+    "firstLevel": 3
+  },
+  {
+    "id": "世",
+    "readings": [
+      "shì"
+    ],
+    "meaning": "world; generation",
+    "strokeCount": 5,
+    "firstLevel": 3
+  },
+  {
+    "id": "界",
+    "readings": [
+      "jiè"
+    ],
+    "meaning": "boundary",
+    "strokeCount": 9,
+    "firstLevel": 3
+  },
+  {
+    "id": "文",
+    "readings": [
+      "wén"
+    ],
+    "meaning": "writing; culture",
+    "strokeCount": 4,
+    "firstLevel": 3
+  },
+  {
+    "id": "化",
+    "readings": [
+      "huà"
+    ],
+    "meaning": "change; transform",
+    "strokeCount": 4,
+    "firstLevel": 3
+  },
+  {
+    "id": "音",
+    "readings": [
+      "yīn"
+    ],
+    "meaning": "sound",
+    "strokeCount": 9,
+    "firstLevel": 3
+  },
+  {
+    "id": "乐",
+    "readings": [
+      "yuè",
+      "lè"
+    ],
+    "meaning": "music; happy",
+    "strokeCount": 5,
+    "firstLevel": 3
+  },
+  {
+    "id": "重",
+    "readings": [
+      "zhòng",
+      "chóng"
+    ],
+    "meaning": "heavy; repeat",
+    "strokeCount": 9,
+    "firstLevel": 3
+  },
+  {
+    "id": "要",
+    "readings": [
+      "yào"
+    ],
+    "meaning": "want; important",
+    "strokeCount": 9,
+    "firstLevel": 3
+  },
+  {
+    "id": "安",
+    "readings": [
+      "ān"
+    ],
+    "meaning": "peace; safe",
+    "strokeCount": 6,
+    "firstLevel": 4
+  },
+  {
+    "id": "全",
+    "readings": [
+      "quán"
+    ],
+    "meaning": "whole; complete",
+    "strokeCount": 6,
+    "firstLevel": 4
+  },
+  {
+    "id": "表",
+    "readings": [
+      "biǎo"
+    ],
+    "meaning": "surface; show",
+    "strokeCount": 8,
+    "firstLevel": 4
+  },
+  {
+    "id": "演",
+    "readings": [
+      "yǎn"
+    ],
+    "meaning": "perform",
+    "strokeCount": 14,
+    "firstLevel": 4
+  },
+  {
+    "id": "诚",
+    "readings": [
+      "chéng"
+    ],
+    "meaning": "sincere",
+    "strokeCount": 8,
+    "firstLevel": 4
+  },
+  {
+    "id": "实",
+    "readings": [
+      "shí"
+    ],
+    "meaning": "real; solid",
+    "strokeCount": 8,
+    "firstLevel": 4
+  },
+  {
+    "id": "经",
+    "readings": [
+      "jīng"
+    ],
+    "meaning": "pass through; classic",
+    "strokeCount": 8,
+    "firstLevel": 4
+  },
+  {
+    "id": "验",
+    "readings": [
+      "yàn"
+    ],
+    "meaning": "examine; test",
+    "strokeCount": 10,
+    "firstLevel": 4
+  },
+  {
+    "id": "理",
+    "readings": [
+      "lǐ"
+    ],
+    "meaning": "reason; manage",
+    "strokeCount": 11,
+    "firstLevel": 4
+  },
+  {
+    "id": "想",
+    "readings": [
+      "xiǎng"
+    ],
+    "meaning": "think; want",
+    "strokeCount": 13,
+    "firstLevel": 4
+  },
+  {
+    "id": "礼",
+    "readings": [
+      "lǐ"
+    ],
+    "meaning": "ceremony; gift",
+    "strokeCount": 5,
+    "firstLevel": 4
+  },
+  {
+    "id": "貌",
+    "readings": [
+      "mào"
+    ],
+    "meaning": "appearance",
+    "strokeCount": 14,
+    "firstLevel": 4
+  },
+  {
+    "id": "美",
+    "readings": [
+      "měi"
+    ],
+    "meaning": "beautiful",
+    "strokeCount": 9,
+    "firstLevel": 4
+  },
+  {
+    "id": "丽",
+    "readings": [
+      "lì"
+    ],
+    "meaning": "beautiful",
+    "strokeCount": 7,
+    "firstLevel": 4
+  },
+  {
+    "id": "判",
+    "readings": [
+      "pàn"
+    ],
+    "meaning": "judge",
+    "strokeCount": 7,
+    "firstLevel": 4
+  },
+  {
+    "id": "断",
+    "readings": [
+      "duàn"
+    ],
+    "meaning": "break; decide",
+    "strokeCount": 11,
+    "firstLevel": 4
+  },
+  {
+    "id": "量",
+    "readings": [
+      "liàng",
+      "liáng"
+    ],
+    "meaning": "quantity; measure",
+    "strokeCount": 12,
+    "firstLevel": 4
+  },
+  {
+    "id": "效",
+    "readings": [
+      "xiào"
+    ],
+    "meaning": "effect",
+    "strokeCount": 10,
+    "firstLevel": 4
+  },
+  {
+    "id": "压",
+    "readings": [
+      "yā"
+    ],
+    "meaning": "press",
+    "strokeCount": 6,
+    "firstLevel": 4
+  },
+  {
+    "id": "力",
+    "readings": [
+      "lì"
+    ],
+    "meaning": "power; strength",
+    "strokeCount": 2,
+    "firstLevel": 4
+  },
+  {
+    "id": "谊",
+    "readings": [
+      "yì"
+    ],
+    "meaning": "friendship",
+    "strokeCount": 10,
+    "firstLevel": 4
+  },
+  {
+    "id": "护",
+    "readings": [
+      "hù"
+    ],
+    "meaning": "protect",
+    "strokeCount": 7,
+    "firstLevel": 5
+  },
+  {
+    "id": "把",
+    "readings": [
+      "bǎ"
+    ],
+    "meaning": "hold; handle",
+    "strokeCount": 7,
+    "firstLevel": 5
+  },
+  {
+    "id": "握",
+    "readings": [
+      "wò"
+    ],
+    "meaning": "grasp",
+    "strokeCount": 12,
+    "firstLevel": 5
+  },
+  {
+    "id": "采",
+    "readings": [
+      "cǎi"
+    ],
+    "meaning": "pick; gather",
+    "strokeCount": 8,
+    "firstLevel": 5
+  },
+  {
+    "id": "访",
+    "readings": [
+      "fǎng"
+    ],
+    "meaning": "visit",
+    "strokeCount": 6,
+    "firstLevel": 5
+  },
+  {
+    "id": "观",
+    "readings": [
+      "guān"
+    ],
+    "meaning": "view; observe",
+    "strokeCount": 6,
+    "firstLevel": 5
+  },
+  {
+    "id": "念",
+    "readings": [
+      "niàn"
+    ],
+    "meaning": "think of; read aloud",
+    "strokeCount": 8,
+    "firstLevel": 5
+  },
+  {
+    "id": "规",
+    "readings": [
+      "guī"
+    ],
+    "meaning": "rule",
+    "strokeCount": 8,
+    "firstLevel": 5
+  },
+  {
+    "id": "律",
+    "readings": [
+      "lǜ"
+    ],
+    "meaning": "law; rule",
+    "strokeCount": 9,
+    "firstLevel": 5
+  },
+  {
+    "id": "魅",
+    "readings": [
+      "mèi"
+    ],
+    "meaning": "charm",
+    "strokeCount": 14,
+    "firstLevel": 5
+  },
+  {
+    "id": "谦",
+    "readings": [
+      "qiān"
+    ],
+    "meaning": "modest",
+    "strokeCount": 12,
+    "firstLevel": 5
+  },
+  {
+    "id": "虚",
+    "readings": [
+      "xū"
+    ],
+    "meaning": "empty; humble",
+    "strokeCount": 11,
+    "firstLevel": 5
+  },
+  {
+    "id": "寻",
+    "readings": [
+      "xún"
+    ],
+    "meaning": "search",
+    "strokeCount": 6,
+    "firstLevel": 5
+  },
+  {
+    "id": "找",
+    "readings": [
+      "zhǎo"
+    ],
+    "meaning": "look for",
+    "strokeCount": 7,
+    "firstLevel": 5
+  },
+  {
+    "id": "逻",
+    "readings": [
+      "luó"
+    ],
+    "meaning": "patrol",
+    "strokeCount": 11,
+    "firstLevel": 5
+  },
+  {
+    "id": "辑",
+    "readings": [
+      "jí"
+    ],
+    "meaning": "edit; collect",
+    "strokeCount": 13,
+    "firstLevel": 5
+  },
+  {
+    "id": "珍",
+    "readings": [
+      "zhēn"
+    ],
+    "meaning": "treasure",
+    "strokeCount": 9,
+    "firstLevel": 5
+  },
+  {
+    "id": "惜",
+    "readings": [
+      "xī"
+    ],
+    "meaning": "cherish; pity",
+    "strokeCount": 11,
+    "firstLevel": 5
+  },
+  {
+    "id": "资",
+    "readings": [
+      "zī"
+    ],
+    "meaning": "resources; capital",
+    "strokeCount": 10,
+    "firstLevel": 5
+  },
+  {
+    "id": "源",
+    "readings": [
+      "yuán"
+    ],
+    "meaning": "source",
+    "strokeCount": 13,
+    "firstLevel": 5
+  },
+  {
+    "id": "自",
+    "readings": [
+      "zì"
+    ],
+    "meaning": "self",
+    "strokeCount": 6,
+    "firstLevel": 5
+  },
+  {
+    "id": "豪",
+    "readings": [
+      "háo"
+    ],
+    "meaning": "heroic; proud",
+    "strokeCount": 14,
+    "firstLevel": 5
+  }
+]

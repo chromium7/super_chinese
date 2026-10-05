@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.10.0-sample",
+  "inputs": {
+    "hsk.v1.json": {
+      "sha256": "cbe3991946f6ff57ed96affa54bb0dee9296085834d7b11d425ffab8bafe492f",
+      "attachmentID": "01a100dd-d50b-7a2d-afd6-7ea2caa8dd0c"
+    },
+    "strokes.v1.json": {
+      "sha256": "5e38564efbf5382a579bcfa49f68b615941404afc98a53e29b3dfc6b969f2be3",
+      "attachmentID": "01a100dd-e508-70e9-87a6-d4b484b7f91a"
+    }
+  },
+  "licenseTexts": {
+    "ARPHICPL.TXT": {
+      "sha256": "3a5e90c0957524a89e48203febcd4492ca4393678abaa7e5b4d70f3ff32b386d",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/APL/english/ARPHICPL.TXT"
+    },
+    "CC-BY-SA-3.0.txt": {
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.txt"
+    },
+    "CC-BY-SA-4.0.txt": {
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt"
+    }
+  }
+}

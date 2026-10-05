@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hanzi Levels sample manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "datasetVersion", "files", "sourceInputs", "wordCounts", "characterCount", "releaseApproved", "releaseBlockers"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "datasetVersion": {"const": "2026.10.0-sample"},
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["words.v1.json", "characters.v1.json", "strokes.v1.json", "manifest.schema.json", "Licenses/ARPHICPL.TXT", "Licenses/CC-BY-SA-3.0.txt", "Licenses/CC-BY-SA-4.0.txt", "Licenses/SOURCES.md"],
+      "properties": {
+        "words.v1.json": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "characters.v1.json": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "strokes.v1.json": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "manifest.schema.json": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "Licenses/ARPHICPL.TXT": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "Licenses/CC-BY-SA-3.0.txt": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "Licenses/CC-BY-SA-4.0.txt": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "Licenses/SOURCES.md": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "sourceInputs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hsk.v1.json", "strokes.v1.json"],
+      "properties": {
+        "hsk.v1.json": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "strokes.v1.json": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "wordCounts": {"const": [71, 20, 16, 12, 12]},
+    "characterCount": {"const": 213},
+    "releaseApproved": {"const": false},
+    "releaseBlockers": {
+      "const": ["Level-list written permission or approved replacement is missing.", "Original upstream definition and stroke revisions were not supplied."]
+    }
+  }
+}
