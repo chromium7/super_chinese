@@ -1,0 +1,24 @@
+Hanzi Levels — supplied 2026.10.0-sample (131 words, 213 characters)
+
+Level membership: Language Player / Zero to Hero Education.
+https://languageplayer.io/
+The supplied prototype uses a representative HSK 1–5 sample.
+No written redistribution permission or approved replacement was supplied.
+Release remains blocked until that decision is resolved.
+
+Definitions/readings: CC-CEDICT contributors and editor team, maintained by
+MDBG; original CEDICT by Paul Andrew Denisowski. https://cc-cedict.org/wiki/
+Supplied definitions are shortened and subsetted; retain CC BY-SA 3.0 Unported.
+Full license: CC-BY-SA-3.0.txt.
+
+Stroke paths/medians: Make Me a Hanzi graphics.txt via hanzi-writer-data 2.0.
+https://github.com/skishore/makemeahanzi
+Derived from Arphic PL KaitiM GB and UKai. © 1999 Arphic Technology Co., Ltd.
+Arphic Public License; full, unmodified text: ARPHICPL.TXT.
+Changes on 2026-10-05: subset/repackage the supplied 213-character sample;
+preserve stroke paths and median coordinates. No dictionary.txt is imported.
+Modified stroke data is available under the same license in this repository:
+https://github.com/chromium7/super_chinese
+
+Original upstream definition/stroke revisions were not supplied with the sample.
+These credits do not claim that release permission/provenance has been cleared.
