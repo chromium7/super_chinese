@@ -4,6 +4,37 @@
 	classes = {};
 	objectVersion = 56;
 	objects = {
+		300000000000000000000101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/DatasetManifest.swift"; sourceTree = "<group>"; };
+		300000000000000000000102 = { isa = PBXBuildFile; fileRef = 300000000000000000000101; };
+		300000000000000000000103 = { isa = PBXBuildFile; fileRef = 300000000000000000000101; };
+		300000000000000000000201 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/Hanzi.swift"; sourceTree = "<group>"; };
+		300000000000000000000202 = { isa = PBXBuildFile; fileRef = 300000000000000000000201; };
+		300000000000000000000203 = { isa = PBXBuildFile; fileRef = 300000000000000000000201; };
+		300000000000000000000301 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/Library.swift"; sourceTree = "<group>"; };
+		300000000000000000000302 = { isa = PBXBuildFile; fileRef = 300000000000000000000301; };
+		300000000000000000000303 = { isa = PBXBuildFile; fileRef = 300000000000000000000301; };
+		300000000000000000000401 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/LibraryContent.swift"; sourceTree = "<group>"; };
+		300000000000000000000402 = { isa = PBXBuildFile; fileRef = 300000000000000000000401; };
+		300000000000000000000403 = { isa = PBXBuildFile; fileRef = 300000000000000000000401; };
+		300000000000000000000501 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/LibraryError.swift"; sourceTree = "<group>"; };
+		300000000000000000000502 = { isa = PBXBuildFile; fileRef = 300000000000000000000501; };
+		300000000000000000000503 = { isa = PBXBuildFile; fileRef = 300000000000000000000501; };
+		300000000000000000000601 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/LibraryLoader.swift"; sourceTree = "<group>"; };
+		300000000000000000000602 = { isa = PBXBuildFile; fileRef = 300000000000000000000601; };
+		300000000000000000000603 = { isa = PBXBuildFile; fileRef = 300000000000000000000601; };
+		300000000000000000000701 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/PinyinFormatter.swift"; sourceTree = "<group>"; };
+		300000000000000000000702 = { isa = PBXBuildFile; fileRef = 300000000000000000000701; };
+		300000000000000000000703 = { isa = PBXBuildFile; fileRef = 300000000000000000000701; };
+		300000000000000000000801 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/SearchIndex.swift"; sourceTree = "<group>"; };
+		300000000000000000000802 = { isa = PBXBuildFile; fileRef = 300000000000000000000801; };
+		300000000000000000000803 = { isa = PBXBuildFile; fileRef = 300000000000000000000801; };
+		300000000000000000000901 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/StrokeSet.swift"; sourceTree = "<group>"; };
+		300000000000000000000902 = { isa = PBXBuildFile; fileRef = 300000000000000000000901; };
+		300000000000000000000903 = { isa = PBXBuildFile; fileRef = 300000000000000000000901; };
+		300000000000000000000A01 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/Word.swift"; sourceTree = "<group>"; };
+		300000000000000000000A02 = { isa = PBXBuildFile; fileRef = 300000000000000000000A01; };
+		300000000000000000000A03 = { isa = PBXBuildFile; fileRef = 300000000000000000000A01; };
+		3000000000000000000000FF = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
 		200000000000000000000001 = { isa = PBXFileReference; lastKnownFileType = folder; path = "Resources/Data"; sourceTree = "<group>"; };
 		200000000000000000000002 = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
 		100000000000000000000001 = {
@@ -13,16 +44,16 @@
 			isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanziLevelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		100000000000000000000003 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>";
+			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTests.swift; sourceTree = "<group>";
 		};
 		100000000000000000000004 = {
 			isa = PBXBuildFile; fileRef = 100000000000000000000003;
 		};
 		100000000000000000000005 = {
-			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000004); runOnlyForDeploymentPostprocessing = 0;
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000004, 300000000000000000000103, 300000000000000000000203, 300000000000000000000303, 300000000000000000000403, 300000000000000000000503, 300000000000000000000603, 300000000000000000000703, 300000000000000000000803, 300000000000000000000903, 300000000000000000000A03); runOnlyForDeploymentPostprocessing = 0;
 		};
 		100000000000000000000006 = {
-			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (3000000000000000000000FF); runOnlyForDeploymentPostprocessing = 0;
 		};
 		100000000000000000000007 = {
 			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +188,16 @@
 				000000000000000000000025,
 				000000000000000000000027,
 				000000000000000000000029,
+				300000000000000000000101,
+				300000000000000000000201,
+				300000000000000000000301,
+				300000000000000000000401,
+				300000000000000000000501,
+				300000000000000000000601,
+				300000000000000000000701,
+				300000000000000000000801,
+				300000000000000000000901,
+				300000000000000000000A01,
 				200000000000000000000001,
 			); path = HanziLevels; sourceTree = "<group>";
 		};
@@ -168,6 +209,16 @@
 		};
 		00000000000000000000000A = {
 			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+				300000000000000000000102,
+				300000000000000000000202,
+				300000000000000000000302,
+				300000000000000000000402,
+				300000000000000000000502,
+				300000000000000000000602,
+				300000000000000000000702,
+				300000000000000000000802,
+				300000000000000000000902,
+				300000000000000000000A02,
 				000000000000000000000016,
 				000000000000000000000018,
 				00000000000000000000001A,
