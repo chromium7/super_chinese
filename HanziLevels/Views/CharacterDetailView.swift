@@ -5,9 +5,9 @@ struct CharacterDetailView: View {
 
     var body: some View {
         EmptyLibraryView(
-            title: "Character unavailable",
+            title: "Character details",
             systemImage: "character.book.closed",
-            description: "This character is not in the bundled library yet."
+            description: "Character details will be available in a later update."
         )
         .navigationTitle(characterID)
         .navigationBarTitleDisplayMode(.inline)
