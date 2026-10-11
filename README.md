@@ -31,6 +31,7 @@ HanziLevels.xcodeproj/           Checked-in project and shared scheme
 HanziLevels/
   App/                          App entry point, root stack, typed Route
   Data/                         Read-only offline library and search index
+  Strokes/                      Native SVG geometry, cached preparation, playback and canvas
   Views/                        Home, Level, Word/Character details, Sources placeholder
     Components/                 Cards, rows, detail headings, stroke integration surface
   Resources/Assets.xcassets/     Adaptive AccentColor
@@ -46,8 +47,16 @@ of distinct characters in reading order. Character cards open character detail,
 which shows readings, meaning, stroke count, first HSK level, and all containing
 words across levels. Each containing word opens its word detail. Missing items
 and library failures show local unavailable states; loading shows a progress indicator.
-`CharacterStrokeArea` is the isolated placeholder for future stroke playback;
-browsing detail metadata does not decode stroke records. Sources & Licenses remains
+`CharacterStrokeArea` loads cached native stroke geometry on a separate actor.
+Its 270pt canvas shows a 米字格 guide, pale unplayed outlines, completed strokes,
+and the accent-colored current stroke, revealed along its median and clipped to
+its outline. Playback starts on appearance; Play/Pause preserves elapsed time,
+Replay starts over, and Play after completion restarts. Each stroke takes
+`220 + medianLength × 0.9` milliseconds with 140 milliseconds between strokes.
+Navigation and backgrounding pause playback. Reduce Motion shows the complete
+character; each Play tap highlights the next stroke, and Replay clears that
+highlight. Playback failures stay within the card so metadata and search remain
+available. Sources & Licenses remains
 a placeholder. Recent is hidden while history is empty; history persistence is
 not implemented yet. Each level remembers its last Words/Characters selection
 for the current app session, independently of other levels. Search text stays
@@ -82,5 +91,9 @@ target. It does not build or launch the Hanzi Levels app for testing. Tests cove
 library loading, content relationships, search normalization, lazy stroke decoding,
 independent mode selections, unique detail characters, cross-level detail
 relationships, missing detail identifiers, and content immutability while browsing.
+Stroke tests cover all 1,640 bundled outlines across 213 characters, coordinate
+flip/scale, SVG command and number parsing, median consistency, timing gaps,
+pause/resume/replay, reduced-motion stepping, cached geometry, cancellation,
+and playback failure isolation.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.

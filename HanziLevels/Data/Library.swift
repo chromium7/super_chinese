@@ -14,6 +14,7 @@ final class Library {
     private(set) var content: LibraryContent?
     @ObservationIgnored private var hasStartedLoading = false
     @ObservationIgnored private var strokeCache: [String: StrokeSet] = [:]
+    @ObservationIgnored private let strokePaths = StrokePathCache()
 
     var datasetVersion: String? { content?.manifest.datasetVersion }
     var words: [Word] { content?.words ?? [] }
@@ -65,6 +66,15 @@ final class Library {
             fail(error)
             throw error
         }
+    }
+
+    /// Playback errors stay local to the stroke card; metadata and search remain usable.
+    /// Decoding, validation and path construction run on the cache actor, not the UI actor.
+    func preparedStrokes(for characterID: String) async throws -> PreparedStrokes {
+        guard let data = content?.strokeArchive.record(for: characterID),
+              let character = character(id: characterID) else { throw LibraryError.missingResources }
+        return try await strokePaths.prepare(characterID: characterID, record: data,
+                                             expectedCount: character.strokeCount)
     }
 
     private func fail(_ error: Error) {
