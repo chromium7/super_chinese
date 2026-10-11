@@ -8,6 +8,7 @@ struct CharacterDetailView: View {
 
     @Environment(\.modelContext) private var context
     @State private var showsHistoryError = false
+    @State private var didAttemptHistoryRecord = false
 
     var body: some View {
         Group {
@@ -48,6 +49,8 @@ struct CharacterDetailView: View {
                 }
                 .listStyle(.insetGrouped)
                 .onAppear {
+                    guard !didAttemptHistoryRecord else { return }
+                    didAttemptHistoryRecord = true
                     do { try HistoryStore.record(.character, itemID: characterID, in: context) }
                     catch { showsHistoryError = true }
                 }

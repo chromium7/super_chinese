@@ -8,6 +8,7 @@ struct WordDetailView: View {
 
     @Environment(\.modelContext) private var context
     @State private var showsHistoryError = false
+    @State private var didAttemptHistoryRecord = false
 
     var body: some View {
         Group {
@@ -48,6 +49,8 @@ struct WordDetailView: View {
                 }
                 .background(Color(.systemGroupedBackground))
                 .onAppear {
+                    guard !didAttemptHistoryRecord else { return }
+                    didAttemptHistoryRecord = true
                     do { try HistoryStore.record(.word, itemID: wordID, in: context) }
                     catch { showsHistoryError = true }
                 }

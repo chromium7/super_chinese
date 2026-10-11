@@ -60,8 +60,13 @@ available. Sources & Licenses remains
 a placeholder. Recent is hidden while history is empty and otherwise shows the
 five newest word/character visits. See All opens History with swipe-to-delete
 and a confirmed Clear History action. One SwiftData model stores at most 50
-unique visits on this device, refreshing the timestamp on each detail appearance.
+unique visits on this device, refreshing the timestamp once per opened detail.
+Returning from a pushed detail leaves visit order unchanged. Each detail attempts
+the history write once, including failures; reopening it starts a new attempt.
 History writes save immediately; failures show an alert and roll back the change.
+Visits to items removed from a later dataset remain in Recent and History and
+count toward their limits. These rows show that the item is no longer available
+and have no navigation; they can be deleted from History or cleared with the rest.
 The container explicitly disables CloudKit and app-group storage.
 Each level remembers its last Words/Characters selection across launches using
 `@AppStorage("levelMode.<n>")`, independently of other levels. Search text stays
@@ -107,5 +112,7 @@ and reopening a local disk store. Preference tests use an isolated defaults suit
 to cover per-level keys, persistence, and fallback for unknown mode values.
 The SwiftData tests require full Xcode; Command Line Tools alone do not provide
 the SwiftData macro plugin.
+The save-failure rollback path has no failure-injection test and remains untested.
+Detail push/pop ordering and save-alert behavior require simulator verification.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.
