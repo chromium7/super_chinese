@@ -31,8 +31,8 @@ HanziLevels.xcodeproj/           Checked-in project and shared scheme
 HanziLevels/
   App/                          App entry point, root stack, typed Route
   Data/                         Read-only offline library and search index
-  Views/                        Home, Level, and placeholder detail destinations
-    Components/                 Level cards, word/character rows, shared empty state
+  Views/                        Home, Level, Word/Character details, Sources placeholder
+    Components/                 Cards, rows, detail headings, stroke integration surface
   Resources/Assets.xcassets/     Adaptive AccentColor
 HanziLevelsTests/                Unhosted library and browsing unit tests
 scripts/                        Offline source check
@@ -41,8 +41,13 @@ scripts/                        Offline source check
 `Route` uses `level(Int)`, `word(String)`, `character(String)`, and `sources`.
 Word and character identifiers are hanzi. Destinations are registered once
 in `RootView`; SwiftUI supplies the back button and swipe-back behavior.
-Word and character rows navigate to placeholder detail screens; their content
-and stroke playback belong to later increments. Sources & Licenses also remains
+Word detail shows tone-marked pinyin, meaning, HSK level, and a two-column grid
+of distinct characters in reading order. Character cards open character detail,
+which shows readings, meaning, stroke count, first HSK level, and all containing
+words across levels. Each containing word opens its word detail. Missing items
+and library failures show local unavailable states; loading shows a progress indicator.
+`CharacterStrokeArea` is the isolated placeholder for future stroke playback;
+browsing detail metadata does not decode stroke records. Sources & Licenses remains
 a placeholder. Recent is hidden while history is empty; history persistence is
 not implemented yet. Each level remembers its last Words/Characters selection
 for the current app session, independently of other levels. Search text stays
@@ -75,6 +80,7 @@ python3 scripts/check_offline.py
 The shared scheme's test action contains only the unhosted `HanziLevelsTests`
 target. It does not build or launch the Hanzi Levels app for testing. Tests cover
 library loading, content relationships, search normalization, lazy stroke decoding,
-independent mode selections, and content immutability while browsing.
+independent mode selections, unique detail characters, cross-level detail
+relationships, missing detail identifiers, and content immutability while browsing.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.
