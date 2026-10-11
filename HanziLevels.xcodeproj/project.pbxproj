@@ -4,6 +4,8 @@
 	classes = {};
 	objectVersion = 56;
 	objects = {
+		200000000000000000000001 = { isa = PBXFileReference; lastKnownFileType = folder; path = "Resources/Data"; sourceTree = "<group>"; };
+		200000000000000000000002 = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
 		100000000000000000000001 = {
 			isa = PBXGroup; children = (100000000000000000000003); path = HanziLevelsTests; sourceTree = "<group>";
 		};
@@ -155,6 +157,7 @@
 				000000000000000000000025,
 				000000000000000000000027,
 				000000000000000000000029,
+				200000000000000000000001,
 			); path = HanziLevels; sourceTree = "<group>";
 		};
 		000000000000000000000005 = {
@@ -180,6 +183,7 @@
 		00000000000000000000000B = {
 			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
 				00000000000000000000002A,
+				200000000000000000000002,
 			); runOnlyForDeploymentPostprocessing = 0;
 		};
 		00000000000000000000000C = {

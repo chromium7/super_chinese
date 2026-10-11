@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.10.0-sample",
+  "files": {
+    "Licenses/ARPHICPL.TXT": "3a5e90c0957524a89e48203febcd4492ca4393678abaa7e5b4d70f3ff32b386d",
+    "Licenses/ATTRIBUTIONS.txt": "792930715b963e7660634c413d2661707fc4bde1cb44154d51a488ee0f20510c",
+    "Licenses/CC-BY-SA-3.0.txt": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
+    "characters.v1.json": "bee70a6ad5aa60d3033eea2791e76b0ccdb03edc865637e5be64ad74557305ee",
+    "strokes.v1.json": "c1e27d8d16b54115f78e4361555fdc31d64375217486284c955df0bcc880c195",
+    "words.v1.json": "b5c856ec0aa16a9341ea0fc68b6b97f9fede631a22a361f87549f5b0a5c699b4"
+  }
+}

@@ -1,0 +1,1168 @@
+[
+  {
+    "id": "爱",
+    "syllables": [
+      "ài"
+    ],
+    "english": "to love",
+    "level": 1
+  },
+  {
+    "id": "八",
+    "syllables": [
+      "bā"
+    ],
+    "english": "eight",
+    "level": 1
+  },
+  {
+    "id": "爸爸",
+    "syllables": [
+      "bà",
+      "ba"
+    ],
+    "english": "dad",
+    "level": 1
+  },
+  {
+    "id": "北京",
+    "syllables": [
+      "Běi",
+      "jīng"
+    ],
+    "english": "Beijing",
+    "level": 1
+  },
+  {
+    "id": "不",
+    "syllables": [
+      "bù"
+    ],
+    "english": "no; not",
+    "level": 1
+  },
+  {
+    "id": "菜",
+    "syllables": [
+      "cài"
+    ],
+    "english": "dish; vegetable",
+    "level": 1
+  },
+  {
+    "id": "茶",
+    "syllables": [
+      "chá"
+    ],
+    "english": "tea",
+    "level": 1
+  },
+  {
+    "id": "吃",
+    "syllables": [
+      "chī"
+    ],
+    "english": "to eat",
+    "level": 1
+  },
+  {
+    "id": "出租车",
+    "syllables": [
+      "chū",
+      "zū",
+      "chē"
+    ],
+    "english": "taxi",
+    "level": 1
+  },
+  {
+    "id": "大",
+    "syllables": [
+      "dà"
+    ],
+    "english": "big",
+    "level": 1
+  },
+  {
+    "id": "电脑",
+    "syllables": [
+      "diàn",
+      "nǎo"
+    ],
+    "english": "computer",
+    "level": 1
+  },
+  {
+    "id": "电视",
+    "syllables": [
+      "diàn",
+      "shì"
+    ],
+    "english": "television",
+    "level": 1
+  },
+  {
+    "id": "电影",
+    "syllables": [
+      "diàn",
+      "yǐng"
+    ],
+    "english": "movie",
+    "level": 1
+  },
+  {
+    "id": "东西",
+    "syllables": [
+      "dōng",
+      "xi"
+    ],
+    "english": "thing",
+    "level": 1
+  },
+  {
+    "id": "对不起",
+    "syllables": [
+      "duì",
+      "bu",
+      "qǐ"
+    ],
+    "english": "sorry",
+    "level": 1
+  },
+  {
+    "id": "多少",
+    "syllables": [
+      "duō",
+      "shao"
+    ],
+    "english": "how many; how much",
+    "level": 1
+  },
+  {
+    "id": "儿子",
+    "syllables": [
+      "ér",
+      "zi"
+    ],
+    "english": "son",
+    "level": 1
+  },
+  {
+    "id": "飞机",
+    "syllables": [
+      "fēi",
+      "jī"
+    ],
+    "english": "airplane",
+    "level": 1
+  },
+  {
+    "id": "高兴",
+    "syllables": [
+      "gāo",
+      "xìng"
+    ],
+    "english": "happy",
+    "level": 1
+  },
+  {
+    "id": "工作",
+    "syllables": [
+      "gōng",
+      "zuò"
+    ],
+    "english": "to work; job",
+    "level": 1
+  },
+  {
+    "id": "汉语",
+    "syllables": [
+      "Hàn",
+      "yǔ"
+    ],
+    "english": "Chinese (language)",
+    "level": 1
+  },
+  {
+    "id": "好",
+    "syllables": [
+      "hǎo"
+    ],
+    "english": "good",
+    "level": 1
+  },
+  {
+    "id": "喝",
+    "syllables": [
+      "hē"
+    ],
+    "english": "to drink",
+    "level": 1
+  },
+  {
+    "id": "很",
+    "syllables": [
+      "hěn"
+    ],
+    "english": "very",
+    "level": 1
+  },
+  {
+    "id": "火车站",
+    "syllables": [
+      "huǒ",
+      "chē",
+      "zhàn"
+    ],
+    "english": "train station",
+    "level": 1
+  },
+  {
+    "id": "今天",
+    "syllables": [
+      "jīn",
+      "tiān"
+    ],
+    "english": "today",
+    "level": 1
+  },
+  {
+    "id": "看见",
+    "syllables": [
+      "kàn",
+      "jiàn"
+    ],
+    "english": "to see",
+    "level": 1
+  },
+  {
+    "id": "老师",
+    "syllables": [
+      "lǎo",
+      "shī"
+    ],
+    "english": "teacher",
+    "level": 1
+  },
+  {
+    "id": "冷",
+    "syllables": [
+      "lěng"
+    ],
+    "english": "cold",
+    "level": 1
+  },
+  {
+    "id": "妈妈",
+    "syllables": [
+      "mā",
+      "ma"
+    ],
+    "english": "mom",
+    "level": 1
+  },
+  {
+    "id": "米饭",
+    "syllables": [
+      "mǐ",
+      "fàn"
+    ],
+    "english": "cooked rice",
+    "level": 1
+  },
+  {
+    "id": "明天",
+    "syllables": [
+      "míng",
+      "tiān"
+    ],
+    "english": "tomorrow",
+    "level": 1
+  },
+  {
+    "id": "名字",
+    "syllables": [
+      "míng",
+      "zi"
+    ],
+    "english": "name",
+    "level": 1
+  },
+  {
+    "id": "你",
+    "syllables": [
+      "nǐ"
+    ],
+    "english": "you",
+    "level": 1
+  },
+  {
+    "id": "女儿",
+    "syllables": [
+      "nǚ",
+      "ér"
+    ],
+    "english": "daughter",
+    "level": 1
+  },
+  {
+    "id": "朋友",
+    "syllables": [
+      "péng",
+      "you"
+    ],
+    "english": "friend",
+    "level": 1
+  },
+  {
+    "id": "漂亮",
+    "syllables": [
+      "piào",
+      "liang"
+    ],
+    "english": "pretty",
+    "level": 1
+  },
+  {
+    "id": "苹果",
+    "syllables": [
+      "píng",
+      "guǒ"
+    ],
+    "english": "apple",
+    "level": 1
+  },
+  {
+    "id": "钱",
+    "syllables": [
+      "qián"
+    ],
+    "english": "money",
+    "level": 1
+  },
+  {
+    "id": "请",
+    "syllables": [
+      "qǐng"
+    ],
+    "english": "please; to invite",
+    "level": 1
+  },
+  {
+    "id": "人",
+    "syllables": [
+      "rén"
+    ],
+    "english": "person",
+    "level": 1
+  },
+  {
+    "id": "认识",
+    "syllables": [
+      "rèn",
+      "shi"
+    ],
+    "english": "to know (someone)",
+    "level": 1
+  },
+  {
+    "id": "商店",
+    "syllables": [
+      "shāng",
+      "diàn"
+    ],
+    "english": "shop",
+    "level": 1
+  },
+  {
+    "id": "上午",
+    "syllables": [
+      "shàng",
+      "wǔ"
+    ],
+    "english": "morning",
+    "level": 1
+  },
+  {
+    "id": "什么",
+    "syllables": [
+      "shén",
+      "me"
+    ],
+    "english": "what",
+    "level": 1
+  },
+  {
+    "id": "时候",
+    "syllables": [
+      "shí",
+      "hou"
+    ],
+    "english": "time; moment",
+    "level": 1
+  },
+  {
+    "id": "书",
+    "syllables": [
+      "shū"
+    ],
+    "english": "book",
+    "level": 1
+  },
+  {
+    "id": "水",
+    "syllables": [
+      "shuǐ"
+    ],
+    "english": "water",
+    "level": 1
+  },
+  {
+    "id": "睡觉",
+    "syllables": [
+      "shuì",
+      "jiào"
+    ],
+    "english": "to sleep",
+    "level": 1
+  },
+  {
+    "id": "说话",
+    "syllables": [
+      "shuō",
+      "huà"
+    ],
+    "english": "to speak",
+    "level": 1
+  },
+  {
+    "id": "天气",
+    "syllables": [
+      "tiān",
+      "qì"
+    ],
+    "english": "weather",
+    "level": 1
+  },
+  {
+    "id": "同学",
+    "syllables": [
+      "tóng",
+      "xué"
+    ],
+    "english": "classmate",
+    "level": 1
+  },
+  {
+    "id": "我们",
+    "syllables": [
+      "wǒ",
+      "men"
+    ],
+    "english": "we; us",
+    "level": 1
+  },
+  {
+    "id": "喜欢",
+    "syllables": [
+      "xǐ",
+      "huan"
+    ],
+    "english": "to like",
+    "level": 1
+  },
+  {
+    "id": "下雨",
+    "syllables": [
+      "xià",
+      "yǔ"
+    ],
+    "english": "to rain",
+    "level": 1
+  },
+  {
+    "id": "先生",
+    "syllables": [
+      "xiān",
+      "sheng"
+    ],
+    "english": "Mr.; sir",
+    "level": 1
+  },
+  {
+    "id": "现在",
+    "syllables": [
+      "xiàn",
+      "zài"
+    ],
+    "english": "now",
+    "level": 1
+  },
+  {
+    "id": "小姐",
+    "syllables": [
+      "xiǎo",
+      "jiě"
+    ],
+    "english": "Miss; young lady",
+    "level": 1
+  },
+  {
+    "id": "谢谢",
+    "syllables": [
+      "xiè",
+      "xie"
+    ],
+    "english": "thank you",
+    "level": 1
+  },
+  {
+    "id": "星期",
+    "syllables": [
+      "xīng",
+      "qī"
+    ],
+    "english": "week",
+    "level": 1
+  },
+  {
+    "id": "学生",
+    "syllables": [
+      "xué",
+      "sheng"
+    ],
+    "english": "student",
+    "level": 1
+  },
+  {
+    "id": "学习",
+    "syllables": [
+      "xué",
+      "xí"
+    ],
+    "english": "to study",
+    "level": 1
+  },
+  {
+    "id": "学校",
+    "syllables": [
+      "xué",
+      "xiào"
+    ],
+    "english": "school",
+    "level": 1
+  },
+  {
+    "id": "医生",
+    "syllables": [
+      "yī",
+      "shēng"
+    ],
+    "english": "doctor",
+    "level": 1
+  },
+  {
+    "id": "医院",
+    "syllables": [
+      "yī",
+      "yuàn"
+    ],
+    "english": "hospital",
+    "level": 1
+  },
+  {
+    "id": "衣服",
+    "syllables": [
+      "yī",
+      "fu"
+    ],
+    "english": "clothes",
+    "level": 1
+  },
+  {
+    "id": "中国",
+    "syllables": [
+      "Zhōng",
+      "guó"
+    ],
+    "english": "China",
+    "level": 1
+  },
+  {
+    "id": "昨天",
+    "syllables": [
+      "zuó",
+      "tiān"
+    ],
+    "english": "yesterday",
+    "level": 1
+  },
+  {
+    "id": "桌子",
+    "syllables": [
+      "zhuō",
+      "zi"
+    ],
+    "english": "table; desk",
+    "level": 1
+  },
+  {
+    "id": "再见",
+    "syllables": [
+      "zài",
+      "jiàn"
+    ],
+    "english": "goodbye",
+    "level": 1
+  },
+  {
+    "id": "怎么样",
+    "syllables": [
+      "zěn",
+      "me",
+      "yàng"
+    ],
+    "english": "how about; how is it",
+    "level": 1
+  },
+  {
+    "id": "帮助",
+    "syllables": [
+      "bāng",
+      "zhù"
+    ],
+    "english": "to help",
+    "level": 2
+  },
+  {
+    "id": "宾馆",
+    "syllables": [
+      "bīn",
+      "guǎn"
+    ],
+    "english": "hotel",
+    "level": 2
+  },
+  {
+    "id": "唱歌",
+    "syllables": [
+      "chàng",
+      "gē"
+    ],
+    "english": "to sing",
+    "level": 2
+  },
+  {
+    "id": "大家",
+    "syllables": [
+      "dà",
+      "jiā"
+    ],
+    "english": "everyone",
+    "level": 2
+  },
+  {
+    "id": "弟弟",
+    "syllables": [
+      "dì",
+      "di"
+    ],
+    "english": "younger brother",
+    "level": 2
+  },
+  {
+    "id": "告诉",
+    "syllables": [
+      "gào",
+      "su"
+    ],
+    "english": "to tell",
+    "level": 2
+  },
+  {
+    "id": "公司",
+    "syllables": [
+      "gōng",
+      "sī"
+    ],
+    "english": "company",
+    "level": 2
+  },
+  {
+    "id": "孩子",
+    "syllables": [
+      "hái",
+      "zi"
+    ],
+    "english": "child",
+    "level": 2
+  },
+  {
+    "id": "机场",
+    "syllables": [
+      "jī",
+      "chǎng"
+    ],
+    "english": "airport",
+    "level": 2
+  },
+  {
+    "id": "教室",
+    "syllables": [
+      "jiào",
+      "shì"
+    ],
+    "english": "classroom",
+    "level": 2
+  },
+  {
+    "id": "咖啡",
+    "syllables": [
+      "kā",
+      "fēi"
+    ],
+    "english": "coffee",
+    "level": 2
+  },
+  {
+    "id": "旅游",
+    "syllables": [
+      "lǚ",
+      "yóu"
+    ],
+    "english": "to travel",
+    "level": 2
+  },
+  {
+    "id": "生日",
+    "syllables": [
+      "shēng",
+      "rì"
+    ],
+    "english": "birthday",
+    "level": 2
+  },
+  {
+    "id": "时间",
+    "syllables": [
+      "shí",
+      "jiān"
+    ],
+    "english": "time",
+    "level": 2
+  },
+  {
+    "id": "手机",
+    "syllables": [
+      "shǒu",
+      "jī"
+    ],
+    "english": "mobile phone",
+    "level": 2
+  },
+  {
+    "id": "问题",
+    "syllables": [
+      "wèn",
+      "tí"
+    ],
+    "english": "question; problem",
+    "level": 2
+  },
+  {
+    "id": "希望",
+    "syllables": [
+      "xī",
+      "wàng"
+    ],
+    "english": "to hope",
+    "level": 2
+  },
+  {
+    "id": "颜色",
+    "syllables": [
+      "yán",
+      "sè"
+    ],
+    "english": "color",
+    "level": 2
+  },
+  {
+    "id": "眼睛",
+    "syllables": [
+      "yǎn",
+      "jing"
+    ],
+    "english": "eye",
+    "level": 2
+  },
+  {
+    "id": "早上",
+    "syllables": [
+      "zǎo",
+      "shang"
+    ],
+    "english": "early morning",
+    "level": 2
+  },
+  {
+    "id": "办法",
+    "syllables": [
+      "bàn",
+      "fǎ"
+    ],
+    "english": "method; way",
+    "level": 3
+  },
+  {
+    "id": "帮忙",
+    "syllables": [
+      "bāng",
+      "máng"
+    ],
+    "english": "to help",
+    "level": 3
+  },
+  {
+    "id": "比赛",
+    "syllables": [
+      "bǐ",
+      "sài"
+    ],
+    "english": "competition",
+    "level": 3
+  },
+  {
+    "id": "地图",
+    "syllables": [
+      "dì",
+      "tú"
+    ],
+    "english": "map",
+    "level": 3
+  },
+  {
+    "id": "附近",
+    "syllables": [
+      "fù",
+      "jìn"
+    ],
+    "english": "nearby",
+    "level": 3
+  },
+  {
+    "id": "关心",
+    "syllables": [
+      "guān",
+      "xīn"
+    ],
+    "english": "to care about",
+    "level": 3
+  },
+  {
+    "id": "欢迎",
+    "syllables": [
+      "huān",
+      "yíng"
+    ],
+    "english": "to welcome",
+    "level": 3
+  },
+  {
+    "id": "环境",
+    "syllables": [
+      "huán",
+      "jìng"
+    ],
+    "english": "environment",
+    "level": 3
+  },
+  {
+    "id": "健康",
+    "syllables": [
+      "jiàn",
+      "kāng"
+    ],
+    "english": "healthy",
+    "level": 3
+  },
+  {
+    "id": "历史",
+    "syllables": [
+      "lì",
+      "shǐ"
+    ],
+    "english": "history",
+    "level": 3
+  },
+  {
+    "id": "奇怪",
+    "syllables": [
+      "qí",
+      "guài"
+    ],
+    "english": "strange",
+    "level": 3
+  },
+  {
+    "id": "认真",
+    "syllables": [
+      "rèn",
+      "zhēn"
+    ],
+    "english": "earnest; serious",
+    "level": 3
+  },
+  {
+    "id": "世界",
+    "syllables": [
+      "shì",
+      "jiè"
+    ],
+    "english": "world",
+    "level": 3
+  },
+  {
+    "id": "文化",
+    "syllables": [
+      "wén",
+      "huà"
+    ],
+    "english": "culture",
+    "level": 3
+  },
+  {
+    "id": "音乐",
+    "syllables": [
+      "yīn",
+      "yuè"
+    ],
+    "english": "music",
+    "level": 3
+  },
+  {
+    "id": "重要",
+    "syllables": [
+      "zhòng",
+      "yào"
+    ],
+    "english": "important",
+    "level": 3
+  },
+  {
+    "id": "安全",
+    "syllables": [
+      "ān",
+      "quán"
+    ],
+    "english": "safe",
+    "level": 4
+  },
+  {
+    "id": "表演",
+    "syllables": [
+      "biǎo",
+      "yǎn"
+    ],
+    "english": "to perform",
+    "level": 4
+  },
+  {
+    "id": "诚实",
+    "syllables": [
+      "chéng",
+      "shí"
+    ],
+    "english": "honest",
+    "level": 4
+  },
+  {
+    "id": "经验",
+    "syllables": [
+      "jīng",
+      "yàn"
+    ],
+    "english": "experience",
+    "level": 4
+  },
+  {
+    "id": "理想",
+    "syllables": [
+      "lǐ",
+      "xiǎng"
+    ],
+    "english": "ideal",
+    "level": 4
+  },
+  {
+    "id": "礼貌",
+    "syllables": [
+      "lǐ",
+      "mào"
+    ],
+    "english": "courtesy",
+    "level": 4
+  },
+  {
+    "id": "美丽",
+    "syllables": [
+      "měi",
+      "lì"
+    ],
+    "english": "beautiful",
+    "level": 4
+  },
+  {
+    "id": "判断",
+    "syllables": [
+      "pàn",
+      "duàn"
+    ],
+    "english": "to judge",
+    "level": 4
+  },
+  {
+    "id": "商量",
+    "syllables": [
+      "shāng",
+      "liang"
+    ],
+    "english": "to discuss",
+    "level": 4
+  },
+  {
+    "id": "效果",
+    "syllables": [
+      "xiào",
+      "guǒ"
+    ],
+    "english": "effect; result",
+    "level": 4
+  },
+  {
+    "id": "压力",
+    "syllables": [
+      "yā",
+      "lì"
+    ],
+    "english": "pressure",
+    "level": 4
+  },
+  {
+    "id": "友谊",
+    "syllables": [
+      "yǒu",
+      "yì"
+    ],
+    "english": "friendship",
+    "level": 4
+  },
+  {
+    "id": "爱护",
+    "syllables": [
+      "ài",
+      "hù"
+    ],
+    "english": "to cherish; to take care of",
+    "level": 5
+  },
+  {
+    "id": "把握",
+    "syllables": [
+      "bǎ",
+      "wò"
+    ],
+    "english": "to grasp",
+    "level": 5
+  },
+  {
+    "id": "采访",
+    "syllables": [
+      "cǎi",
+      "fǎng"
+    ],
+    "english": "to interview",
+    "level": 5
+  },
+  {
+    "id": "观念",
+    "syllables": [
+      "guān",
+      "niàn"
+    ],
+    "english": "concept",
+    "level": 5
+  },
+  {
+    "id": "规律",
+    "syllables": [
+      "guī",
+      "lǜ"
+    ],
+    "english": "pattern; law",
+    "level": 5
+  },
+  {
+    "id": "魅力",
+    "syllables": [
+      "mèi",
+      "lì"
+    ],
+    "english": "charm",
+    "level": 5
+  },
+  {
+    "id": "谦虚",
+    "syllables": [
+      "qiān",
+      "xū"
+    ],
+    "english": "modest",
+    "level": 5
+  },
+  {
+    "id": "寻找",
+    "syllables": [
+      "xún",
+      "zhǎo"
+    ],
+    "english": "to look for",
+    "level": 5
+  },
+  {
+    "id": "逻辑",
+    "syllables": [
+      "luó",
+      "ji"
+    ],
+    "english": "logic",
+    "level": 5
+  },
+  {
+    "id": "珍惜",
+    "syllables": [
+      "zhēn",
+      "xī"
+    ],
+    "english": "to treasure",
+    "level": 5
+  },
+  {
+    "id": "资源",
+    "syllables": [
+      "zī",
+      "yuán"
+    ],
+    "english": "resources",
+    "level": 5
+  },
+  {
+    "id": "自豪",
+    "syllables": [
+      "zì",
+      "háo"
+    ],
+    "english": "proud",
+    "level": 5
+  }
+]

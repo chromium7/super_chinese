@@ -1,0 +1,3 @@
+# Upstream legal texts must remain byte-for-byte unchanged, including whitespace.
+HanziLevels/Resources/Data/Licenses/ARPHICPL.TXT -whitespace
+HanziLevels/Resources/Data/Licenses/CC-BY-SA-*.txt -whitespace
