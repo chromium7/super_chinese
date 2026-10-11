@@ -1,9 +1,14 @@
 import SwiftUI
+import SwiftData
 
 @MainActor
 struct CharacterDetailView: View {
     let characterID: String
     @Environment(Library.self) private var library
+
+    @Environment(\.modelContext) private var context
+    @State private var showsHistoryError = false
+    @State private var didAttemptHistoryRecord = false
 
     var body: some View {
         Group {
@@ -43,12 +48,22 @@ struct CharacterDetailView: View {
                     }
                 }
                 .listStyle(.insetGrouped)
+                .onAppear {
+                    guard !didAttemptHistoryRecord else { return }
+                    didAttemptHistoryRecord = true
+                    do { try HistoryStore.record(.character, itemID: characterID, in: context) }
+                    catch { showsHistoryError = true }
+                }
             } else {
                 DetailUnavailableView(title: "Character unavailable", state: library.state)
             }
         }
         .navigationTitle(characterID)
         .navigationBarTitleDisplayMode(.inline)
+        .alert("History could not be saved", isPresented: $showsHistoryError) {
+        } message: {
+            Text("You can keep browsing. Please reopen this item to try saving it again.")
+        }
     }
 }
 
@@ -57,6 +72,7 @@ struct CharacterDetailView: View {
     NavigationStack {
         CharacterDetailView(characterID: "学")
     }
+    .modelContainer(for: HistoryEntry.self, inMemory: true)
     .environment(library)
     .task { await library.load() }
     .preferredColorScheme(.light)
@@ -67,6 +83,7 @@ struct CharacterDetailView: View {
     NavigationStack {
         CharacterDetailView(characterID: "学")
     }
+    .modelContainer(for: HistoryEntry.self, inMemory: true)
     .environment(library)
     .task { await library.load() }
     .preferredColorScheme(.dark)

@@ -1,4 +1,5 @@
 import XCTest
+import SwiftUI
 
 final class BrowsingTests: XCTestCase {
     @MainActor
@@ -36,33 +37,41 @@ final class BrowsingTests: XCTestCase {
     }
 
     @MainActor
-    func testModeSelectionsAreIndependentAndSurviveRevisitingLevels() async {
-        let state = BrowsingState()
-        XCTAssertEqual(state.modes[1, default: .words], .words)
-        state.modes[1] = .characters
-        XCTAssertEqual(state.modes[2, default: .words], .words)
-        state.modes[2] = .words
-        state.modes[5] = .characters
-        XCTAssertEqual(state.modes[1, default: .words], .characters)
-        XCTAssertEqual(state.modes[2, default: .words], .words)
-        XCTAssertEqual(state.modes[5, default: .words], .characters)
-        XCTAssertEqual(BrowsingState().modes[1, default: .words], .words)
+    func testModesPersistIndependentlyAcrossRecreation() throws {
+        let name = "HanziLevelsTests." + UUID().uuidString
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: name))
+        defer { defaults.removePersistentDomain(forName: name) }
+        let first = AppStorage(wrappedValue: LevelMode.words, BrowsingState.modeKey(for: 1), store: defaults)
+        let second = AppStorage(wrappedValue: LevelMode.words, BrowsingState.modeKey(for: 2), store: defaults)
+        let fifth = AppStorage(wrappedValue: LevelMode.words, BrowsingState.modeKey(for: 5), store: defaults)
+        XCTAssertEqual(first.wrappedValue, .words)
+        first.wrappedValue = .characters
+        fifth.wrappedValue = .characters
+        XCTAssertEqual(second.wrappedValue, .words)
+        XCTAssertEqual(defaults.string(forKey: "levelMode.1"), "characters")
+        let reopened = AppStorage(wrappedValue: LevelMode.words, "levelMode.1", store: defaults)
+        XCTAssertEqual(reopened.wrappedValue, .characters)
+        XCTAssertEqual(fifth.wrappedValue, .characters)
+        first.wrappedValue = .words
+        XCTAssertEqual(fifth.wrappedValue, .characters)
+        defaults.set("unrecognized", forKey: "levelMode.3")
+        let invalid = AppStorage(wrappedValue: LevelMode.words, "levelMode.3", store: defaults)
+        XCTAssertEqual(invalid.wrappedValue, .words)
+        XCTAssertEqual(Set(defaults.persistentDomain(forName: name)?.keys.map { $0 } ?? []),
+                       Set(["levelMode.1", "levelMode.3", "levelMode.5"]))
     }
 
     @MainActor
-    func testBrowsingAndChangingModesPreservesBundledContentAndOrdering() async throws {
+    func testBrowsingPreservesBundledContentAndOrdering() async throws {
         let directory = try XCTUnwrap(Bundle(for: Self.self).resourceURL?.appendingPathComponent("Data", isDirectory: true))
         let library = Library()
         await library.load(directory: directory)
         XCTAssertEqual(library.state, .ready)
         let before = try XCTUnwrap(library.content)
-        let state = BrowsingState()
 
         for level in 1...5 {
-            state.modes[level] = .words
             XCTAssertEqual(library.searchWords("", level: level), before.wordsByLevel[level])
             _ = library.searchWords("student", level: level)
-            state.modes[level] = .characters
             XCTAssertEqual(library.searchCharacters("", level: level).map(\.id), before.characterIDsByLevel[level])
             _ = library.searchCharacters("xue", level: level)
             XCTAssertTrue(library.searchWords("no such vocabulary", level: level).isEmpty)

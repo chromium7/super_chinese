@@ -3,9 +3,14 @@ import SwiftUI
 @MainActor
 struct LevelView: View {
     let level: Int
-    @Binding var mode: LevelMode
+    @AppStorage private var mode: LevelMode
     @Environment(Library.self) private var library
     @State private var query = ""
+
+    init(level: Int) {
+        self.level = level
+        _mode = AppStorage(wrappedValue: .words, BrowsingState.modeKey(for: level))
+    }
 
     var body: some View {
         let words = mode == .words ? library.searchWords(query, level: level) : []
@@ -64,30 +69,30 @@ struct LevelView: View {
     }
 }
 
-#Preview("Words · Light") {
+#Preview("Level · Light") {
     let library = Library()
     NavigationStack {
-        LevelView(level: 1, mode: .constant(.words))
+        LevelView(level: 1)
     }
     .environment(library)
     .task { await library.load() }
     .preferredColorScheme(.light)
 }
 
-#Preview("Characters · Dark") {
+#Preview("Level · Dark") {
     let library = Library()
     NavigationStack {
-        LevelView(level: 1, mode: .constant(.characters))
+        LevelView(level: 1)
     }
     .environment(library)
     .task { await library.load() }
     .preferredColorScheme(.dark)
 }
 
-#Preview("Characters · Accessibility") {
+#Preview("Level · Accessibility") {
     let library = Library()
     NavigationStack {
-        LevelView(level: 1, mode: .constant(.characters))
+        LevelView(level: 1)
     }
     .environment(library)
     .task { await library.load() }

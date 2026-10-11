@@ -1,8 +1,10 @@
 import SwiftUI
+import SwiftData
 
 @MainActor
 struct HomeView: View {
     @Environment(Library.self) private var library
+    @Query(sort: HistoryStore.newestFirst) private var history: [HistoryEntry]
 
     var body: some View {
         Group {
@@ -42,7 +44,9 @@ struct HomeView: View {
                     .accessibilityIdentifier("level.\(level)")
                 }
 
-                // Recent stays hidden while history is empty; no placeholder records.
+                if !history.isEmpty {
+                    recent
+                }
                 NavigationLink(value: Route.sources) {
                     HStack {
                         Text("Sources & Licenses")
@@ -69,5 +73,30 @@ struct HomeView: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 12)
         }
+    }
+
+    private var recent: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("Recent")
+                    .font(.headline)
+                    .accessibilityAddTraits(.isHeader)
+                Spacer(minLength: 12)
+                NavigationLink("See All", value: Route.history)
+                    .accessibilityLabel("See all history")
+            }
+            VStack(spacing: 0) {
+                ForEach(Array(history.prefix(5))) { entry in
+                    HistoryRow(entry: entry, showsChevron: true)
+                        .buttonStyle(.plain)
+                        .padding(16)
+                    if entry.key != history.prefix(5).last?.key {
+                        Divider().padding(.horizontal, 16)
+                    }
+                }
+            }
+            .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 14))
+        }
+        .padding(.top, 16)
     }
 }

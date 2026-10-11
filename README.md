@@ -39,7 +39,7 @@ HanziLevelsTests/                Unhosted library and browsing unit tests
 scripts/                        Offline source check
 ```
 
-`Route` uses `level(Int)`, `word(String)`, `character(String)`, and `sources`.
+`Route` uses `level(Int)`, `word(String)`, `character(String)`, `history`, and `sources`.
 Word and character identifiers are hanzi. Destinations are registered once
 in `RootView`; SwiftUI supplies the back button and swipe-back behavior.
 Word detail shows tone-marked pinyin, meaning, HSK level, and a two-column grid
@@ -57,9 +57,19 @@ Navigation and backgrounding pause playback. Reduce Motion shows the complete
 character; each Play tap highlights the next stroke, and Replay clears that
 highlight. Playback failures stay within the card so metadata and search remain
 available. Sources & Licenses remains
-a placeholder. Recent is hidden while history is empty; history persistence is
-not implemented yet. Each level remembers its last Words/Characters selection
-for the current app session, independently of other levels. Search text stays
+a placeholder. Recent is hidden while history is empty and otherwise shows the
+five newest word/character visits. See All opens History with swipe-to-delete
+and a confirmed Clear History action. One SwiftData model stores at most 50
+unique visits on this device, refreshing the timestamp once per opened detail.
+Returning from a pushed detail leaves visit order unchanged. Each detail attempts
+the history write once, including failures; reopening it starts a new attempt.
+History writes save immediately; failures show an alert and roll back the change.
+Visits to items removed from a later dataset remain in Recent and History and
+count toward their limits. These rows show that the item is no longer available
+and have no navigation; they can be deleted from History or cleared with the rest.
+The container explicitly disables CloudKit and app-group storage.
+Each level remembers its last Words/Characters selection across launches using
+`@AppStorage("levelMode.<n>")`, independently of other levels. Search text stays
 in the current level while switching modes and resets when that screen is closed.
 
 The bundled dataset is a small HSK sample, not the complete HSK vocabulary.
@@ -95,5 +105,14 @@ Stroke tests cover all 1,640 bundled outlines across 213 characters, coordinate
 flip/scale, SVG command and number parsing, median consistency, timing gaps,
 pause/resume/replay, reduced-motion stepping, cached geometry, cancellation,
 and playback failure isolation.
+
+History tests cover timestamp upserts, word/character key uniqueness, newest-first
+ordering and trimming, revisits at the limit, deletion, idempotent clearing,
+and reopening a local disk store. Preference tests use an isolated defaults suite
+to cover per-level keys, persistence, and fallback for unknown mode values.
+The SwiftData tests require full Xcode; Command Line Tools alone do not provide
+the SwiftData macro plugin.
+The save-failure rollback path has no failure-injection test and remains untested.
+Detail push/pop ordering and save-alert behavior require simulator verification.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.

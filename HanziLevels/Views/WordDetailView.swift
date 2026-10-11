@@ -1,9 +1,14 @@
 import SwiftUI
+import SwiftData
 
 @MainActor
 struct WordDetailView: View {
     let wordID: String
     @Environment(Library.self) private var library
+
+    @Environment(\.modelContext) private var context
+    @State private var showsHistoryError = false
+    @State private var didAttemptHistoryRecord = false
 
     var body: some View {
         Group {
@@ -43,12 +48,22 @@ struct WordDetailView: View {
                     .padding(20)
                 }
                 .background(Color(.systemGroupedBackground))
+                .onAppear {
+                    guard !didAttemptHistoryRecord else { return }
+                    didAttemptHistoryRecord = true
+                    do { try HistoryStore.record(.word, itemID: wordID, in: context) }
+                    catch { showsHistoryError = true }
+                }
             } else {
                 DetailUnavailableView(title: "Word unavailable", state: library.state)
             }
         }
         .navigationTitle(wordID)
         .navigationBarTitleDisplayMode(.inline)
+        .alert("History could not be saved", isPresented: $showsHistoryError) {
+        } message: {
+            Text("You can keep browsing. Please reopen this item to try saving it again.")
+        }
     }
 }
 
@@ -57,6 +72,7 @@ struct WordDetailView: View {
     NavigationStack {
         WordDetailView(wordID: "学生")
     }
+    .modelContainer(for: HistoryEntry.self, inMemory: true)
     .environment(library)
     .task { await library.load() }
     .preferredColorScheme(.light)
@@ -67,6 +83,7 @@ struct WordDetailView: View {
     NavigationStack {
         WordDetailView(wordID: "学生")
     }
+    .modelContainer(for: HistoryEntry.self, inMemory: true)
     .environment(library)
     .task { await library.load() }
     .preferredColorScheme(.dark)
