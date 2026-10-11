@@ -35,7 +35,7 @@ struct HomeView: View {
                             level: level,
                             wordCount: library.words(in: level).count,
                             characterCount: library.characterIDs(in: level).count,
-                            preview: library.words(in: level).prefix(3).compactMap { $0.characters.first }.joined()
+                            preview: library.previewCharacters(in: level)
                         )
                     }
                     .buttonStyle(.plain)

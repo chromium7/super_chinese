@@ -40,6 +40,7 @@ final class Library {
     func character(id: String) -> Hanzi? { content?.charactersByID[id] }
     func words(in level: Int) -> [Word] { content?.wordsByLevel[level] ?? [] }
     func characterIDs(in level: Int) -> [String] { content?.characterIDsByLevel[level] ?? [] }
+    func previewCharacters(in level: Int) -> String { characterIDs(in: level).prefix(3).joined() }
     func words(containing characterID: String) -> [Word] { content?.wordsByCharacter[characterID] ?? [] }
 
     func searchWords(_ query: String, level: Int? = nil) -> [Word] {

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct WordRow: View {
     let word: Word
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @ScaledMetric(relativeTo: .title2) private var hanziSize = 24
 
     var body: some View {
@@ -15,7 +16,8 @@ struct WordRow: View {
             Text(word.english)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-                .lineLimit(1)
+                .lineLimit(dynamicTypeSize.isAccessibilitySize ? nil : 1)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.vertical, 6)
         .accessibilityElement(children: .ignore)

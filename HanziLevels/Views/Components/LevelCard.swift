@@ -30,7 +30,7 @@ struct LevelCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 16))
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("HSK \(level), \(wordCount) words, \(characterCount) characters")
+        .accessibilityLabel("HSK \(level), \(counts)")
         .accessibilityValue("Preview: \(preview)")
     }
 
@@ -38,11 +38,15 @@ struct LevelCard: View {
         VStack(alignment: .leading, spacing: 6) {
             Text("HSK \(level)")
                 .font(.title3.weight(.semibold))
-            Text("\(wordCount) words · \(characterCount) characters")
+            Text(counts)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
         .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private var counts: String {
+        "\(LevelMode.words.resultLabel(count: wordCount)) · \(LevelMode.characters.resultLabel(count: characterCount))"
     }
 
     private var previewCharacters: some View {
