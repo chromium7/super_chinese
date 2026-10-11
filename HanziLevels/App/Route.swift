@@ -4,4 +4,5 @@ enum Route: Hashable {
     case word(String)
     case character(String)
     case sources
+    case history
 }
