@@ -54,7 +54,7 @@ final class Library {
 
     func strokes(for characterID: String) throws -> StrokeSet? {
         if let cached = strokeCache[characterID] { return cached }
-        guard let data = content?.strokeRecords[characterID], let hanzi = character(id: characterID) else { return nil }
+        guard let data = content?.strokeArchive.record(for: characterID), let hanzi = character(id: characterID) else { return nil }
         do {
             let strokes = try JSONDecoder().decode(StrokeSet.self, from: data)
             try strokes.validate(expectedCount: hanzi.strokeCount)

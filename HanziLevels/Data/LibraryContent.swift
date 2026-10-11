@@ -9,7 +9,7 @@ struct LibraryContent: Sendable {
     let charactersByID: [String: Hanzi]
     let characterIDsByLevel: [Int: [String]]
     let wordsByCharacter: [String: [Word]]
-    let strokeRecords: [String: Data]
+    let strokeArchive: StrokeArchive
     let searchIndex: SearchIndex
 
     init(manifest: Data, words: Data, characters: Data, strokes: Data) throws {
@@ -23,16 +23,7 @@ struct LibraryContent: Sendable {
         }
         wordsByID = Dictionary(uniqueKeysWithValues: self.words.map { ($0.id, $0) })
         charactersByID = Dictionary(uniqueKeysWithValues: self.characters.map { ($0.id, $0) })
-        guard let rawStrokes = try JSONSerialization.jsonObject(with: strokes) as? [String: Any] else {
-            throw LibraryError.invalidContent("Invalid stroke archive.")
-        }
-        // Keep serialized records; typed arrays and paths are decoded only on demand.
-        strokeRecords = try rawStrokes.mapValues { record in
-            guard let object = record as? [String: Any] else {
-                throw LibraryError.invalidContent("Invalid stroke record.")
-            }
-            return try JSONSerialization.data(withJSONObject: object)
-        }
+        strokeArchive = try StrokeArchive(data: strokes)
         var levels: [Int: [Word]] = [:]
         var levelIDs: [Int: [String]] = [:]
         var relationships: [String: [Word]] = [:]
@@ -46,7 +37,7 @@ struct LibraryContent: Sendable {
             levels[word.level, default: []].append(word)
             var seenInWord: Set<String> = []
             for id in word.characters {
-                guard charactersByID[id] != nil, strokeRecords[id] != nil else {
+                guard charactersByID[id] != nil, strokeArchive.contains(id) else {
                     throw LibraryError.invalidContent("A word has missing character data.")
                 }
                 if !(levelIDs[word.level] ?? []).contains(id) {
@@ -60,7 +51,7 @@ struct LibraryContent: Sendable {
             guard hanzi.id.count == 1, !hanzi.readings.isEmpty,
                   hanzi.readings.allSatisfy({ !$0.isEmpty }), !hanzi.meaning.isEmpty,
                   hanzi.strokeCount > 0, (1...5).contains(hanzi.firstLevel),
-                  firstLevels[hanzi.id] == hanzi.firstLevel, strokeRecords[hanzi.id] != nil else {
+                  firstLevels[hanzi.id] == hanzi.firstLevel, strokeArchive.contains(hanzi.id) else {
                 throw LibraryError.invalidContent("Invalid character fields or relationships.")
             }
         }

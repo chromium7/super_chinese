@@ -1,15 +1,8 @@
 import XCTest
-#if SWIFT_PACKAGE
-@testable import HanziLibrary
-#endif
 
 final class LibraryTests: XCTestCase {
     private func directory() throws -> URL {
-        #if SWIFT_PACKAGE
-        let bundle = Bundle.module
-        #else
         let bundle = Bundle(for: Self.self)
-        #endif
         return try XCTUnwrap(bundle.resourceURL?.appendingPathComponent("Data", isDirectory: true))
     }
 
@@ -84,7 +77,7 @@ final class LibraryTests: XCTestCase {
             for id in word.characters {
                 let hanzi = try XCTUnwrap(library.charactersByID[id])
                 XCTAssertTrue(try XCTUnwrap(library.wordsByCharacter[id]).contains(word))
-                let strokes = try JSONDecoder().decode(StrokeSet.self, from: XCTUnwrap(library.strokeRecords[id]))
+                let strokes = try JSONDecoder().decode(StrokeSet.self, from: XCTUnwrap(library.strokeArchive.record(for: id)))
                 XCTAssertNoThrow(try strokes.validate(expectedCount: hanzi.strokeCount))
             }
         }
@@ -132,6 +125,28 @@ final class LibraryTests: XCTestCase {
             object = characters
         }
         XCTAssertThrowsError(try content(characters: missing))
+    }
+
+    func testStrokeArchiveSlicesEscapedKeysAndNestedRecords() throws {
+        let source = #"{ "\u5b66": {"strokes":["M 0 0 \"quoted\" \\ tail { } [ ]"],"medians":[[[0,0]]]}, "生": {"strokes":["M 1 1"],"medians":[[[1,1]]]}}"#
+        let archive = try StrokeArchive(data: Data(source.utf8))
+        XCTAssertTrue(archive.contains("学"))
+        XCTAssertNil(archive.record(for: "missing"))
+        let record = try XCTUnwrap(archive.record(for: "学"))
+        let strokes = try JSONDecoder().decode(StrokeSet.self, from: record)
+        XCTAssertEqual(strokes.strokes, [#"M 0 0 "quoted" \ tail { } [ ]"#])
+        XCTAssertNoThrow(try strokes.validate(expectedCount: 1))
+        // Record contents are not parsed at indexing time, even if their JSON is invalid.
+        let lazy = try StrokeArchive(data: Data(#"{"学":{"strokes":notJSON}}"#.utf8))
+        XCTAssertThrowsError(try JSONDecoder().decode(StrokeSet.self, from: XCTUnwrap(lazy.record(for: "学"))))
+    }
+
+    func testStrokeArchiveRejectsInvalidBoundariesAndDuplicateKeys() {
+        for source in ["[]", "{", #"{"学":[]}"#, #"{"学":{},}"#,
+                       #"{"学":{},"学":{}}"#, #"{"学":{"medians":[}}"#,
+                       #"{"学":{"strokes":["unfinished]}}"#, #"{"学":{}} trailing"#] {
+            XCTAssertThrowsError(try StrokeArchive(data: Data(source.utf8)))
+        }
     }
 
     @MainActor
