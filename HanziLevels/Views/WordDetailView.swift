@@ -5,9 +5,9 @@ struct WordDetailView: View {
 
     var body: some View {
         EmptyLibraryView(
-            title: "Word unavailable",
+            title: "Word details",
             systemImage: "text.book.closed",
-            description: "This word is not in the bundled library yet."
+            description: "Word details will be available in a later update."
         )
         .navigationTitle(wordID)
         .navigationBarTitleDisplayMode(.inline)
