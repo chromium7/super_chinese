@@ -4,7 +4,7 @@ struct DetailHeading: View {
     let hanzi: String
     let pinyin: String
     let meaning: String
-    let levelLabel: String
+    var levelLabel: String? = nil
     @ScaledMetric(relativeTo: .largeTitle) private var hanziSize = 64
 
     var body: some View {
@@ -12,17 +12,22 @@ struct DetailHeading: View {
             Text(hanzi)
                 .font(.system(size: hanziSize, weight: .medium))
                 .accessibilityAddTraits(.isHeader)
+                .accessibilityLabel("Hanzi: \(hanzi)")
             Text(pinyin)
                 .font(.title2)
                 .foregroundStyle(Color.accentColor)
+                .accessibilityLabel("Readings: \(pinyin)")
             Text(meaning)
                 .font(.title3)
-            Text(levelLabel)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .background(Color(.tertiarySystemGroupedBackground), in: .capsule)
+                .accessibilityLabel("Meaning: \(meaning)")
+            if let levelLabel {
+                Text(levelLabel)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(Color(.tertiarySystemGroupedBackground), in: .capsule)
+            }
         }
         .multilineTextAlignment(.center)
         .fixedSize(horizontal: false, vertical: true)

@@ -65,6 +65,10 @@ struct SourcesView: View {
         let loaded = await loader.load(directory: directory)
         guard !Task.isCancelled else { return }
         documents = loaded
+        let missingCount = SourceDocument.allCases.filter { loaded[$0] == nil }.count
+        if missingCount > 0 {
+            AccessibilityNotification.Announcement("\(missingCount) bundled documents unavailable. Expand a document to retry.").post()
+        }
     }
 
     private func retry() {

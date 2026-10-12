@@ -5,6 +5,7 @@ import SwiftData
 struct WordDetailView: View {
     let wordID: String
     @Environment(Library.self) private var library
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     @Environment(\.modelContext) private var context
     @State private var showsHistoryError = false
@@ -27,8 +28,7 @@ struct WordDetailView: View {
                                 Text("No characters are listed for this word.")
                                     .foregroundStyle(.secondary)
                             } else {
-                                LazyVGrid(columns: [GridItem(.flexible(), alignment: .top),
-                                                    GridItem(.flexible(), alignment: .top)],
+                                LazyVGrid(columns: characterColumns,
                                           alignment: .leading, spacing: 12) {
                                     ForEach(word.uniqueCharacterIDs, id: \.self) { id in
                                         if let character = library.character(id: id) {
@@ -64,6 +64,13 @@ struct WordDetailView: View {
         } message: {
             Text("You can keep browsing. Please reopen this item to try saving it again.")
         }
+    }
+
+    private var characterColumns: [GridItem] {
+        if dynamicTypeSize.isAccessibilitySize {
+            return [GridItem(.flexible(), alignment: .top)]
+        }
+        return [GridItem(.adaptive(minimum: 140), alignment: .top)]
     }
 }
 

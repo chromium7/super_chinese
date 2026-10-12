@@ -31,7 +31,7 @@ struct CharacterCard: View {
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 14))
         .contentShape(.rect(cornerRadius: 14))
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(character.id), \(character.readings.joined(separator: ", ")), \(character.meaning)")
+        .accessibilityLabel("Character: \(character.id), readings: \(character.readings.joined(separator: ", ")), meaning: \(character.meaning)")
         .accessibilityHint("Opens character details")
     }
 }

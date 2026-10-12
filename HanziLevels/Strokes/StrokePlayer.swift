@@ -21,6 +21,21 @@ final class StrokePlayer {
         return timeline.frame(at: elapsedTime(at: date))
     }
 
+    /// Summarizes stable playback states without announcing every animation frame.
+    func accessibilityStatus(at date: Date = .now) -> String {
+        let count = timeline.durations.count
+        guard count > 0 else { return "No strokes available." }
+        let total = "\(count) \(count == 1 ? "stroke" : "strokes")"
+        if reduceMotion {
+            if let selectedStroke { return "Stroke \(selectedStroke + 1) of \(count) highlighted." }
+            return "Complete character. No stroke highlighted. \(total)."
+        }
+        let frame = frame(at: date)
+        if frame.isComplete { return "Playback complete. \(total)." }
+        let position = "Stroke \((frame.currentIndex ?? 0) + 1) of \(count)."
+        return "\(isPlaying ? "Playing" : "Paused"). \(position)"
+    }
+
     func start(reduceMotion: Bool, at date: Date = .now) {
         self.reduceMotion = reduceMotion
         replay(at: date)

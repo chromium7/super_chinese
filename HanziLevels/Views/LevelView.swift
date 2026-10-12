@@ -5,6 +5,7 @@ struct LevelView: View {
     let level: Int
     @AppStorage private var mode: LevelMode
     @Environment(Library.self) private var library
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var query = ""
 
     init(level: Int) {
@@ -18,12 +19,14 @@ struct LevelView: View {
         let count = mode == .words ? words.count : characters.count
 
         VStack(alignment: .leading, spacing: 12) {
-            Picker("Display mode", selection: $mode) {
-                ForEach(LevelMode.allCases) { mode in
-                    Text(mode.title).tag(mode)
+            Group {
+                if dynamicTypeSize.isAccessibilitySize {
+                    modePicker.pickerStyle(.menu)
+                        .frame(minHeight: 44)
+                } else {
+                    modePicker.pickerStyle(.segmented)
                 }
             }
-            .pickerStyle(.segmented)
             .padding(.horizontal, 20)
             .accessibilityIdentifier("level.mode")
 
@@ -54,8 +57,20 @@ struct LevelView: View {
             .overlay {
                 if library.state == .loading {
                     ProgressView("Loading library…")
+                } else if case .failed(let message) = library.state {
+                    EmptyLibraryView(title: "Library unavailable", systemImage: "exclamationmark.triangle",
+                                     description: message)
                 } else if count == 0 {
-                    ContentUnavailableView.search(text: query)
+                    if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        EmptyLibraryView(title: "No \(mode.title.lowercased()) in this level",
+                                         systemImage: "text.book.closed",
+                                         description: "Choose another HSK level to browse the bundled content.")
+                    } else {
+                        ScrollView {
+                            ContentUnavailableView.search(text: query)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
                 }
             }
         }
@@ -66,6 +81,14 @@ struct LevelView: View {
         .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Hanzi, pinyin or English")
         .autocorrectionDisabled()
         .textInputAutocapitalization(.never)
+    }
+
+    private var modePicker: some View {
+        Picker("Display mode", selection: $mode) {
+            ForEach(LevelMode.allCases) { mode in
+                Text(mode.title).tag(mode)
+            }
+        }
     }
 }
 
