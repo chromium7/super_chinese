@@ -32,7 +32,7 @@ HanziLevels/
   App/                          App entry point, root stack, typed Route
   Data/                         Read-only offline library and search index
   Strokes/                      Native SVG geometry, cached preparation, playback and canvas
-  Views/                        Home, Level, Word/Character details, Sources placeholder
+  Views/                        Home, Level, Word/Character details, Sources & Licenses
     Components/                 Cards, rows, detail headings, stroke integration surface
   Resources/Assets.xcassets/     Adaptive AccentColor
 HanziLevelsTests/                Unhosted library and browsing unit tests
@@ -56,8 +56,12 @@ Replay starts over, and Play after completion restarts. Each stroke takes
 Navigation and backgrounding pause playback. Reduce Motion shows the complete
 character; each Play tap highlights the next stroke, and Replay clears that
 highlight. Playback failures stay within the card so metadata and search remain
-available. Sources & Licenses remains
-a placeholder. Recent is hidden while history is empty and otherwise shows the
+available. Sources & Licenses shows the three bundled data sources, their roles
+and license names, and expandable full Arphic Public License and CC BY-SA 3.0
+Unported texts. Source notes open expanded and retain the unresolved level-list
+permission/replacement decision and missing upstream revisions. Documents load
+locally off the main actor; unreadable files show an error and retry without
+hiding the remaining documents. Recent is hidden while history is empty and otherwise shows the
 five newest word/character visits. See All opens History with swipe-to-delete
 and a confirmed Clear History action. One SwiftData model stores at most 50
 unique visits on this device, refreshing the timestamp once per opened detail.
@@ -104,7 +108,9 @@ relationships, missing detail identifiers, and content immutability while browsi
 Stroke tests cover all 1,640 bundled outlines across 213 characters, coordinate
 flip/scale, SVG command and number parsing, median consistency, timing gaps,
 pause/resume/replay, reduced-motion stepping, cached geometry, cancellation,
-and playback failure isolation.
+and playback failure isolation. Source document tests cover complete, unmodified
+bundled text, retained release blockers, refusal of remote directories, isolated
+missing/invalid/empty documents, and retry after files become readable.
 
 History tests cover timestamp upserts, word/character key uniqueness, newest-first
 ordering and trimming, revisits at the limit, deletion, idempotent clearing,
