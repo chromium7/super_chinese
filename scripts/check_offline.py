@@ -9,6 +9,7 @@ violations = []
 for source in sorted((root / "HanziLevels").rglob("*.swift")):
     for number, line in enumerate(source.read_text(encoding="utf-8").splitlines(), 1):
         if re.search(r"\b(URLSession|NSURLSession|URLRequest|NSURLRequest|NSURLConnection|WKWebView)\b"
+                     r"|\bNW[A-Z]\w*\b|\b(CFSocket|CFStream)\w*\b"
                      r"|^\s*import\s+(Network|NetworkExtension|FoundationNetworking|CFNetwork|WebKit|CloudKit)\b", line):
             violations.append(f"{source.relative_to(root)}:{number}: {line.strip()}")
 

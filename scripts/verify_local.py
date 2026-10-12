@@ -20,6 +20,18 @@ def run(*arguments):
     subprocess.run(list(map(str, arguments)), cwd=ROOT, check=True)
 
 
+def record_revision(allow_dirty):
+    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    status = subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=all"], cwd=ROOT, text=True)
+    print("Revision: " + revision + (" DIRTY" if status else " CLEAN"), flush=True)
+    if status:
+        print(status, end="", flush=True)
+        if not allow_dirty:
+            raise ValueError("Working tree is dirty; commit changes or explicitly use --allow-dirty")
+        print("WARNING: --allow-dirty tests local changes, not the recorded commit alone.", flush=True)
+
+
 def target_sources():
     project = json.loads(subprocess.check_output(
         ["plutil", "-convert", "json", "-o", "-", str(PROJECT)]))
@@ -28,6 +40,12 @@ def target_sources():
 
     def visit(identifier, parent):
         obj = objects[identifier]
+        source_tree = obj.get("sourceTree", "<group>")
+        if source_tree == "SOURCE_ROOT":
+            parent = ROOT
+        elif source_tree != "<group>":
+            # Product/SDK refs are irrelevant here; fail if a Sources phase needs one.
+            return
         path = parent / obj.get("path", "")
         if obj["isa"] == "PBXGroup":
             for child in obj["children"]:
@@ -44,7 +62,12 @@ def target_sources():
         for phase_id in obj["buildPhases"]:
             phase = objects[phase_id]
             if phase["isa"] == "PBXSourcesBuildPhase":
-                sources.extend(paths[objects[build]["fileRef"]] for build in phase["files"])
+                for build in phase["files"]:
+                    reference = objects[build]["fileRef"]
+                    if reference not in paths:
+                        raise ValueError(f"Unresolved source reference {reference} in target {obj['name']}; "
+                                         "unsupported group or sourceTree")
+                    sources.append(paths[reference])
         targets[obj["name"]] = sources
     return targets
 
@@ -70,6 +93,7 @@ def static_checks(sources):
             raise ValueError("Bundled file checksum mismatch: " + name)
     print(f"Verified {len(manifest['files'])} bundled SHA-256 checksums.", flush=True)
     run("git", "diff", "--check")
+    run("git", "diff", "--cached", "--check")
 
 
 def standalone(sources):
@@ -78,15 +102,17 @@ def standalone(sources):
         production, copies, calls, skipped = [], [], [], []
         for source in sources["HanziLevelsTests"]:
             text = source.read_text(encoding="utf-8")
+            if source.parent.name != "HanziLevelsTests":
+                if "import SwiftData" in text:
+                    skipped.append("production: " + str(source.relative_to(ROOT)))
+                else:
+                    production.append(source)
+                continue
             cases = re.findall(r"^    func (test\w+)\(\)([^\n{]*)\{", text, re.MULTILINE)
-            if source.parent.name == "HanziLevelsTests":
-                if len(cases) != len(re.findall(r"\bfunc test\w+\b", text)) or re.search(r"\bfunc (setUp|tearDown)\b", text):
-                    raise ValueError("Unsupported standalone test structure: " + source.name)
+            if len(cases) != len(re.findall(r"\bfunc test\w+\b", text)) or re.search(r"\bfunc (setUp|tearDown)\b", text):
+                raise ValueError("Unsupported standalone test structure: " + source.name)
             if "import SwiftData" in text:
                 skipped.extend(source.stem + "." + name for name, _ in cases)
-                continue
-            if source.parent.name != "HanziLevelsTests":
-                production.append(source)
                 continue
             # Fail closed if discovery misses a new parameterized/multiline/lifecycle case.
             cls = re.search(r"final class (\w+): XCTestCase", text)
@@ -129,15 +155,16 @@ def main():
     modes.add_argument("--standalone", action="store_true", help="CLT fallback; excludes SwiftData, does not use XCTest")
     modes.add_argument("--ios", action="store_true", help="Full Xcode unit tests and separate simulator app build")
     parser.add_argument("--destination", help="Installed simulator destination, e.g. platform=iOS Simulator,id=<UUID>")
+    parser.add_argument("--allow-dirty", action="store_true", help="Development-only: label local changes DIRTY in the log")
     args = parser.parse_args()
     if args.ios and not args.destination:
         parser.error("--ios requires --destination")
     (ROOT / "build").mkdir(exist_ok=True)
-    print("Revision: " + subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip())
-    run("git", "status", "--short")
+    record_revision(args.allow_dirty)
     run("swift", "--version")
     sources = target_sources()
     static_checks(sources)
+    run(sys.executable, "-m", "unittest", "discover", "-s", "scripts", "-p", "test_verify_local.py")
     if args.standalone:
         standalone(sources)
     else:
@@ -155,5 +182,5 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except (subprocess.CalledProcessError, ValueError, OSError) as error:
+    except (subprocess.CalledProcessError, ValueError, OSError, KeyError) as error:
         sys.exit("Verification failed: " + str(error))

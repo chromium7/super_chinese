@@ -6,6 +6,8 @@ final class HistoryTests: XCTestCase {
 
     @MainActor
     private func failSave(_ context: ModelContext) throws {
+        // Failure occurs before context.save(): these cases verify in-memory rollback,
+        // not persistence atomicity during a real storage failure.
         XCTAssertTrue(context.hasChanges, "Inject failure only after applying the history operation.")
         throw SaveFailure.injected
     }
@@ -141,7 +143,7 @@ final class HistoryTests: XCTestCase {
         }
         XCTAssertFalse(context.hasChanges)
         XCTAssertEqual(try entries(in: context).map(\.key), expected)
-        // A separate context must still see the committed history, including the trimmed oldest entry.
+        // No failing write reached the store; this checks the original committed baseline.
         XCTAssertEqual(try entries(in: ModelContext(container)).map(\.key), expected)
         try HistoryStore.record(.character, itemID: "学", in: context, at: Date(timeIntervalSince1970: 100))
         let result = try entries(in: context)

@@ -151,6 +151,20 @@ The latter two fail because full Xcode and `simctl` are unavailable.
 The gate prints the exact revision, dirty tree, expanded compiler commands and
 case names; final commit and log are recorded in the issue delivery.
 
+The gate now rejects dirty tracked/staged or untracked content by default.
+Use `--allow-dirty` only during development: it prints `DIRTY` and an explicit
+warning beside the revision. Both staged and unstaged whitespace checks run.
+Skipped SwiftData production files are named separately from skipped test cases.
+The API scan also rejects `NW*`, `CFSocket*` and `CFStream*`; URL arguments to
+Foundation `contentsOf:` calls still require file-only guards and code review.
+History failure injection occurs before `context.save()`, proving in-memory
+rollback rather than real storage-failure persistence atomicity. Separate contexts
+only confirm the existing committed baseline; disk reopening has its own test.
+Six standard-library gate regression cases run as part of either verification
+mode (or alone with `python3 -m unittest discover -s scripts -p 'test_verify_local.py'`).
+They cover clean/staged/unstaged/untracked revision labeling, unknown source
+references, named SwiftData skips, staged whitespace errors and networking symbols.
+
 All ten SwiftData XCTest cases, the complete iOS XCTest action, iOS app build,
 packaged-resource verification, simulator/device screenshots, fresh install,
 relaunch, save alerts, VoiceOver, Dynamic Type, appearance and Reduce Motion

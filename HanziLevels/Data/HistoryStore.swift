@@ -15,7 +15,7 @@ enum HistoryStore {
 
     static func record(_ kind: HistoryKind, itemID: String, in context: ModelContext,
                        at date: Date = .now,
-                       save: (ModelContext) throws -> Void = { try $0.save() }) throws {
+                       save: @MainActor (ModelContext) throws -> Void = { try $0.save() }) throws {
         try transaction(in: context, save: save) {
             var entries = try context.fetch(FetchDescriptor<HistoryEntry>(sortBy: newestFirst))
             let key = kind.keyPrefix + itemID
@@ -34,19 +34,19 @@ enum HistoryStore {
     }
 
     static func delete(_ entries: [HistoryEntry], in context: ModelContext,
-                       save: (ModelContext) throws -> Void = { try $0.save() }) throws {
+                       save: @MainActor (ModelContext) throws -> Void = { try $0.save() }) throws {
         try transaction(in: context, save: save) {
             for entry in entries { context.delete(entry) }
         }
     }
 
     static func clear(in context: ModelContext,
-                      save: (ModelContext) throws -> Void = { try $0.save() }) throws {
+                      save: @MainActor (ModelContext) throws -> Void = { try $0.save() }) throws {
         try delete(context.fetch(FetchDescriptor<HistoryEntry>()), in: context, save: save)
     }
 
     // The save dependency permits deterministic failure tests with a real ModelContext.
-    private static func transaction(in context: ModelContext, save: (ModelContext) throws -> Void,
+    private static func transaction(in context: ModelContext, save: @MainActor (ModelContext) throws -> Void,
                                     changes: () throws -> Void) throws {
         do {
             try changes()

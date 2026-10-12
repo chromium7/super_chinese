@@ -122,6 +122,9 @@ Three additional failure-injection tests cover rollback after insertion/trimming
 timestamp updates, deletion and clearing, plus retry after failure. They use real
 SwiftData contexts with an injected throwing save dependency; app calls retain
 the default immediate save. These tests still require full Xcode to execute.
+The injected error occurs before `context.save()`: this verifies rollback,
+not persistence atomicity during a real disk/store failure. Separate-context
+assertions only confirm that the previously committed baseline remains intact.
 Detail push/pop ordering and save-alert behavior require simulator verification.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.
@@ -141,3 +144,14 @@ python3 scripts/verify_local.py --ios \
 ```
 
 Standalone success does not verify an iOS app run or clear release permission.
+The gate requires a clean working tree by default, including staged changes and
+untracked files. Development runs can explicitly use `--allow-dirty`; their
+revision line says `DIRTY` and warns that the recorded commit alone was not tested.
+Ignored build output and Python caches do not affect this check. Both staged and
+unstaged diffs are checked for whitespace errors. Standard-library gate regressions
+run with `python3 -m unittest discover -s scripts -p 'test_verify_local.py'`.
+
+The offline API scan includes Network framework `NW*` types and `CFSocket`/`CFStream`
+symbols. It does not determine whether `Data(contentsOf:)` or `String(contentsOf:)`
+receives a remote URL; local loaders must retain their file-only URL guards and
+rejection tests. The scan is not proof against arbitrary custom networking code.
