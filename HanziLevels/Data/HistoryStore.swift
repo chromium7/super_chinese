@@ -14,8 +14,9 @@ enum HistoryStore {
     }
 
     static func record(_ kind: HistoryKind, itemID: String, in context: ModelContext,
-                       at date: Date = .now) throws {
-        try save(in: context) {
+                       at date: Date = .now,
+                       save: (ModelContext) throws -> Void = { try $0.save() }) throws {
+        try transaction(in: context, save: save) {
             var entries = try context.fetch(FetchDescriptor<HistoryEntry>(sortBy: newestFirst))
             let key = kind.keyPrefix + itemID
             if let entry = entries.first(where: { $0.key == key }) {
@@ -32,20 +33,24 @@ enum HistoryStore {
         }
     }
 
-    static func delete(_ entries: [HistoryEntry], in context: ModelContext) throws {
-        try save(in: context) {
+    static func delete(_ entries: [HistoryEntry], in context: ModelContext,
+                       save: (ModelContext) throws -> Void = { try $0.save() }) throws {
+        try transaction(in: context, save: save) {
             for entry in entries { context.delete(entry) }
         }
     }
 
-    static func clear(in context: ModelContext) throws {
-        try delete(context.fetch(FetchDescriptor<HistoryEntry>()), in: context)
+    static func clear(in context: ModelContext,
+                      save: (ModelContext) throws -> Void = { try $0.save() }) throws {
+        try delete(context.fetch(FetchDescriptor<HistoryEntry>()), in: context, save: save)
     }
 
-    private static func save(in context: ModelContext, changes: () throws -> Void) throws {
+    // The save dependency permits deterministic failure tests with a real ModelContext.
+    private static func transaction(in context: ModelContext, save: (ModelContext) throws -> Void,
+                                    changes: () throws -> Void) throws {
         do {
             try changes()
-            try context.save()
+            try save(context)
         } catch {
             // This context stores only history; a failed write must not look successful.
             context.rollback()

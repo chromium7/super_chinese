@@ -2,6 +2,14 @@ import XCTest
 import SwiftData
 
 final class HistoryTests: XCTestCase {
+    private enum SaveFailure: Error { case injected }
+
+    @MainActor
+    private func failSave(_ context: ModelContext) throws {
+        XCTAssertTrue(context.hasChanges, "Inject failure only after applying the history operation.")
+        throw SaveFailure.injected
+    }
+
     @MainActor
     private func container() throws -> ModelContainer {
         try ModelContainer(for: HistoryEntry.self,
@@ -116,5 +124,70 @@ final class HistoryTests: XCTestCase {
         }
         let cleared = try ModelContainer(for: HistoryEntry.self, configurations: configuration)
         XCTAssertTrue(try entries(in: cleared.mainContext).isEmpty)
+    }
+
+    @MainActor
+    func testFailedInsertRestoresTrimmedEntryAndAllowsRetry() throws {
+        let container = try container()
+        let context = container.mainContext
+        for index in 0..<50 {
+            try HistoryStore.record(.word, itemID: "item\(index)", in: context,
+                                    at: Date(timeIntervalSince1970: Double(index)))
+        }
+        let expected = try entries(in: context).map(\.key)
+        XCTAssertThrowsError(try HistoryStore.record(.character, itemID: "学", in: context,
+                                                     at: Date(timeIntervalSince1970: 100), save: failSave)) {
+            XCTAssertTrue($0 is SaveFailure)
+        }
+        XCTAssertFalse(context.hasChanges)
+        XCTAssertEqual(try entries(in: context).map(\.key), expected)
+        // A separate context must still see the committed history, including the trimmed oldest entry.
+        XCTAssertEqual(try entries(in: ModelContext(container)).map(\.key), expected)
+        try HistoryStore.record(.character, itemID: "学", in: context, at: Date(timeIntervalSince1970: 100))
+        let result = try entries(in: context)
+        XCTAssertEqual(result.count, 50)
+        XCTAssertEqual(result.first?.key, "c:学")
+        XCTAssertFalse(result.contains { $0.itemID == "item0" })
+    }
+
+    @MainActor
+    func testFailedRevisitRestoresTimestampAndOrdering() throws {
+        let container = try container()
+        let context = container.mainContext
+        let original = Date(timeIntervalSince1970: 1)
+        try HistoryStore.record(.word, itemID: "学生", in: context, at: original)
+        try HistoryStore.record(.character, itemID: "学", in: context, at: Date(timeIntervalSince1970: 2))
+        XCTAssertThrowsError(try HistoryStore.record(.word, itemID: "学生", in: context,
+                                                     at: Date(timeIntervalSince1970: 3), save: failSave)) {
+            XCTAssertTrue($0 is SaveFailure)
+        }
+        XCTAssertFalse(context.hasChanges)
+        let result = try entries(in: context)
+        XCTAssertEqual(result.map(\.key), ["c:学", "w:学生"])
+        XCTAssertEqual(result.last?.viewedAt, original)
+        XCTAssertEqual(try entries(in: ModelContext(container)).last?.viewedAt, original)
+    }
+
+    @MainActor
+    func testFailedDeleteAndClearRestoreHistoryAndAllowRetry() throws {
+        let container = try container()
+        let context = container.mainContext
+        try HistoryStore.record(.word, itemID: "学生", in: context, at: Date(timeIntervalSince1970: 1))
+        try HistoryStore.record(.character, itemID: "学", in: context, at: Date(timeIntervalSince1970: 2))
+        let expected = try entries(in: context).map(\.key)
+        let selected = try XCTUnwrap(try entries(in: context).first)
+        XCTAssertThrowsError(try HistoryStore.delete([selected], in: context, save: failSave)) {
+            XCTAssertTrue($0 is SaveFailure)
+        }
+        XCTAssertFalse(context.hasChanges)
+        XCTAssertEqual(try entries(in: context).map(\.key), expected)
+        XCTAssertThrowsError(try HistoryStore.clear(in: context, save: failSave)) {
+            XCTAssertTrue($0 is SaveFailure)
+        }
+        XCTAssertFalse(context.hasChanges)
+        XCTAssertEqual(try entries(in: context).map(\.key), expected)
+        XCTAssertEqual(try entries(in: ModelContext(container)).map(\.key), expected)
+        try HistoryStore.clear(in: context)
+        XCTAssertTrue(try entries(in: ModelContext(container)).isEmpty)
     }
 }

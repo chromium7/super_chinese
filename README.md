@@ -36,7 +36,7 @@ HanziLevels/
     Components/                 Cards, rows, detail headings, stroke integration surface
   Resources/Assets.xcassets/     Adaptive AccentColor
 HanziLevelsTests/                Unhosted library and browsing unit tests
-scripts/                        Offline source check
+scripts/                        Offline source and repeatable local verification gates
 ```
 
 `Route` uses `level(Int)`, `word(String)`, `character(String)`, `history`, and `sources`.
@@ -118,7 +118,26 @@ and reopening a local disk store. Preference tests use an isolated defaults suit
 to cover per-level keys, persistence, and fallback for unknown mode values.
 The SwiftData tests require full Xcode; Command Line Tools alone do not provide
 the SwiftData macro plugin.
-The save-failure rollback path has no failure-injection test and remains untested.
+Three additional failure-injection tests cover rollback after insertion/trimming,
+timestamp updates, deletion and clearing, plus retry after failure. They use real
+SwiftData contexts with an injected throwing save dependency; app calls retain
+the default immediate save. These tests still require full Xcode to execute.
 Detail push/pop ordering and save-alert behavior require simulator verification.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.
+
+The repeatable gate checks target source membership, syntax, offline APIs,
+bundled SHA-256 checksums, and all available unit cases. See
+[the release QA checklist](docs/release-qa.md) for coverage, exact commands,
+fresh-install airplane-mode steps, and the recorded verification limits.
+
+```sh
+# Command Line Tools fallback: real logic with an assertion adapter, excludes SwiftData.
+python3 scripts/verify_local.py --standalone
+
+# Full Xcode: unhosted XCTest, then an independent simulator app build.
+python3 scripts/verify_local.py --ios \
+  --destination 'platform=iOS Simulator,id=<installed-simulator-UUID>'
+```
+
+Standalone success does not verify an iOS app run or clear release permission.
