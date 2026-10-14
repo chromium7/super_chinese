@@ -130,9 +130,9 @@ Detail push/pop ordering and save-alert behavior require simulator verification.
 There is no simulator CI workflow, app-launch automation, or UI-test target.
 
 The repeatable gate checks target source membership, syntax, offline APIs,
-bundled SHA-256 checksums, and all available unit cases. See
-[the release QA checklist](docs/release-qa.md) for coverage, exact commands,
-fresh-install airplane-mode steps, and the recorded verification limits.
+bundled SHA-256 checksums, and all available unit cases. The release QA checklist
+and verification reports are attached to Multica issue APE-197, covering exact
+commands, fresh-install airplane-mode steps, and recorded verification limits.
 
 ```sh
 # Command Line Tools fallback: real logic with an assertion adapter, excludes SwiftData.
