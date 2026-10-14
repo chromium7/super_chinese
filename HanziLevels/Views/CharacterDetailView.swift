@@ -5,6 +5,7 @@ import SwiftData
 struct CharacterDetailView: View {
     let characterID: String
     @Environment(Library.self) private var library
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     @Environment(\.modelContext) private var context
     @State private var showsHistoryError = false
@@ -15,17 +16,15 @@ struct CharacterDetailView: View {
             if library.state == .ready, let character = library.character(id: characterID) {
                 List {
                     Section {
-                        // APE-193 owns the stroke renderer and playback controls in this component.
                         CharacterStrokeArea(character: character)
                     }
 
                     Section {
                         DetailHeading(hanzi: character.id, pinyin: character.readings.joined(separator: " · "),
-                                      meaning: character.meaning, levelLabel: "First appears in HSK \(character.firstLevel)")
+                                      meaning: character.meaning)
                             .padding(.vertical, 12)
-                        LabeledContent("Readings", value: character.readings.joined(separator: " · "))
-                        LabeledContent("Strokes", value: "\(character.strokeCount)")
-                        LabeledContent("First appears", value: "HSK \(character.firstLevel)")
+                        metadata("Strokes", value: "\(character.strokeCount)")
+                        metadata("First appears", value: "HSK \(character.firstLevel)")
                     }
 
                     Section("Appears in") {
@@ -63,6 +62,20 @@ struct CharacterDetailView: View {
         .alert("History could not be saved", isPresented: $showsHistoryError) {
         } message: {
             Text("You can keep browsing. Please reopen this item to try saving it again.")
+        }
+    }
+
+    @ViewBuilder
+    private func metadata(_ title: String, value: String) -> some View {
+        if dynamicTypeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title).foregroundStyle(.secondary)
+                Text(value)
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityElement(children: .combine)
+        } else {
+            LabeledContent(title, value: value)
         }
     }
 }

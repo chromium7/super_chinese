@@ -33,6 +33,7 @@ struct SourceDocumentView: View {
                         Button("Retry", action: retry)
                             .buttonStyle(.bordered)
                             .frame(minHeight: 44)
+                            .accessibilityLabel("Retry loading \(document.title)")
                     }
                 }
             }

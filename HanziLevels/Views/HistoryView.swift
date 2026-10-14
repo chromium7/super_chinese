@@ -16,6 +16,7 @@ struct HistoryView: View {
             .onDelete { offsets in
                 do {
                     try HistoryStore.delete(offsets.map { entries[$0] }, in: context)
+                    AccessibilityNotification.Announcement("History updated.").post()
                 } catch {
                     showsError = true
                 }
@@ -24,24 +25,31 @@ struct HistoryView: View {
         .listStyle(.insetGrouped)
         .overlay {
             if entries.isEmpty {
-                ContentUnavailableView("No history yet", systemImage: "clock",
-                                       description: Text("Words and characters you open will appear here."))
+                EmptyLibraryView(title: "No history yet", systemImage: "clock",
+                                 description: "Words and characters you open will appear here.")
             }
         }
         .navigationTitle("History")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Clear History", role: .destructive) { confirmsClear = true }
-                    .disabled(entries.isEmpty)
-                    .confirmationDialog("Clear History?", isPresented: $confirmsClear, titleVisibility: .visible) {
-                        Button("Clear History", role: .destructive) {
-                            do { try HistoryStore.clear(in: context) }
-                            catch { showsError = true }
+                Button(role: .destructive) { confirmsClear = true } label: {
+                    Label("Clear History", systemImage: "trash")
+                }
+                .labelStyle(.iconOnly)
+                .disabled(entries.isEmpty)
+                .confirmationDialog("Clear History?", isPresented: $confirmsClear, titleVisibility: .visible) {
+                    Button("Clear History", role: .destructive) {
+                        do {
+                            try HistoryStore.clear(in: context)
+                            AccessibilityNotification.Announcement("History cleared.").post()
+                        } catch {
+                            showsError = true
                         }
-                        Button("Cancel", role: .cancel) { }
-                    } message: {
-                        Text("This removes all recently viewed words and characters from this device.")
                     }
+                    Button("Cancel", role: .cancel) { }
+                } message: {
+                    Text("This removes all recently viewed words and characters from this device.")
+                }
             }
         }
         .alert("History could not be updated", isPresented: $showsError) {

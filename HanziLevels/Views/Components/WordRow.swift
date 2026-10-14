@@ -21,6 +21,6 @@ struct WordRow: View {
         }
         .padding(.vertical, 6)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(word.id), \(word.pinyin), \(word.english)")
+        .accessibilityLabel("Word: \(word.id), readings: \(word.pinyin), meaning: \(word.english)")
     }
 }

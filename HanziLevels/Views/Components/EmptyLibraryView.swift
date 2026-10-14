@@ -6,12 +6,15 @@ struct EmptyLibraryView: View {
     let description: String
 
     var body: some View {
-        ContentUnavailableView {
-            Label(title, systemImage: systemImage)
-        } description: {
-            Text(description)
+        ScrollView {
+            ContentUnavailableView {
+                Label(title, systemImage: systemImage)
+            } description: {
+                Text(description)
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.vertical, 20)
         }
-        .padding(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(.systemGroupedBackground))
     }

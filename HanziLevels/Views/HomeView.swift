@@ -13,7 +13,8 @@ struct HomeView: View {
                 ProgressView("Loading library…")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             case .failed(let message):
-                ContentUnavailableView("Content unavailable", systemImage: "exclamationmark.triangle", description: Text(message))
+                EmptyLibraryView(title: "Content unavailable", systemImage: "exclamationmark.triangle",
+                                 description: message)
             case .ready:
                 levels
             }
@@ -77,13 +78,16 @@ struct HomeView: View {
 
     private var recent: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text("Recent")
-                    .font(.headline)
-                    .accessibilityAddTraits(.isHeader)
-                Spacer(minLength: 12)
-                NavigationLink("See All", value: Route.history)
-                    .accessibilityLabel("See all history")
+            ViewThatFits(in: .horizontal) {
+                HStack {
+                    recentTitle
+                    Spacer(minLength: 12)
+                    historyLink
+                }
+                VStack(alignment: .leading, spacing: 8) {
+                    recentTitle
+                    historyLink
+                }
             }
             VStack(spacing: 0) {
                 ForEach(Array(history.prefix(5))) { entry in
@@ -98,5 +102,17 @@ struct HomeView: View {
             .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 14))
         }
         .padding(.top, 16)
+    }
+
+    private var recentTitle: some View {
+        Text("Recent")
+            .font(.headline)
+            .accessibilityAddTraits(.isHeader)
+    }
+
+    private var historyLink: some View {
+        NavigationLink("See All", value: Route.history)
+            .frame(minHeight: 44)
+            .accessibilityLabel("See all history")
     }
 }

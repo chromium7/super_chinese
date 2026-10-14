@@ -22,7 +22,7 @@ struct CharacterRow: View {
         }
         .padding(.vertical, 6)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(character.id), \(character.readings.joined(separator: ", ")), \(character.meaning), \(character.strokeCount) strokes")
+        .accessibilityLabel("Character: \(character.id), readings: \(character.readings.joined(separator: ", ")), meaning: \(character.meaning), \(character.strokeCount) strokes")
     }
 
     private var tile: some View {

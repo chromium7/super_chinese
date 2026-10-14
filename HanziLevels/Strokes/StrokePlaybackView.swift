@@ -6,6 +6,7 @@ struct StrokePlaybackView: View {
     let strokes: PreparedStrokes
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var player: StrokePlayer
     @State private var hasStarted = false
 
@@ -20,13 +21,20 @@ struct StrokePlaybackView: View {
             let frame = player.frame(at: timeline.date)
             VStack(spacing: 16) {
                 StrokeView(strokes: strokes, frame: frame, reduceMotion: player.reduceMotion)
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 12) { controls }
+                if dynamicTypeSize.isAccessibilitySize {
                     VStack(spacing: 12) { controls }
+                } else {
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 12) { controls }
+                        VStack(spacing: 12) { controls }
+                    }
                 }
                 Text(strokeLabel(frame))
                     .font(.subheadline.monospacedDigit())
                     .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel("Stroke order for \(characterID)")
+                    .accessibilityValue(player.accessibilityStatus(at: timeline.date))
                 if player.reduceMotion {
                     Text("Tap Play to highlight the next stroke.")
                         .font(.caption)
@@ -37,7 +45,10 @@ struct StrokePlaybackView: View {
             }
             .frame(maxWidth: .infinity)
             .onChange(of: frame.isComplete) { _, complete in
-                if complete && player.isPlaying { player.finish() }
+                if complete && player.isPlaying {
+                    player.finish()
+                    announceStatus()
+                }
             }
         }
         .onAppear {
@@ -48,7 +59,10 @@ struct StrokePlaybackView: View {
             }
         }
         .onDisappear { player.pause() }
-        .onChange(of: reduceMotion) { _, enabled in player.setReduceMotion(enabled) }
+        .onChange(of: reduceMotion) { _, enabled in
+            player.setReduceMotion(enabled)
+            announceStatus()
+        }
         .onChange(of: scenePhase) { _, phase in
             if phase != .active { player.pause() }
         }
@@ -58,21 +72,33 @@ struct StrokePlaybackView: View {
     private var controls: some View {
         Button(player.isPlaying ? "Pause" : "Play", systemImage: player.isPlaying ? "pause.fill" : "play.fill") {
             player.playOrPause()
+            announceStatus()
         }
         .buttonStyle(.borderedProminent)
         .controlSize(.large)
-        .fixedSize()
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(minHeight: 44)
+        .accessibilityValue(player.accessibilityStatus())
         .accessibilityHint(player.reduceMotion ? "Highlights the next stroke of \(characterID)." : "Controls stroke order playback for \(characterID).")
 
-        Button("Replay", systemImage: "arrow.counterclockwise") { player.replay() }
-            .buttonStyle(.bordered)
-            .controlSize(.large)
-            .fixedSize()
-            .accessibilityHint(player.reduceMotion ? "Clears the highlight. Play starts with the first stroke." : "Starts again from the first stroke.")
+        Button("Replay", systemImage: "arrow.counterclockwise") {
+            player.replay()
+            announceStatus()
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.large)
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(minHeight: 44)
+        .accessibilityHint(player.reduceMotion ? "Clears the highlight. Play starts with the first stroke." : "Starts again from the first stroke.")
     }
 
     private func strokeLabel(_ frame: StrokeTimeline.Frame) -> String {
         if let current = frame.currentIndex { return "Stroke \(current + 1) of \(strokes.outlines.count)" }
-        return "\(strokes.outlines.count) strokes"
+        let count = strokes.outlines.count
+        return "\(count) \(count == 1 ? "stroke" : "strokes")"
+    }
+
+    private func announceStatus() {
+        AccessibilityNotification.Announcement("\(characterID). \(player.accessibilityStatus())").post()
     }
 }

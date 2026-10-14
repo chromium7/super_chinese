@@ -146,6 +146,39 @@ final class StrokeTests: XCTestCase {
     }
 
     @MainActor
+    func testAccessiblePlaybackStatusTracksPauseResumeAndCompletion() {
+        let player = StrokePlayer(timeline: StrokeTimeline(medianLengths: [200, 400]))
+        let start = Date(timeIntervalSince1970: 1000)
+        player.start(reduceMotion: false, at: start)
+        XCTAssertEqual(player.accessibilityStatus(at: start), "Playing. Stroke 1 of 2.")
+        player.pause(at: start.addingTimeInterval(0.2))
+        XCTAssertEqual(player.accessibilityStatus(at: start.addingTimeInterval(100)), "Paused. Stroke 1 of 2.")
+        player.playOrPause(at: start.addingTimeInterval(100))
+        XCTAssertEqual(player.accessibilityStatus(at: start.addingTimeInterval(100.4)), "Playing. Stroke 2 of 2.")
+        player.finish()
+        XCTAssertEqual(player.accessibilityStatus(), "Playback complete. 2 strokes.")
+        player.replay(at: start)
+        XCTAssertEqual(player.accessibilityStatus(at: start), "Playing. Stroke 1 of 2.")
+    }
+
+    @MainActor
+    func testAccessibleReducedMotionStatusTracksHighlightResetAndEmptyData() {
+        let player = StrokePlayer(timeline: StrokeTimeline(medianLengths: [200]))
+        player.start(reduceMotion: true)
+        XCTAssertEqual(player.accessibilityStatus(), "Complete character. No stroke highlighted. 1 stroke.")
+        player.playOrPause()
+        XCTAssertEqual(player.accessibilityStatus(), "Stroke 1 of 1 highlighted.")
+        player.replay()
+        XCTAssertEqual(player.accessibilityStatus(), "Complete character. No stroke highlighted. 1 stroke.")
+        player.setReduceMotion(false)
+        XCTAssertEqual(player.accessibilityStatus(), "Playback complete. 1 stroke.")
+        let empty = StrokePlayer(timeline: StrokeTimeline(medianLengths: []))
+        empty.start(reduceMotion: true)
+        empty.playOrPause()
+        XCTAssertEqual(empty.accessibilityStatus(), "No strokes available.")
+    }
+
+    @MainActor
     func testPreparedGeometryIsCachedAndPlaybackFailureKeepsSearchAvailable() async throws {
         let source = try directory()
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)

@@ -22,6 +22,11 @@ struct CharacterStrokeArea: View {
         }
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
+        .onChange(of: failed) { _, failed in
+            if failed {
+                AccessibilityNotification.Announcement("Stroke order unavailable for \(character.id). Character information is still available.").post()
+            }
+        }
         .task(id: character.id) {
             prepared = nil
             failed = false
