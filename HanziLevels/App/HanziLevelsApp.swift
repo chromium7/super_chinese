@@ -5,6 +5,7 @@ import SwiftData
 @MainActor
 struct HanziLevelsApp: App {
     @State private var library = Library()
+    @State private var pendingCharacterID: String?
     @State private var historyContainer = Result { try HistoryStore.makeContainer() }
 
     var body: some Scene {
@@ -14,7 +15,7 @@ struct HanziLevelsApp: App {
                     EmptyLibraryView(title: "Content unavailable", systemImage: "exclamationmark.triangle",
                                      description: "\(message) Try reopening the app. If the problem continues, an app update with corrected bundled content is needed.")
                 } else if case .success(let container) = historyContainer {
-                    RootView()
+                    RootView(pendingCharacterID: $pendingCharacterID)
                         .modelContainer(container)
                 } else {
                     ScrollView {
@@ -41,6 +42,11 @@ struct HanziLevelsApp: App {
             .background(Color(.systemGroupedBackground))
             .environment(library)
             .task { await library.load() }
+            .onOpenURL { url in
+                if let id = CharacterLink.characterID(from: url) {
+                    pendingCharacterID = id
+                }
+            }
             .onChange(of: library.state) { _, state in
                 switch state {
                 case .loading:
