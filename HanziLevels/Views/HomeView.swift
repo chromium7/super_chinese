@@ -1,10 +1,12 @@
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 @MainActor
 struct HomeView: View {
     @Environment(Library.self) private var library
     @Query(sort: HistoryStore.newestFirst) private var history: [HistoryEntry]
+    @AppStorage(WidgetSettings.levelKey, store: WidgetSettings.defaults) private var currentLevel = 1
 
     var body: some View {
         Group {
@@ -22,6 +24,9 @@ struct HomeView: View {
         .background(Color(.systemGroupedBackground))
         .navigationTitle("Levels")
         .navigationBarTitleDisplayMode(.large)
+        .onChange(of: currentLevel) { _, _ in
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetSettings.kind)
+        }
     }
 
     private var levels: some View {
@@ -31,6 +36,26 @@ struct HomeView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .padding(.bottom, 12)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Picker("Current HSK level", selection: $currentLevel) {
+                        ForEach(1...5, id: \.self) { level in
+                            Text("HSK \(level)").tag(level)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .frame(minHeight: 44)
+                    .accessibilityIdentifier("currentHSKLevel")
+                    Text("Your Home Screen widget shows characters from this level.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(16)
+                .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 14))
+                .padding(.bottom, 12)
+                .onAppear {
+                    currentLevel = WidgetSettings.validLevel(currentLevel)
+                }
 
                 ForEach(1...5, id: \.self) { level in
                     NavigationLink(value: Route.level(level)) {

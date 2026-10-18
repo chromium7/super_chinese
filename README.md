@@ -19,7 +19,9 @@ needed in a fresh checkout.
 3. Run with **⌘R**. Run unit tests with **⌘U**.
 
 For a physical iPhone, choose your development team under Signing &
-Capabilities. Simulator builds do not need a development team.
+Capabilities for both **HanziLevels** and **HanziLevelsWidget**. Register/enable
+the **group.com.chromium7.HanziLevels** App Group for both targets with that team.
+Simulator builds do not need a development team.
 
 The build setting `SWIFT_VERSION = 5.0` selects Swift 5 language mode;
 the required compiler is Swift 5.10 or newer.
@@ -35,6 +37,8 @@ HanziLevels/
   Views/                        Home, Level, Word/Character details, Sources & Licenses
     Components/                 Cards, rows, detail headings, stroke integration surface
   Resources/Assets.xcassets/     Adaptive AccentColor
+  WidgetShared/                 Shared level preference, catalog, rotation, detail URLs
+HanziLevelsWidget/              Small and medium WidgetKit extension
 HanziLevelsTests/                Unhosted library and browsing unit tests
 scripts/                        Offline source check
 ```
@@ -75,6 +79,32 @@ The container explicitly disables CloudKit and app-group storage.
 Each level remembers its last Words/Characters selection across launches using
 `@AppStorage("levelMode.<n>")`, independently of other levels. Search text stays
 in the current level while switching modes and resets when that screen is closed.
+
+## Home Screen widget
+
+Choose **Current HSK level** on Home (HSK 1 by default). This is a study preference
+independent of which level you browse; opening another level or a widget detail
+does not change it. Add **Hanzi Levels → HSK Character** from the iPhone widget
+gallery in small or medium size. Both sizes show hanzi, tone-marked pinyin, and a
+meaning that truncates to fit; VoiceOver reads the full meaning. Tapping opens
+the displayed character's details, including when the app starts cold. The
+pending link waits for library loading and history recovery. Missing character
+IDs use the existing unavailable-detail screen. Invalid URLs are ignored.
+
+Characters come from the selected level's word membership, matching the app's
+Characters list. Rotation is deterministic in eight-hour slots anchored to the
+Unix epoch (00:00, 08:00, and 16:00 UTC), so all widgets agree and timezone/DST
+changes do not reset it. A week of entries is supplied ahead of time, followed
+by a request for the next timeline. Each boundary advances to another character
+when the pool has more than one. Changing the study level requests a widget
+reload. iOS controls when it renders entries and services reload requests, so
+exact display timing cannot be guaranteed; see Apple's
+[Keeping a widget up to date](https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date).
+
+The extension reads its own bundled word/character data without decoding
+strokes, network access, or access to browsing history. Only the study-level
+preference is shared through the App Group. Unreadable or inconsistent data
+shows a local unavailable state and requests another timeline in an hour.
 
 The bundled dataset is a small HSK sample, not the complete HSK vocabulary.
 Home displays its version in the on-device content footnote. Loading and bundle
@@ -120,5 +150,16 @@ The SwiftData tests require full Xcode; Command Line Tools alone do not provide
 the SwiftData macro plugin.
 The save-failure rollback path has no failure-injection test and remains untested.
 Detail push/pop ordering and save-alert behavior require simulator verification.
+
+`WidgetTests` covers exact rotation boundaries, three changes per 24 hours,
+week-long timelines, empty/single-item pools, per-level catalog membership,
+bad content, detail URL validation, and study-level persistence/fallback.
+With full Xcode, build the app scheme above (which embeds the extension), then
+run the unit tests. Verify small/medium widgets in light/dark appearance and
+large text, level changes, and warm/cold detail links on a simulator or device.
+The widget and app UI have not been built or visually verified in the current
+Command Line Tools-only environment; Xcode, XCTest, and `simctl` are unavailable.
+The shared Foundation logic was compiled with Swift 5.10 and its seven test
+methods executed through a lightweight assertion harness, rather than XCTest.
 
 There is no simulator CI workflow, app-launch automation, or UI-test target.

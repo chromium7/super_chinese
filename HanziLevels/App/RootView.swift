@@ -2,7 +2,13 @@ import SwiftUI
 
 @MainActor
 struct RootView: View {
+    @Environment(Library.self) private var library
+    @Binding var pendingCharacterID: String?
     @State private var path: [Route] = []
+
+    init(pendingCharacterID: Binding<String?> = .constant(nil)) {
+        _pendingCharacterID = pendingCharacterID
+    }
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -22,6 +28,14 @@ struct RootView: View {
                     }
                 }
         }
+        .onChange(of: pendingCharacterID, initial: true) { _, _ in openPendingCharacter() }
+        .onChange(of: library.state) { _, _ in openPendingCharacter() }
+    }
+
+    private func openPendingCharacter() {
+        guard library.state == .ready, let id = pendingCharacterID else { return }
+        path = [.character(id)]
+        pendingCharacterID = nil
     }
 }
 
