@@ -10,7 +10,7 @@ does not request permissions, use the network, or require an account.
 
 ## Open and run
 
-Requires **Xcode 15.3 or later** (Swift 5.10+) and an iOS simulator or iPhone
+Requires **Xcode 16 or later** (Swift 5.10+ source compatibility) and an iOS simulator or iPhone
 running **iOS 17 or later**. No package installation or project generation is
 needed in a fresh checkout.
 
@@ -29,23 +29,55 @@ the required compiler is Swift 5.10 or newer.
 ## Structure
 
 ```text
-HanziLevels.xcodeproj/           Checked-in project and shared scheme
+HanziLevels.xcodeproj/          Checked-in project and shared scheme
 HanziLevels/
-  App/                          App entry point, root stack, typed Route
-  Data/                         Read-only offline library and search index
-  Strokes/                      Native SVG geometry, cached preparation, playback and canvas
-  Views/                        Home, Level, Word/Character details, Sources & Licenses
-    Components/                 Cards, rows, detail headings, stroke integration surface
-  Resources/Assets.xcassets/     Adaptive AccentColor
-  WidgetShared/                 Shared level preference, catalog, rotation, detail URLs
-HanziLevelsWidget/              Small and medium WidgetKit extension
-HanziLevelsTests/                Unhosted library and browsing unit tests
-scripts/                        Offline source check
+  HanziLevelsApp.swift          App entry point and service setup
+  ContentView.swift            Root navigation and destination construction
+  Screens/                     Screens organized by feature
+    Home/                      HSK levels and recent visits
+    Levels/                    Word/character browsing and search
+    Words/                     Word details
+    Characters/                Character details
+    History/                   Recent visit management
+    Sources/                   Sources and license documents
+  ViewModels/                  Observable screen state and loading/search logic
+  Components/                  Reusable cards, rows, and document views
+    Strokes/                   Stroke canvas and playback controls
+  Core/                        Shared application services and domain types
+    Browsing/                  Persistent level-mode keys and display modes
+    History/                   SwiftData history model and storage
+    Library/                   Offline content models, decoding, and search
+    Navigation/                Typed routes
+    Sources/                   Attribution models and local document loading
+    Strokes/                   SVG geometry, caching, timeline, and player
+    Widget/                    Shared preferences, catalog, rotation, and URLs
+  Assets.xcassets/              Adaptive AccentColor
+  Resources/Data/              Bundled vocabulary, strokes, and license texts
+HanziLevelsWidget/             Small and medium WidgetKit extension
+HanziLevelsTests/              Unhosted library and screen-state unit tests
+scripts/                       Offline source check
 ```
+
+The layout uses feature folders under `Screens`,
+reusable SwiftUI elements under `Components`, shared services under `Core`, and
+observable screen state under `ViewModels`. `ContentView` constructs the level
+and sources view models with their dependencies. SwiftUI presentation state,
+accessibility announcements, and `@AppStorage` bindings stay in the views.
+
+The app, widget, and test folders use Xcode's synchronized folders, so their
+navigator hierarchy follows the files on disk. Adding a screen, component, or
+test inside its target folder normally needs no `project.pbxproj` change.
+Files used by more than one target still have explicit membership: the unhosted
+tests compile selected core/view-model sources directly, and the widget compiles
+its shared catalog/model sources. Add explicit membership when introducing a
+new dependency used by those targets. `Resources/Data` remains an explicit folder
+resource in all three targets to preserve `Data/Licenses` and existing bundle
+URLs. The app and widget `Info.plist` and entitlement files are excluded from
+automatic resource discovery.
 
 `Route` uses `level(Int)`, `word(String)`, `character(String)`, `history`, and `sources`.
 Word and character identifiers are hanzi. Destinations are registered once
-in `RootView`; SwiftUI supplies the back button and swipe-back behavior.
+in `ContentView`; SwiftUI supplies the back button and swipe-back behavior.
 Word detail shows tone-marked pinyin, meaning, HSK level, and a two-column grid
 of distinct characters in reading order. Character cards open character detail,
 which shows readings, meaning, stroke count, first HSK level, and all containing
@@ -151,15 +183,16 @@ the SwiftData macro plugin.
 The save-failure rollback path has no failure-injection test and remains untested.
 Detail push/pop ordering and save-alert behavior require simulator verification.
 
+`ViewModelTests` covers level-scoped search, query lifetime, document retries,
+and cancellation preserving loaded documents.
+
 `WidgetTests` covers exact rotation boundaries, three changes per 24 hours,
 week-long timelines, empty/single-item pools, per-level catalog membership,
 bad content, detail URL validation, and study-level persistence/fallback.
 With full Xcode, build the app scheme above (which embeds the extension), then
 run the unit tests. Verify small/medium widgets in light/dark appearance and
 large text, level changes, and warm/cold detail links on a simulator or device.
-The widget and app UI have not been built or visually verified in the current
-Command Line Tools-only environment; Xcode, XCTest, and `simctl` are unavailable.
-The shared Foundation logic was compiled with Swift 5.10 and its seven test
-methods executed through a lightweight assertion harness, rather than XCTest.
-
-There is no simulator CI workflow, app-launch automation, or UI-test target.
+The `iOS` GitHub Actions workflow builds the app and embedded widget, then runs
+the unhosted unit tests on an available iPhone simulator. Local Command Line
+Tools alone cannot build the iOS targets or run XCTest. There is no app-launch
+automation or UI-test target; visual and interaction checks remain manual.

@@ -15,7 +15,7 @@ struct HanziLevelsApp: App {
                     EmptyLibraryView(title: "Content unavailable", systemImage: "exclamationmark.triangle",
                                      description: "\(message) Try reopening the app. If the problem continues, an app update with corrected bundled content is needed.")
                 } else if case .success(let container) = historyContainer {
-                    RootView(pendingCharacterID: $pendingCharacterID)
+                    ContentView(pendingCharacterID: $pendingCharacterID)
                         .modelContainer(container)
                 } else {
                     ScrollView {

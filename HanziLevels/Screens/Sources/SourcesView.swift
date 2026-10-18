@@ -2,9 +2,11 @@ import SwiftUI
 
 @MainActor
 struct SourcesView: View {
-    @State private var documents: [SourceDocument: String]?
-    @State private var reloadID = 0
-    private let loader = SourceDocumentLoader()
+    @State private var viewModel: SourcesViewModel
+
+    init(viewModel: SourcesViewModel) {
+        _viewModel = State(initialValue: viewModel)
+    }
 
     var body: some View {
         ScrollView {
@@ -45,9 +47,9 @@ struct SourcesView: View {
                 ForEach(SourceDocument.allCases) { document in
                     SourceDocumentView(
                         document: document,
-                        text: documents?[document],
-                        isLoading: documents == nil,
-                        retry: retry
+                        text: viewModel.documents?[document],
+                        isLoading: viewModel.documents == nil,
+                        retry: viewModel.retry
                     )
                 }
             }
@@ -57,33 +59,21 @@ struct SourcesView: View {
         .background(Color(.systemGroupedBackground))
         .navigationTitle("Sources & Licenses")
         .navigationBarTitleDisplayMode(.large)
-        .task(id: reloadID) { await loadDocuments() }
-    }
-
-    private func loadDocuments() async {
-        let directory = Bundle.main.resourceURL?.appendingPathComponent("Data/Licenses", isDirectory: true)
-        let loaded = await loader.load(directory: directory)
-        guard !Task.isCancelled else { return }
-        documents = loaded
-        let missingCount = SourceDocument.allCases.filter { loaded[$0] == nil }.count
-        if missingCount > 0 {
-            AccessibilityNotification.Announcement("\(missingCount) bundled documents unavailable. Expand a document to retry.").post()
+        .task(id: viewModel.reloadID) {
+            if let missingCount = await viewModel.loadDocuments(), missingCount > 0 {
+                AccessibilityNotification.Announcement("\(missingCount) bundled documents unavailable. Expand a document to retry.").post()
+            }
         }
-    }
-
-    private func retry() {
-        documents = nil
-        reloadID += 1
     }
 }
 
 #Preview("Light") {
-    NavigationStack { SourcesView() }
+    NavigationStack { SourcesView(viewModel: SourcesViewModel()) }
         .preferredColorScheme(.light)
 }
 
 #Preview("Dark · Accessibility") {
-    NavigationStack { SourcesView() }
+    NavigationStack { SourcesView(viewModel: SourcesViewModel()) }
         .preferredColorScheme(.dark)
         .environment(\.dynamicTypeSize, .accessibility3)
 }

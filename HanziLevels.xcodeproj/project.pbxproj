@@ -2,549 +2,954 @@
 {
 	archiveVersion = 1;
 	classes = {};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
-		900000000000000000000100 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WidgetShared/WidgetSettings.swift"; sourceTree = "<group>"; };
-		900000000000000000000101 = { isa = PBXBuildFile; fileRef = 900000000000000000000100; };
-		900000000000000000000102 = { isa = PBXBuildFile; fileRef = 900000000000000000000100; };
-		900000000000000000000103 = { isa = PBXBuildFile; fileRef = 900000000000000000000100; };
-		900000000000000000000110 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WidgetShared/CharacterLink.swift"; sourceTree = "<group>"; };
-		900000000000000000000111 = { isa = PBXBuildFile; fileRef = 900000000000000000000110; };
-		900000000000000000000112 = { isa = PBXBuildFile; fileRef = 900000000000000000000110; };
-		900000000000000000000113 = { isa = PBXBuildFile; fileRef = 900000000000000000000110; };
-		900000000000000000000120 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WidgetShared/CharacterRotation.swift"; sourceTree = "<group>"; };
-		900000000000000000000121 = { isa = PBXBuildFile; fileRef = 900000000000000000000120; };
-		900000000000000000000122 = { isa = PBXBuildFile; fileRef = 900000000000000000000120; };
-		900000000000000000000123 = { isa = PBXBuildFile; fileRef = 900000000000000000000120; };
-		900000000000000000000130 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WidgetShared/WidgetCharacterCatalog.swift"; sourceTree = "<group>"; };
-		900000000000000000000131 = { isa = PBXBuildFile; fileRef = 900000000000000000000130; };
-		900000000000000000000132 = { isa = PBXBuildFile; fileRef = 900000000000000000000130; };
-		900000000000000000000133 = { isa = PBXBuildFile; fileRef = 900000000000000000000130; };
-		900000000000000000000200 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterEntry.swift"; sourceTree = "<group>"; };
-		900000000000000000000201 = { isa = PBXBuildFile; fileRef = 900000000000000000000200; };
-		900000000000000000000210 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterProvider.swift"; sourceTree = "<group>"; };
-		900000000000000000000211 = { isa = PBXBuildFile; fileRef = 900000000000000000000210; };
-		900000000000000000000220 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterWidgetView.swift"; sourceTree = "<group>"; };
-		900000000000000000000221 = { isa = PBXBuildFile; fileRef = 900000000000000000000220; };
-		900000000000000000000230 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HSKCharacterWidget.swift"; sourceTree = "<group>"; };
-		900000000000000000000231 = { isa = PBXBuildFile; fileRef = 900000000000000000000230; };
-		900000000000000000000300 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTests.swift; sourceTree = "<group>"; };
-		900000000000000000000301 = { isa = PBXBuildFile; fileRef = 900000000000000000000300; };
-		900000000000000000000310 = { isa = PBXBuildFile; fileRef = 300000000000000000000201; };
-		900000000000000000000311 = { isa = PBXBuildFile; fileRef = 300000000000000000000A01; };
-		900000000000000000000312 = { isa = PBXBuildFile; fileRef = 300000000000000000000701; };
-		900000000000000000000313 = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
-		900000000000000000000314 = { isa = PBXBuildFile; fileRef = 000000000000000000000029; };
-		900000000000000000000400 = { isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HanziLevelsWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		900000000000000000000401 = { isa = PBXGroup; children = (900000000000000000000200, 900000000000000000000210, 900000000000000000000220, 900000000000000000000230); path = HanziLevelsWidget; sourceTree = "<group>"; };
-		900000000000000000000402 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (900000000000000000000201, 900000000000000000000211, 900000000000000000000221, 900000000000000000000231, 900000000000000000000103, 900000000000000000000113, 900000000000000000000123, 900000000000000000000133, 900000000000000000000310, 900000000000000000000311, 900000000000000000000312); runOnlyForDeploymentPostprocessing = 0; };
-		900000000000000000000403 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (900000000000000000000313, 900000000000000000000314); runOnlyForDeploymentPostprocessing = 0; };
-		900000000000000000000404 = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		900000000000000000000405 = { isa = PBXNativeTarget; buildConfigurationList = 900000000000000000000408; buildPhases = (900000000000000000000402, 900000000000000000000404, 900000000000000000000403); buildRules = (); dependencies = (); name = HanziLevelsWidget; productName = HanziLevelsWidget; productReference = 900000000000000000000400; productType = "com.apple.product-type.app-extension"; };
-		900000000000000000000406 = { isa = XCBuildConfiguration; buildSettings = { APPLICATION_EXTENSION_API_ONLY = YES; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_ENTITLEMENTS = HanziLevelsWidget/HanziLevelsWidget.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_FILE = HanziLevelsWidget/Info.plist; INFOPLIST_KEY_CFBundleDisplayName = "HSK Character"; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks"); MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels.Widget; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; TARGETED_DEVICE_FAMILY = "1"; }; name = Debug; };
-		900000000000000000000407 = { isa = XCBuildConfiguration; buildSettings = { APPLICATION_EXTENSION_API_ONLY = YES; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_ENTITLEMENTS = HanziLevelsWidget/HanziLevelsWidget.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_FILE = HanziLevelsWidget/Info.plist; INFOPLIST_KEY_CFBundleDisplayName = "HSK Character"; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks"); MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels.Widget; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; TARGETED_DEVICE_FAMILY = "1"; }; name = Release; };
-		900000000000000000000408 = { isa = XCConfigurationList; buildConfigurations = (900000000000000000000406, 900000000000000000000407); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		900000000000000000000409 = { isa = PBXBuildFile; fileRef = 900000000000000000000400; settings = { ATTRIBUTES = (RemoveHeadersOnCopy); }; };
-		90000000000000000000040A = { isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 13; files = (900000000000000000000409); name = "Embed App Extensions"; runOnlyForDeploymentPostprocessing = 0; };
-		90000000000000000000040B = { isa = PBXContainerItemProxy; containerPortal = 000000000000000000000001; proxyType = 1; remoteGlobalIDString = 900000000000000000000405; remoteInfo = HanziLevelsWidget; };
-		90000000000000000000040C = { isa = PBXTargetDependency; target = 900000000000000000000405; targetProxy = 90000000000000000000040B; };
-		800000000000000000000101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/DataSourceAttribution.swift"; sourceTree = "<group>"; };
-		800000000000000000000102 = { isa = PBXBuildFile; fileRef = 800000000000000000000101; };
-		800000000000000000000103 = { isa = PBXBuildFile; fileRef = 800000000000000000000101; };
-		800000000000000000000201 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/SourceDocument.swift"; sourceTree = "<group>"; };
-		800000000000000000000202 = { isa = PBXBuildFile; fileRef = 800000000000000000000201; };
-		800000000000000000000203 = { isa = PBXBuildFile; fileRef = 800000000000000000000201; };
-		800000000000000000000301 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/SourceDocumentLoader.swift"; sourceTree = "<group>"; };
-		800000000000000000000302 = { isa = PBXBuildFile; fileRef = 800000000000000000000301; };
-		800000000000000000000303 = { isa = PBXBuildFile; fileRef = 800000000000000000000301; };
-		800000000000000000000401 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/SourceDocumentView.swift"; sourceTree = "<group>"; };
-		800000000000000000000402 = { isa = PBXBuildFile; fileRef = 800000000000000000000401; };
-		800000000000000000000501 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDocumentTests.swift; sourceTree = "<group>"; };
-		800000000000000000000502 = { isa = PBXBuildFile; fileRef = 800000000000000000000501; };
-		700000000000000000000101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/HistoryKind.swift"; sourceTree = "<group>"; };
-		700000000000000000000102 = { isa = PBXBuildFile; fileRef = 700000000000000000000101; };
-		700000000000000000000103 = { isa = PBXBuildFile; fileRef = 700000000000000000000101; };
-		700000000000000000000201 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/HistoryEntry.swift"; sourceTree = "<group>"; };
-		700000000000000000000202 = { isa = PBXBuildFile; fileRef = 700000000000000000000201; };
-		700000000000000000000203 = { isa = PBXBuildFile; fileRef = 700000000000000000000201; };
-		700000000000000000000301 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/HistoryStore.swift"; sourceTree = "<group>"; };
-		700000000000000000000302 = { isa = PBXBuildFile; fileRef = 700000000000000000000301; };
-		700000000000000000000303 = { isa = PBXBuildFile; fileRef = 700000000000000000000301; };
-		700000000000000000000401 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/HistoryRow.swift"; sourceTree = "<group>"; };
-		700000000000000000000402 = { isa = PBXBuildFile; fileRef = 700000000000000000000401; };
-		700000000000000000000501 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/HistoryView.swift"; sourceTree = "<group>"; };
-		700000000000000000000502 = { isa = PBXBuildFile; fileRef = 700000000000000000000501; };
-		700000000000000000000601 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryTests.swift"; sourceTree = "<group>"; };
-		700000000000000000000602 = { isa = PBXBuildFile; fileRef = 700000000000000000000601; };
-		600000000000000000000101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strokes/SVGPathParser.swift"; sourceTree = "<group>"; };
-		600000000000000000000102 = { isa = PBXBuildFile; fileRef = 600000000000000000000101; };
-		600000000000000000000103 = { isa = PBXBuildFile; fileRef = 600000000000000000000101; };
-		600000000000000000000201 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strokes/PreparedStrokes.swift"; sourceTree = "<group>"; };
-		600000000000000000000202 = { isa = PBXBuildFile; fileRef = 600000000000000000000201; };
-		600000000000000000000203 = { isa = PBXBuildFile; fileRef = 600000000000000000000201; };
-		600000000000000000000301 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strokes/StrokePathCache.swift"; sourceTree = "<group>"; };
-		600000000000000000000302 = { isa = PBXBuildFile; fileRef = 600000000000000000000301; };
-		600000000000000000000303 = { isa = PBXBuildFile; fileRef = 600000000000000000000301; };
-		600000000000000000000401 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strokes/StrokeTimeline.swift"; sourceTree = "<group>"; };
-		600000000000000000000402 = { isa = PBXBuildFile; fileRef = 600000000000000000000401; };
-		600000000000000000000403 = { isa = PBXBuildFile; fileRef = 600000000000000000000401; };
-		600000000000000000000501 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strokes/StrokePlayer.swift"; sourceTree = "<group>"; };
-		600000000000000000000502 = { isa = PBXBuildFile; fileRef = 600000000000000000000501; };
-		600000000000000000000503 = { isa = PBXBuildFile; fileRef = 600000000000000000000501; };
-		600000000000000000000601 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strokes/StrokeView.swift"; sourceTree = "<group>"; };
-		600000000000000000000602 = { isa = PBXBuildFile; fileRef = 600000000000000000000601; };
-		600000000000000000000701 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strokes/StrokePlaybackView.swift"; sourceTree = "<group>"; };
-		600000000000000000000702 = { isa = PBXBuildFile; fileRef = 600000000000000000000701; };
-		600000000000000000000801 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeTests.swift; sourceTree = "<group>"; };
-		600000000000000000000802 = { isa = PBXBuildFile; fileRef = 600000000000000000000801; };
-		500000000000000000000101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/DetailHeading.swift"; sourceTree = "<group>"; };
-		500000000000000000000102 = { isa = PBXBuildFile; fileRef = 500000000000000000000101; };
-		500000000000000000000201 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/CharacterCard.swift"; sourceTree = "<group>"; };
-		500000000000000000000202 = { isa = PBXBuildFile; fileRef = 500000000000000000000201; };
-		500000000000000000000301 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/CharacterStrokeArea.swift"; sourceTree = "<group>"; };
-		500000000000000000000302 = { isa = PBXBuildFile; fileRef = 500000000000000000000301; };
-		500000000000000000000401 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/DetailUnavailableView.swift"; sourceTree = "<group>"; };
-		500000000000000000000402 = { isa = PBXBuildFile; fileRef = 500000000000000000000401; };
-		500000000000000000000501 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTests.swift; sourceTree = "<group>"; };
-		500000000000000000000502 = { isa = PBXBuildFile; fileRef = 500000000000000000000501; };
-		400000000000000000000101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/LevelMode.swift"; sourceTree = "<group>"; };
-		400000000000000000000102 = { isa = PBXBuildFile; fileRef = 400000000000000000000101; };
-		400000000000000000000103 = { isa = PBXBuildFile; fileRef = 400000000000000000000101; };
-		400000000000000000000201 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/BrowsingState.swift"; sourceTree = "<group>"; };
-		400000000000000000000202 = { isa = PBXBuildFile; fileRef = 400000000000000000000201; };
-		400000000000000000000203 = { isa = PBXBuildFile; fileRef = 400000000000000000000201; };
-		400000000000000000000301 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/WordRow.swift"; sourceTree = "<group>"; };
-		400000000000000000000302 = { isa = PBXBuildFile; fileRef = 400000000000000000000301; };
-		400000000000000000000401 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/CharacterRow.swift"; sourceTree = "<group>"; };
-		400000000000000000000402 = { isa = PBXBuildFile; fileRef = 400000000000000000000401; };
-		400000000000000000000501 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsingTests.swift; sourceTree = "<group>"; };
-		400000000000000000000502 = { isa = PBXBuildFile; fileRef = 400000000000000000000501; };
-		300000000000000000000B01 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/StrokeArchive.swift"; sourceTree = "<group>"; };
-		300000000000000000000B02 = { isa = PBXBuildFile; fileRef = 300000000000000000000B01; };
-		300000000000000000000B03 = { isa = PBXBuildFile; fileRef = 300000000000000000000B01; };
-		300000000000000000000101 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/DatasetManifest.swift"; sourceTree = "<group>"; };
-		300000000000000000000102 = { isa = PBXBuildFile; fileRef = 300000000000000000000101; };
-		300000000000000000000103 = { isa = PBXBuildFile; fileRef = 300000000000000000000101; };
-		300000000000000000000201 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/Hanzi.swift"; sourceTree = "<group>"; };
-		300000000000000000000202 = { isa = PBXBuildFile; fileRef = 300000000000000000000201; };
-		300000000000000000000203 = { isa = PBXBuildFile; fileRef = 300000000000000000000201; };
-		300000000000000000000301 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/Library.swift"; sourceTree = "<group>"; };
-		300000000000000000000302 = { isa = PBXBuildFile; fileRef = 300000000000000000000301; };
-		300000000000000000000303 = { isa = PBXBuildFile; fileRef = 300000000000000000000301; };
-		300000000000000000000401 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/LibraryContent.swift"; sourceTree = "<group>"; };
-		300000000000000000000402 = { isa = PBXBuildFile; fileRef = 300000000000000000000401; };
-		300000000000000000000403 = { isa = PBXBuildFile; fileRef = 300000000000000000000401; };
-		300000000000000000000501 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/LibraryError.swift"; sourceTree = "<group>"; };
-		300000000000000000000502 = { isa = PBXBuildFile; fileRef = 300000000000000000000501; };
-		300000000000000000000503 = { isa = PBXBuildFile; fileRef = 300000000000000000000501; };
-		300000000000000000000601 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/LibraryLoader.swift"; sourceTree = "<group>"; };
-		300000000000000000000602 = { isa = PBXBuildFile; fileRef = 300000000000000000000601; };
-		300000000000000000000603 = { isa = PBXBuildFile; fileRef = 300000000000000000000601; };
-		300000000000000000000701 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/PinyinFormatter.swift"; sourceTree = "<group>"; };
-		300000000000000000000702 = { isa = PBXBuildFile; fileRef = 300000000000000000000701; };
-		300000000000000000000703 = { isa = PBXBuildFile; fileRef = 300000000000000000000701; };
-		300000000000000000000801 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/SearchIndex.swift"; sourceTree = "<group>"; };
-		300000000000000000000802 = { isa = PBXBuildFile; fileRef = 300000000000000000000801; };
-		300000000000000000000803 = { isa = PBXBuildFile; fileRef = 300000000000000000000801; };
-		300000000000000000000901 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/StrokeSet.swift"; sourceTree = "<group>"; };
-		300000000000000000000902 = { isa = PBXBuildFile; fileRef = 300000000000000000000901; };
-		300000000000000000000903 = { isa = PBXBuildFile; fileRef = 300000000000000000000901; };
-		300000000000000000000A01 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data/Word.swift"; sourceTree = "<group>"; };
-		300000000000000000000A02 = { isa = PBXBuildFile; fileRef = 300000000000000000000A01; };
-		300000000000000000000A03 = { isa = PBXBuildFile; fileRef = 300000000000000000000A01; };
-		3000000000000000000000FF = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
-		200000000000000000000001 = { isa = PBXFileReference; lastKnownFileType = folder; path = "Resources/Data"; sourceTree = "<group>"; };
-		200000000000000000000002 = { isa = PBXBuildFile; fileRef = 200000000000000000000001; };
-		100000000000000000000001 = {
-			isa = PBXGroup; children = (
-				900000000000000000000300, 800000000000000000000501, 700000000000000000000601, 600000000000000000000801, 100000000000000000000003, 400000000000000000000501, 500000000000000000000501); path = HanziLevelsTests; sourceTree = "<group>";
+
+/* Begin PBXBuildFile section */
+		900000000000000000000314 /* Assets.xcassets */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000029 /* Assets.xcassets */;
 		};
-		100000000000000000000002 = {
-			isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanziLevelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR;
+		400000000000000000000203 /* BrowsingState.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 400000000000000000000201 /* BrowsingState.swift */;
 		};
-		100000000000000000000003 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTests.swift; sourceTree = "<group>";
+		900000000000000000000112 /* CharacterLink.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000110 /* CharacterLink.swift */;
 		};
-		100000000000000000000004 = {
-			isa = PBXBuildFile; fileRef = 100000000000000000000003;
+		900000000000000000000113 /* CharacterLink.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000110 /* CharacterLink.swift */;
 		};
-		100000000000000000000005 = {
-			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (900000000000000000000301, 900000000000000000000102, 900000000000000000000112, 900000000000000000000122, 900000000000000000000132, 800000000000000000000502, 800000000000000000000103, 800000000000000000000203, 800000000000000000000303, 700000000000000000000602, 700000000000000000000103, 700000000000000000000203, 700000000000000000000303, 600000000000000000000802, 600000000000000000000103, 600000000000000000000203, 600000000000000000000303, 600000000000000000000403, 600000000000000000000503, 100000000000000000000004, 500000000000000000000502, 400000000000000000000502, 400000000000000000000103, 400000000000000000000203, 300000000000000000000103, 300000000000000000000203, 300000000000000000000303, 300000000000000000000403, 300000000000000000000503, 300000000000000000000603, 300000000000000000000703, 300000000000000000000803, 300000000000000000000903, 300000000000000000000A03, 300000000000000000000B03); runOnlyForDeploymentPostprocessing = 0;
+		900000000000000000000122 /* CharacterRotation.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000120 /* CharacterRotation.swift */;
 		};
-		100000000000000000000006 = {
-			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (3000000000000000000000FF); runOnlyForDeploymentPostprocessing = 0;
+		900000000000000000000123 /* CharacterRotation.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000120 /* CharacterRotation.swift */;
 		};
-		100000000000000000000007 = {
-			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;
+		200000000000000000000002 /* Data */ = {
+			isa = PBXBuildFile;
+			fileRef = 200000000000000000000001 /* Data */;
 		};
-		100000000000000000000008 = {
-			isa = PBXNativeTarget; buildConfigurationList = 100000000000000000000009;
-			buildPhases = (100000000000000000000005, 100000000000000000000007, 100000000000000000000006);
-			buildRules = (); dependencies = ();
-			name = HanziLevelsTests; productName = HanziLevelsTests; productReference = 100000000000000000000002;
+		3000000000000000000000FF /* Data */ = {
+			isa = PBXBuildFile;
+			fileRef = 200000000000000000000001 /* Data */;
+		};
+		900000000000000000000313 /* Data */ = {
+			isa = PBXBuildFile;
+			fileRef = 200000000000000000000001 /* Data */;
+		};
+		300000000000000000000103 /* DatasetManifest.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000101 /* DatasetManifest.swift */;
+		};
+		800000000000000000000103 /* DataSourceAttribution.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 800000000000000000000101 /* DataSourceAttribution.swift */;
+		};
+		300000000000000000000203 /* Hanzi.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000201 /* Hanzi.swift */;
+		};
+		900000000000000000000310 /* Hanzi.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000201 /* Hanzi.swift */;
+		};
+		900000000000000000000409 /* HanziLevelsWidget.appex */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000400 /* HanziLevelsWidget.appex */;
+			settings = {
+				ATTRIBUTES = (
+					RemoveHeadersOnCopy,
+				);
+			};
+		};
+		700000000000000000000203 /* HistoryEntry.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 700000000000000000000201 /* HistoryEntry.swift */;
+		};
+		700000000000000000000103 /* HistoryKind.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 700000000000000000000101 /* HistoryKind.swift */;
+		};
+		700000000000000000000303 /* HistoryStore.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 700000000000000000000301 /* HistoryStore.swift */;
+		};
+		400000000000000000000103 /* LevelMode.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 400000000000000000000101 /* LevelMode.swift */;
+		};
+		A20000000000000000000001 /* LevelViewModel.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = A10000000000000000000001 /* LevelViewModel.swift */;
+		};
+		300000000000000000000303 /* Library.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000301 /* Library.swift */;
+		};
+		300000000000000000000403 /* LibraryContent.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000401 /* LibraryContent.swift */;
+		};
+		300000000000000000000503 /* LibraryError.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000501 /* LibraryError.swift */;
+		};
+		300000000000000000000603 /* LibraryLoader.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000601 /* LibraryLoader.swift */;
+		};
+		300000000000000000000703 /* PinyinFormatter.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000701 /* PinyinFormatter.swift */;
+		};
+		900000000000000000000312 /* PinyinFormatter.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000701 /* PinyinFormatter.swift */;
+		};
+		600000000000000000000203 /* PreparedStrokes.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 600000000000000000000201 /* PreparedStrokes.swift */;
+		};
+		300000000000000000000803 /* SearchIndex.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000801 /* SearchIndex.swift */;
+		};
+		800000000000000000000203 /* SourceDocument.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 800000000000000000000201 /* SourceDocument.swift */;
+		};
+		800000000000000000000303 /* SourceDocumentLoader.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 800000000000000000000301 /* SourceDocumentLoader.swift */;
+		};
+		A20000000000000000000002 /* SourcesViewModel.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = A10000000000000000000002 /* SourcesViewModel.swift */;
+		};
+		300000000000000000000B03 /* StrokeArchive.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000B01 /* StrokeArchive.swift */;
+		};
+		600000000000000000000303 /* StrokePathCache.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 600000000000000000000301 /* StrokePathCache.swift */;
+		};
+		600000000000000000000503 /* StrokePlayer.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 600000000000000000000501 /* StrokePlayer.swift */;
+		};
+		300000000000000000000903 /* StrokeSet.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000901 /* StrokeSet.swift */;
+		};
+		600000000000000000000403 /* StrokeTimeline.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 600000000000000000000401 /* StrokeTimeline.swift */;
+		};
+		600000000000000000000103 /* SVGPathParser.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 600000000000000000000101 /* SVGPathParser.swift */;
+		};
+		900000000000000000000132 /* WidgetCharacterCatalog.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000130 /* WidgetCharacterCatalog.swift */;
+		};
+		900000000000000000000133 /* WidgetCharacterCatalog.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000130 /* WidgetCharacterCatalog.swift */;
+		};
+		900000000000000000000102 /* WidgetSettings.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000100 /* WidgetSettings.swift */;
+		};
+		900000000000000000000103 /* WidgetSettings.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 900000000000000000000100 /* WidgetSettings.swift */;
+		};
+		300000000000000000000A03 /* Word.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000A01 /* Word.swift */;
+		};
+		900000000000000000000311 /* Word.swift */ = {
+			isa = PBXBuildFile;
+			fileRef = 300000000000000000000A01 /* Word.swift */;
+		};
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90000000000000000000040B = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 900000000000000000000405 /* HanziLevelsWidget */;
+			remoteInfo = HanziLevelsWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		90000000000000000000040A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				900000000000000000000409 /* HanziLevelsWidget.appex */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		000000000000000000000029 /* Assets.xcassets */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder.assetcatalog;
+			path = HanziLevels/Assets.xcassets;
+			sourceTree = SOURCE_ROOT;
+		};
+		400000000000000000000201 /* BrowsingState.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Browsing/BrowsingState.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		900000000000000000000110 /* CharacterLink.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Widget/CharacterLink.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		900000000000000000000120 /* CharacterRotation.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Widget/CharacterRotation.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		200000000000000000000001 /* Data */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			path = HanziLevels/Resources/Data;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000101 /* DatasetManifest.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/DatasetManifest.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		800000000000000000000101 /* DataSourceAttribution.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Sources/DataSourceAttribution.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000201 /* Hanzi.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/Hanzi.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		000000000000000000000008 /* HanziLevels.app */ = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			path = HanziLevels.app;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		100000000000000000000002 /* HanziLevelsTests.xctest */ = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.cfbundle;
+			includeInIndex = 0;
+			path = HanziLevelsTests.xctest;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		900000000000000000000400 /* HanziLevelsWidget.appex */ = {
+			isa = PBXFileReference;
+			explicitFileType = "wrapper.app-extension";
+			includeInIndex = 0;
+			path = HanziLevelsWidget.appex;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		700000000000000000000201 /* HistoryEntry.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/History/HistoryEntry.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		700000000000000000000101 /* HistoryKind.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/History/HistoryKind.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		700000000000000000000301 /* HistoryStore.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/History/HistoryStore.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		400000000000000000000101 /* LevelMode.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Browsing/LevelMode.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		A10000000000000000000001 /* LevelViewModel.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/ViewModels/LevelViewModel.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000301 /* Library.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/Library.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000401 /* LibraryContent.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/LibraryContent.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000501 /* LibraryError.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/LibraryError.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000601 /* LibraryLoader.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/LibraryLoader.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000701 /* PinyinFormatter.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/PinyinFormatter.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		600000000000000000000201 /* PreparedStrokes.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Strokes/PreparedStrokes.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000801 /* SearchIndex.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/SearchIndex.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		800000000000000000000201 /* SourceDocument.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Sources/SourceDocument.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		800000000000000000000301 /* SourceDocumentLoader.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Sources/SourceDocumentLoader.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		A10000000000000000000002 /* SourcesViewModel.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/ViewModels/SourcesViewModel.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000B01 /* StrokeArchive.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/StrokeArchive.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		600000000000000000000301 /* StrokePathCache.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Strokes/StrokePathCache.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		600000000000000000000501 /* StrokePlayer.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Strokes/StrokePlayer.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000901 /* StrokeSet.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/StrokeSet.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		600000000000000000000401 /* StrokeTimeline.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Strokes/StrokeTimeline.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		600000000000000000000101 /* SVGPathParser.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Strokes/SVGPathParser.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		900000000000000000000130 /* WidgetCharacterCatalog.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Widget/WidgetCharacterCatalog.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		900000000000000000000100 /* WidgetSettings.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Widget/WidgetSettings.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		300000000000000000000A01 /* Word.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HanziLevels/Core/Library/Word.swift;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A00000000000000000000001 /* Membership exceptions */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				HanziLevels.entitlements,
+				Resources/Data,
+			);
+			target = 000000000000000000000006 /* HanziLevels */;
+		};
+		A00000000000000000000002 /* Membership exceptions */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				HanziLevelsWidget.entitlements,
+			);
+			target = 900000000000000000000405 /* HanziLevelsWidget */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		000000000000000000000003 /* HanziLevels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A00000000000000000000001 /* Membership exceptions */,
+			);
+			explicitFileTypes = {};
+			explicitFolders = ();
+			path = HanziLevels;
+			sourceTree = "<group>";
+		};
+		100000000000000000000001 /* HanziLevelsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {};
+			explicitFolders = ();
+			path = HanziLevelsTests;
+			sourceTree = "<group>";
+		};
+		900000000000000000000401 /* HanziLevelsWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A00000000000000000000002 /* Membership exceptions */,
+			);
+			explicitFileTypes = {};
+			explicitFolders = ();
+			path = HanziLevelsWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00000000000000000000000C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100000000000000000000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900000000000000000000404 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000003 /* HanziLevels */,
+				100000000000000000000001 /* HanziLevelsTests */,
+				900000000000000000000401 /* HanziLevelsWidget */,
+				000000000000000000000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000008 /* HanziLevels.app */,
+				100000000000000000000002 /* HanziLevelsTests.xctest */,
+				900000000000000000000400 /* HanziLevelsWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000000000000000000000006 /* HanziLevels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000000000000000000013 /* Build configuration list */;
+			buildPhases = (
+				00000000000000000000000A /* Sources */,
+				00000000000000000000000C /* Frameworks */,
+				00000000000000000000000B /* Resources */,
+				90000000000000000000040A /* Embed App Extensions */,
+			);
+			buildRules = ();
+			dependencies = (
+				90000000000000000000040C,
+			);
+			fileSystemSynchronizedGroups = (
+				000000000000000000000003 /* HanziLevels */,
+			);
+			name = HanziLevels;
+			productName = HanziLevels;
+			productReference = 000000000000000000000008 /* HanziLevels.app */;
+			productType = "com.apple.product-type.application";
+		};
+		100000000000000000000008 /* HanziLevelsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000009 /* Build configuration list */;
+			buildPhases = (
+				100000000000000000000005 /* Sources */,
+				100000000000000000000007 /* Frameworks */,
+				100000000000000000000006 /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			fileSystemSynchronizedGroups = (
+				100000000000000000000001 /* HanziLevelsTests */,
+			);
+			name = HanziLevelsTests;
+			productName = HanziLevelsTests;
+			productReference = 100000000000000000000002 /* HanziLevelsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		100000000000000000000009 = {
-			isa = XCConfigurationList; buildConfigurations = (10000000000000000000000A, 10000000000000000000000B);
-			defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		900000000000000000000405 /* HanziLevelsWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900000000000000000000408 /* Build configuration list */;
+			buildPhases = (
+				900000000000000000000402 /* Sources */,
+				900000000000000000000404 /* Frameworks */,
+				900000000000000000000403 /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			fileSystemSynchronizedGroups = (
+				900000000000000000000401 /* HanziLevelsWidget */,
+			);
+			name = HanziLevelsWidget;
+			productName = HanziLevelsWidget;
+			productReference = 900000000000000000000400 /* HanziLevelsWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
-		10000000000000000000000A = {
-			isa = XCBuildConfiguration; buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevelsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = "1";
-			}; name = Debug;
-		};
-		10000000000000000000000B = {
-			isa = XCBuildConfiguration; buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevelsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = "1";
-			}; name = Release;
-		};
-		000000000000000000000015 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/HanziLevelsApp.swift"; sourceTree = "<group>";
-		};
-		000000000000000000000016 = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000015;
-		};
-		000000000000000000000017 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/RootView.swift"; sourceTree = "<group>";
-		};
-		000000000000000000000018 = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000017;
-		};
-		000000000000000000000019 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/Route.swift"; sourceTree = "<group>";
-		};
-		00000000000000000000001A = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000019;
-		};
-		00000000000000000000001B = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/CharacterDetailView.swift"; sourceTree = "<group>";
-		};
-		00000000000000000000001C = {
-			isa = PBXBuildFile; fileRef = 00000000000000000000001B;
-		};
-		00000000000000000000001D = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/EmptyLibraryView.swift"; sourceTree = "<group>";
-		};
-		00000000000000000000001E = {
-			isa = PBXBuildFile; fileRef = 00000000000000000000001D;
-		};
-		00000000000000000000001F = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/LevelCard.swift"; sourceTree = "<group>";
-		};
-		000000000000000000000020 = {
-			isa = PBXBuildFile; fileRef = 00000000000000000000001F;
-		};
-		000000000000000000000021 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/HomeView.swift"; sourceTree = "<group>";
-		};
-		000000000000000000000022 = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000021;
-		};
-		000000000000000000000023 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/LevelView.swift"; sourceTree = "<group>";
-		};
-		000000000000000000000024 = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000023;
-		};
-		000000000000000000000025 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/SourcesView.swift"; sourceTree = "<group>";
-		};
-		000000000000000000000026 = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000025;
-		};
-		000000000000000000000027 = {
-			isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/WordDetailView.swift"; sourceTree = "<group>";
-		};
-		000000000000000000000028 = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000027;
-		};
-		000000000000000000000029 = {
-			isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Resources/Assets.xcassets"; sourceTree = "<group>";
-		};
-		00000000000000000000002A = {
-			isa = PBXBuildFile; fileRef = 000000000000000000000029;
-		};
-		000000000000000000000008 = {
-			isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanziLevels.app; sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		000000000000000000000002 = {
-			isa = PBXGroup; children = (
-				000000000000000000000003,
-				100000000000000000000001,
-				900000000000000000000401,
-				000000000000000000000005,
-			); sourceTree = "<group>";
-		};
-		000000000000000000000003 = {
-			isa = PBXGroup; children = (
-				800000000000000000000101,
-				800000000000000000000201,
-				800000000000000000000301,
-				800000000000000000000401,
-				700000000000000000000101,
-				700000000000000000000201,
-				700000000000000000000301,
-				700000000000000000000401,
-				700000000000000000000501,
+/* End PBXNativeTarget section */
 
-				600000000000000000000101,
-				600000000000000000000201,
-				600000000000000000000301,
-				600000000000000000000401,
-				600000000000000000000501,
-				600000000000000000000601,
-				600000000000000000000701,
-
-				400000000000000000000101,
-				400000000000000000000201,
-				400000000000000000000301,
-				500000000000000000000101,
-				500000000000000000000201,
-				500000000000000000000301,
-				500000000000000000000401,
-				400000000000000000000401,
-				000000000000000000000015,
-				000000000000000000000017,
-				000000000000000000000019,
-				00000000000000000000001B,
-				00000000000000000000001D,
-				00000000000000000000001F,
-				000000000000000000000021,
-				000000000000000000000023,
-				000000000000000000000025,
-				000000000000000000000027,
-				000000000000000000000029,
-				300000000000000000000101,
-				300000000000000000000201,
-				300000000000000000000301,
-				300000000000000000000401,
-				300000000000000000000501,
-				300000000000000000000601,
-				300000000000000000000701,
-				300000000000000000000801,
-				300000000000000000000901,
-				300000000000000000000A01,
-				300000000000000000000B01,
-				200000000000000000000001,
-				900000000000000000000100,
-				900000000000000000000110,
-				900000000000000000000120,
-				900000000000000000000130,
-			); path = HanziLevels; sourceTree = "<group>";
-		};
-		000000000000000000000005 = {
-			isa = PBXGroup; children = (
-				000000000000000000000008,
-				100000000000000000000002,
-				900000000000000000000400,
-			); name = Products; sourceTree = "<group>";
-		};
-		00000000000000000000000A = {
-			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
-				900000000000000000000101,
-				900000000000000000000111,
-				900000000000000000000121,
-				900000000000000000000131,
-				800000000000000000000102,
-				800000000000000000000202,
-				800000000000000000000302,
-				800000000000000000000402,
-				700000000000000000000102,
-				700000000000000000000202,
-				700000000000000000000302,
-				700000000000000000000402,
-				700000000000000000000502,
-
-				600000000000000000000102,
-				600000000000000000000202,
-				600000000000000000000302,
-				600000000000000000000402,
-				600000000000000000000502,
-				600000000000000000000602,
-				600000000000000000000702,
-
-				300000000000000000000102,
-				300000000000000000000202,
-				300000000000000000000302,
-				300000000000000000000402,
-				300000000000000000000502,
-				300000000000000000000602,
-				300000000000000000000702,
-				300000000000000000000802,
-				300000000000000000000902,
-				300000000000000000000A02,
-				300000000000000000000B02,
-				400000000000000000000102,
-				400000000000000000000202,
-				400000000000000000000302,
-				500000000000000000000102,
-				500000000000000000000202,
-				500000000000000000000302,
-				500000000000000000000402,
-				400000000000000000000402,
-				000000000000000000000016,
-				000000000000000000000018,
-				00000000000000000000001A,
-				00000000000000000000001C,
-				00000000000000000000001E,
-				000000000000000000000020,
-				000000000000000000000022,
-				000000000000000000000024,
-				000000000000000000000026,
-				000000000000000000000028,
-			); runOnlyForDeploymentPostprocessing = 0;
-		};
-		00000000000000000000000B = {
-			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
-				00000000000000000000002A,
-				200000000000000000000002,
-			); runOnlyForDeploymentPostprocessing = 0;
-		};
-		00000000000000000000000C = {
-			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
-			); runOnlyForDeploymentPostprocessing = 0;
-		};
-		000000000000000000000006 = {
-			isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000013; buildPhases = (
-				00000000000000000000000A,
-				00000000000000000000000C,
-				00000000000000000000000B,
-				90000000000000000000040A,
-			); buildRules = (); dependencies = (90000000000000000000040C); name = HanziLevels; productName = HanziLevels; productReference = 000000000000000000000008; productType = "com.apple.product-type.application";
-		};
-		00000000000000000000002D = {
-			isa = XCBuildConfiguration; buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			}; name = Debug;
-		};
-		00000000000000000000002E = {
-			isa = XCBuildConfiguration; buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				VALIDATE_PRODUCT = YES;
-			}; name = Release;
-		};
-		000000000000000000000012 = {
-			isa = XCConfigurationList; buildConfigurations = (
-				00000000000000000000002D,
-				00000000000000000000002E,
-			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
-		};
-		00000000000000000000002F = {
-			isa = XCBuildConfiguration; buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HanziLevels/HanziLevels.entitlements;
-				INFOPLIST_FILE = HanziLevels/Info.plist;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Hanzi Levels";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1";
-			}; name = Debug;
-		};
-		000000000000000000000030 = {
-			isa = XCBuildConfiguration; buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HanziLevels/HanziLevels.entitlements;
-				INFOPLIST_FILE = HanziLevels/Info.plist;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Hanzi Levels";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1";
-			}; name = Release;
-		};
-		000000000000000000000013 = {
-			isa = XCConfigurationList; buildConfigurations = (
-				00000000000000000000002F,
-				000000000000000000000030,
-			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
-		};
-		000000000000000000000001 = {
+/* Begin PBXProject section */
+		000000000000000000000001 /* Project object */ = {
 			isa = PBXProject;
-			attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1530; TargetAttributes = { 000000000000000000000006 = { CreatedOnToolsVersion = 15.3; }; 100000000000000000000008 = { CreatedOnToolsVersion = 15.3; }; }; };
-			buildConfigurationList = 000000000000000000000012; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0;
-			knownRegions = (en, Base); mainGroup = 000000000000000000000002; productRefGroup = 000000000000000000000005; projectDirPath = ""; projectRoot = ""; targets = (
-				000000000000000000000006,
-				100000000000000000000008,
-				900000000000000000000405,
+			attributes = {
+				LastUpgradeCheck = 1600;
+				BuildIndependentTargetsInParallel = YES;
+				TargetAttributes = {
+					000000000000000000000006 /* HanziLevels */ = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					100000000000000000000008 /* HanziLevelsTests */ = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 000000000000000000000012 /* Build configuration list */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000000000000000000000002;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 000000000000000000000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000000000000000000000006 /* HanziLevels */,
+				100000000000000000000008 /* HanziLevelsTests */,
+				900000000000000000000405 /* HanziLevelsWidget */,
 			);
 		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00000000000000000000000B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				200000000000000000000002 /* Data */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3000000000000000000000FF /* Data */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900000000000000000000403 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900000000000000000000313 /* Data */,
+				900000000000000000000314 /* Assets.xcassets */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00000000000000000000000A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100000000000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900000000000000000000102 /* WidgetSettings.swift */,
+				900000000000000000000112 /* CharacterLink.swift */,
+				900000000000000000000122 /* CharacterRotation.swift */,
+				900000000000000000000132 /* WidgetCharacterCatalog.swift */,
+				800000000000000000000103 /* DataSourceAttribution.swift */,
+				800000000000000000000203 /* SourceDocument.swift */,
+				800000000000000000000303 /* SourceDocumentLoader.swift */,
+				700000000000000000000103 /* HistoryKind.swift */,
+				700000000000000000000203 /* HistoryEntry.swift */,
+				700000000000000000000303 /* HistoryStore.swift */,
+				600000000000000000000103 /* SVGPathParser.swift */,
+				600000000000000000000203 /* PreparedStrokes.swift */,
+				600000000000000000000303 /* StrokePathCache.swift */,
+				600000000000000000000403 /* StrokeTimeline.swift */,
+				600000000000000000000503 /* StrokePlayer.swift */,
+				400000000000000000000103 /* LevelMode.swift */,
+				400000000000000000000203 /* BrowsingState.swift */,
+				300000000000000000000103 /* DatasetManifest.swift */,
+				300000000000000000000203 /* Hanzi.swift */,
+				300000000000000000000303 /* Library.swift */,
+				300000000000000000000403 /* LibraryContent.swift */,
+				300000000000000000000503 /* LibraryError.swift */,
+				300000000000000000000603 /* LibraryLoader.swift */,
+				300000000000000000000703 /* PinyinFormatter.swift */,
+				300000000000000000000803 /* SearchIndex.swift */,
+				300000000000000000000903 /* StrokeSet.swift */,
+				300000000000000000000A03 /* Word.swift */,
+				300000000000000000000B03 /* StrokeArchive.swift */,
+				A20000000000000000000001 /* LevelViewModel.swift */,
+				A20000000000000000000002 /* SourcesViewModel.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900000000000000000000402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900000000000000000000103 /* WidgetSettings.swift */,
+				900000000000000000000113 /* CharacterLink.swift */,
+				900000000000000000000123 /* CharacterRotation.swift */,
+				900000000000000000000133 /* WidgetCharacterCatalog.swift */,
+				900000000000000000000310 /* Hanzi.swift */,
+				900000000000000000000311 /* Word.swift */,
+				900000000000000000000312 /* PinyinFormatter.swift */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90000000000000000000040C = {
+			isa = PBXTargetDependency;
+			target = 900000000000000000000405 /* HanziLevelsWidget */;
+			targetProxy = 90000000000000000000040B;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00000000000000000000002D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SDKROOT = iphoneos;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				CLANG_ENABLE_OBJC_ARC = YES;
+			};
+			name = Debug;
+		};
+		00000000000000000000002F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HanziLevels/HanziLevels.entitlements;
+				MARKETING_VERSION = 0.1.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				CURRENT_PROJECT_VERSION = 1;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hanzi Levels";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				INFOPLIST_FILE = HanziLevels/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
+			};
+			name = Debug;
+		};
+		10000000000000000000000A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				MARKETING_VERSION = 0.1.0;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevelsTests;
+				CODE_SIGN_STYLE = Automatic;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				CURRENT_PROJECT_VERSION = 1;
+			};
+			name = Debug;
+		};
+		900000000000000000000406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				MARKETING_VERSION = 0.1.0;
+				INFOPLIST_FILE = HanziLevelsWidget/Info.plist;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "HSK Character";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HanziLevelsWidget/HanziLevelsWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels.Widget;
+				CURRENT_PROJECT_VERSION = 1;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Debug;
+		};
+		00000000000000000000002E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		000000000000000000000030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HanziLevels/HanziLevels.entitlements;
+				MARKETING_VERSION = 0.1.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				CURRENT_PROJECT_VERSION = 1;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hanzi Levels";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				INFOPLIST_FILE = HanziLevels/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
+			};
+			name = Release;
+		};
+		10000000000000000000000B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				MARKETING_VERSION = 0.1.0;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevelsTests;
+				CODE_SIGN_STYLE = Automatic;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				CURRENT_PROJECT_VERSION = 1;
+			};
+			name = Release;
+		};
+		900000000000000000000407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				MARKETING_VERSION = 0.1.0;
+				INFOPLIST_FILE = HanziLevelsWidget/Info.plist;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "HSK Character";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HanziLevelsWidget/HanziLevelsWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chromium7.HanziLevels.Widget;
+				CURRENT_PROJECT_VERSION = 1;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		000000000000000000000012 /* Build configuration list */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00000000000000000000002D /* Debug */,
+				00000000000000000000002E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000000000000000000000013 /* Build configuration list */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00000000000000000000002F /* Debug */,
+				000000000000000000000030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100000000000000000000009 /* Build configuration list */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10000000000000000000000A /* Debug */,
+				10000000000000000000000B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900000000000000000000408 /* Build configuration list */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900000000000000000000406 /* Debug */,
+				900000000000000000000407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
 	};
-	rootObject = 000000000000000000000001;
+	rootObject = 000000000000000000000001 /* Project object */;
 }
