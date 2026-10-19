@@ -1,7 +1,7 @@
 import SwiftUI
 
 @MainActor
-struct RootView: View {
+struct ContentView: View {
     @Environment(Library.self) private var library
     @Binding var pendingCharacterID: String?
     @State private var path: [Route] = []
@@ -16,13 +16,13 @@ struct RootView: View {
                 .navigationDestination(for: Route.self) { route in
                     switch route {
                     case .level(let level):
-                        LevelView(level: level)
+                        LevelView(viewModel: LevelViewModel(level: level, library: library))
                     case .word(let id):
                         WordDetailView(wordID: id)
                     case .character(let id):
                         CharacterDetailView(characterID: id)
                     case .sources:
-                        SourcesView()
+                        SourcesView(viewModel: SourcesViewModel())
                     case .history:
                         HistoryView()
                     }
@@ -41,7 +41,7 @@ struct RootView: View {
 
 #Preview("Light") {
     let library = Library()
-    RootView()
+    ContentView()
         .modelContainer(for: HistoryEntry.self, inMemory: true)
         .environment(library)
         .task { await library.load() }
@@ -50,7 +50,7 @@ struct RootView: View {
 
 #Preview("Dark") {
     let library = Library()
-    RootView()
+    ContentView()
         .modelContainer(for: HistoryEntry.self, inMemory: true)
         .environment(library)
         .task { await library.load() }

@@ -2,20 +2,20 @@ import SwiftUI
 
 @MainActor
 struct LevelView: View {
-    let level: Int
-    @AppStorage private var mode: LevelMode
-    @Environment(Library.self) private var library
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @State private var query = ""
+    @State private var viewModel: LevelViewModel
 
-    init(level: Int) {
-        self.level = level
-        _mode = AppStorage(wrappedValue: .words, BrowsingState.modeKey(for: level))
+    private var level: Int { viewModel.level }
+    @AppStorage private var mode: LevelMode
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    init(viewModel: LevelViewModel) {
+        _viewModel = State(initialValue: viewModel)
+        _mode = AppStorage(wrappedValue: .words, BrowsingState.modeKey(for: viewModel.level))
     }
 
     var body: some View {
-        let words = mode == .words ? library.searchWords(query, level: level) : []
-        let characters = mode == .characters ? library.searchCharacters(query, level: level) : []
+        let words = viewModel.words(for: mode)
+        let characters = viewModel.characters(for: mode)
         let count = mode == .words ? words.count : characters.count
 
         VStack(alignment: .leading, spacing: 12) {
@@ -55,19 +55,19 @@ struct LevelView: View {
             .scrollContentBackground(.hidden)
             .contentMargins(.top, 0, for: .scrollContent)
             .overlay {
-                if library.state == .loading {
+                if viewModel.state == .loading {
                     ProgressView("Loading library…")
-                } else if case .failed(let message) = library.state {
+                } else if case .failed(let message) = viewModel.state {
                     EmptyLibraryView(title: "Library unavailable", systemImage: "exclamationmark.triangle",
                                      description: message)
                 } else if count == 0 {
-                    if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    if viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                         EmptyLibraryView(title: "No \(mode.title.lowercased()) in this level",
                                          systemImage: "text.book.closed",
                                          description: "Choose another HSK level to browse the bundled content.")
                     } else {
                         ScrollView {
-                            ContentUnavailableView.search(text: query)
+                            ContentUnavailableView.search(text: viewModel.query)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                     }
@@ -78,7 +78,7 @@ struct LevelView: View {
         .background(Color(.systemGroupedBackground))
         .navigationTitle("HSK \(level)")
         .navigationBarTitleDisplayMode(.large)
-        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Hanzi, pinyin or English")
+        .searchable(text: $viewModel.query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Hanzi, pinyin or English")
         .autocorrectionDisabled()
         .textInputAutocapitalization(.never)
     }
@@ -95,7 +95,7 @@ struct LevelView: View {
 #Preview("Level · Light") {
     let library = Library()
     NavigationStack {
-        LevelView(level: 1)
+        LevelView(viewModel: LevelViewModel(level: 1, library: library))
     }
     .environment(library)
     .task { await library.load() }
@@ -105,7 +105,7 @@ struct LevelView: View {
 #Preview("Level · Dark") {
     let library = Library()
     NavigationStack {
-        LevelView(level: 1)
+        LevelView(viewModel: LevelViewModel(level: 1, library: library))
     }
     .environment(library)
     .task { await library.load() }
@@ -115,7 +115,7 @@ struct LevelView: View {
 #Preview("Level · Accessibility") {
     let library = Library()
     NavigationStack {
-        LevelView(level: 1)
+        LevelView(viewModel: LevelViewModel(level: 1, library: library))
     }
     .environment(library)
     .task { await library.load() }
